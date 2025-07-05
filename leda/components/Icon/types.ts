@@ -9,7 +9,7 @@ export type IconProps = {
   strokeOpacity?: number | string | null;
   strokeWidth?: number | string | null;
   [x: string]: unknown;
-} & Omit<SVGProps<SVGElement>, 'fill' | 'stroke' | 'strokeOpacity' | 'strokeWidth'>;
+} & Omit<SVGProps<SVGSVGElement>, 'fill' | 'stroke' | 'strokeOpacity' | 'strokeWidth'>;
 
 export enum Icons {
   Calendar = 'calendar',

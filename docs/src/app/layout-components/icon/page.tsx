@@ -63,7 +63,7 @@ const IconPage = () => {
         </tr>
         <tr>
           <Td>[SVG props]</Td>
-          <Td>{'SVGProps<SVGElement>'}</Td>
+          <Td>{'SVGProps<SVGSVGElement>'}</Td>
           <Td>You can pass all supported SVG props</Td>
         </tr>
         <UnderscoreClasses />
