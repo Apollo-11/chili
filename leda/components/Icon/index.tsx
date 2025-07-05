@@ -20,15 +20,21 @@ export const Icon = (props: IconProps): React.ReactElement | null => {
   const paths = ICON_PATHS[icon];
   if (!paths) return null;
 
+  const sanitizedSize = size ?? undefined;
+  const sanitizedFill = fill ?? undefined;
+  const sanitizedStroke = stroke ?? undefined;
+  const sanitizedStrokeWidth = strokeWidth ?? undefined;
+  const sanitizedStrokeOpacity = strokeOpacity ?? undefined;
+
   return (
     <svg
-      width={size}
-      height={size}
+      width={sanitizedSize}
+      height={sanitizedSize}
       viewBox="0 0 24 24"
-      fill={fill}
-      stroke={stroke}
-      strokeWidth={strokeWidth}
-      strokeOpacity={strokeOpacity}
+      fill={sanitizedFill}
+      stroke={sanitizedStroke}
+      strokeWidth={sanitizedStrokeWidth}
+      strokeOpacity={sanitizedStrokeOpacity}
       strokeLinecap="round"
       strokeLinejoin="round"
       {...restProps}
