@@ -16,10 +16,8 @@ const IconPage = () => {
       <H1>Icon</H1>
 
       <P>
-        Leda wraps{' '}
-        <A target="_blank" href="https://github.com/ianmiller347/feather-icons-react#readme">
-          feather-icons-react
-        </A> to add standard Leda props and types.
+        Leda provides its own lightweight set of SVG icons.
+        Use icon names or the exported enum <Code>L.IconTypes.Icons</Code> to pick one.
       </P>
 
       <PropsTableSection>
