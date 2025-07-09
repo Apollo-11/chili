@@ -27,6 +27,6 @@
     "dist",
   ],
   "include": [
-    "./leda/"
+    "./chili/"
   ]
 }

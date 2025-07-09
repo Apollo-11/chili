@@ -1,4 +1,4 @@
-import * as L from '@leda';
+import * as L from '@chili';
 import { DatesLive } from '@/components/live/DatesLive';
 import { log } from '@/utils';
 

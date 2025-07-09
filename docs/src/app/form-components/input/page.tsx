@@ -2,7 +2,7 @@
 
 /* eslint-disable react/jsx-curly-brace-presence */
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { UnderscoreClasses } from '@/components/commonProps';
 import {
   A, Code, CodeBlock, H1, H2, P, Section, THead, Table, Td,

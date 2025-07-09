@@ -235,7 +235,7 @@ Happy new year!
 - CheckBox: base CSS
 
 ### Changed
-- CheckBox: it uses Leda icons instead of font
+ - CheckBox: it uses Chili icons instead of font
 
 
 ## [0.27.4] - 2023-07-22

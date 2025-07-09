@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import zxcvbn from 'zxcvbn';
 import { Live } from '@/components/live';
 import { Section } from '@/components/typography';

@@ -2,7 +2,7 @@
 
 /* eslint-disable react/jsx-curly-brace-presence */
 
-import { Button, ButtonGroup } from '@leda';
+import { Button, ButtonGroup } from '@chili';
 import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
 import { H1, Td, TdCode } from '@/components/typography';
 import { Live } from '@/components/live';

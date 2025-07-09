@@ -2,7 +2,7 @@
 
 /* eslint-disable react/jsx-curly-brace-presence */
 
-import * as L from '@leda';
+import * as L from '@chili';
 import {
   H1, Td,
 } from '@/components/typography';

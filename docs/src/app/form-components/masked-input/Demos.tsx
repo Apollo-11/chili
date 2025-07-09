@@ -1,4 +1,4 @@
-import * as L from '@leda';
+import * as L from '@chili';
 import { Live } from '@/components/live';
 import { Section } from '@/components/typography';
 

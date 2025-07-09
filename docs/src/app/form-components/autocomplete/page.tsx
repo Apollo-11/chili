@@ -2,7 +2,7 @@
 
 /* eslint-disable react/jsx-curly-brace-presence */
 
-import * as L from '@leda';
+import * as L from '@chili';
 import {
   H1, H2, Section, Table, Th, Td, TdCode, P, A,
 } from '@/components/typography';
@@ -111,7 +111,7 @@ interface AutoCompleteMessages {
             Customize component text labels
           </P>
           <P>
-            Consider using <A href={PATHS.ledaProvider}>Leda provider</A> to set messages globally.
+            Consider using <A href={PATHS.chiliProvider}>Chili provider</A> to set messages globally.
           </P>
         </Td>
       </tr>

@@ -1,4 +1,4 @@
-import * as L from '@leda';
+import * as L from '@chili';
 import { MenuButton } from './MenuButton';
 import { greekFont } from '@/fonts';
 
@@ -57,7 +57,7 @@ export const MainHeader = ({
         "
       >
         <L.A
-          href="https://github.com/leda-development/leda"
+          href="https://github.com/chili-development/chili"
           target="_blank"
           className="
             p-3

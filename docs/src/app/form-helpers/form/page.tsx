@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { Live } from '@/components/live';
 import {
   CodeBlock, H1, H2, P, Section, THead, Table, Td,

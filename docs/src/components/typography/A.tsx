@@ -1,6 +1,6 @@
-import * as L from '@leda';
+import * as L from '@chili';
 import classnames from 'classnames';
-import type { AProps } from '@leda/components/A/types';
+import type { AProps } from '@chili/components/A/types';
 
 export const A = ({
   children,

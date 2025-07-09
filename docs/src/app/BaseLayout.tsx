@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { useEffect, useState } from 'react';
 import { MainHeader } from '@/components/header';
 import { MainNav } from '@/components/nav';

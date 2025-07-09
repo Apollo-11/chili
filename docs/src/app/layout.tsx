@@ -6,7 +6,7 @@ import { BaseLayout } from './BaseLayout';
 import { mainFont } from '@/fonts';
 
 export const metadata: Metadata = {
-  title: 'Leda',
+  title: 'Chili',
   description: 'React UI components library',
 };
 

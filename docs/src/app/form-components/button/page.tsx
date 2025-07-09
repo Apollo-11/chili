@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@leda';
+import { Button } from '@chili';
 import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
 import {
   H1, H2, Td, TdCode,

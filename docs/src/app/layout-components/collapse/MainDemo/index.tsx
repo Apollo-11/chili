@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import React from 'react';
 import { BasicDemo } from './BasicDemo';
 import { ControlledDemo } from './ControlledDemo';

@@ -1,4 +1,4 @@
-import * as L from '@leda';
+import * as L from '@chili';
 import {
   Code, H2, P, Section, Table, Td, TdCode, THead, CodeBlock, A, propsTableCommonHeaders,
 } from '@/components/typography';

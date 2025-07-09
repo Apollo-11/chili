@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import * as L from '@leda';
+import * as L from '@chili';
 import { Live } from '@/components/live';
 import {
   A, Code, H1, H2, P, Section, Td,
@@ -16,7 +16,7 @@ const IconPage = () => {
       <H1>Icon</H1>
 
       <P>
-        Leda provides its own lightweight set of SVG icons.
+        Chili provides its own lightweight set of SVG icons.
         Use icon names or the exported enum <Code>L.IconTypes.Icons</Code> to pick one.
       </P>
 

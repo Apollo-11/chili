@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import {
   H1, H2, P, A, Section,
 } from '@/components/typography';

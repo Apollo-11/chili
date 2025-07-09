@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { Live } from '@/components/live';
 import {
   Code, A, H1, P, THead, Table, Td, CodeBlock,
@@ -12,7 +12,7 @@ const PredefinedValidatorPage = () => (
     <H1>Predefined validators</H1>
 
     <P>
-      Leda has a number of predefined validators both international and local.
+      Chili has a number of predefined validators both international and local.
     </P>
 
     <P>

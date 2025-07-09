@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { Live } from '@/components/live';
 import {
   A,
@@ -12,7 +12,7 @@ import { log } from '@/utils';
 
 const Home = () => (
   <article className="mb-10">
-    <H1>Leda the React components library</H1>
+    <H1>Chili the React components library</H1>
 
     <P>Built-in forms, validation, customization etc.</P>
 
@@ -69,7 +69,7 @@ const Home = () => (
       </P>
 
       <P>
-        Leda components can have both className and _your-class-name props.
+        Chili components can have both className and _your-class-name props.
       </P>
 
       <div>
@@ -97,10 +97,10 @@ const Home = () => (
       </div>
 
       <P>
-        Many examples use L. notaition. We have imported Leda as follows: <Code>import * as L from &apos;@leda&apos;</Code>.
+        Many examples use L. notaition. We have imported Chili as follows: <Code>import * as L from &apos;@chili&apos;</Code>.
       </P>
       <P>
-        L is just a namespace to get access to any Leda component in the live edit window.
+        L is just a namespace to get access to any Chili component in the live edit window.
       </P>
     </Section>
 
@@ -134,7 +134,7 @@ const Home = () => (
         React 16.8.0 and above (the one with hooks).
       </P>
       <P>
-        <Code>npm i leda</Code>
+        <Code>npm i chili-ui</Code>
       </P>
     </Section>
 
