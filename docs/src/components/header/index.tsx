@@ -34,20 +34,11 @@ export const MainHeader = ({
             text-3xl
           `}
         >
-          <span className="text-pink-500">
-            L
-          </span>
-          <span className="text-teal-500">
-            E
-          </span>
-          <span className="text-yellow-500">
-            D
-          </span>
-          <span className="text-cyan-600">
-            A
+          <span className="text-red-600">
+            Chili
           </span>
         </span>
-        <span className="ml-2 text-xs">1.3.11</span>
+        <span className="ml-2 text-xs">0.1.1</span>
       </L.A>
       <div
         className="
