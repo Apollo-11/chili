@@ -2,7 +2,7 @@
 
 /* eslint-disable react/jsx-curly-brace-presence */
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { Live } from '@/components/live';
 import {
   Code, H1, H2, P, Section, THead, Table, Td, propsTableCommonHeaders,
@@ -17,13 +17,13 @@ const ValidatePage = () => (
     </P>
 
     <P>
-      <Code>{'import { validate } from leda'}</Code>
+      <Code>{'import { validate } from chili-ui'}</Code>
     </P>
 
     <P>or</P>
 
     <P>
-      <Code>import * as L from leda</Code>
+      <Code>import * as L from chili-ui</Code>
       <br />
       <Code>{"L.validate.email('123@gmial.com')"}</Code>
     </P>

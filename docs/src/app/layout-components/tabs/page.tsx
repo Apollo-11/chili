@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { UnderscoreClasses } from '@/components/commonProps';
 import {
   H1, H2, Section, THead, Table, Td, propsTableCommonHeaders,

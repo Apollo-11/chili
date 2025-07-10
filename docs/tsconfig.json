@@ -29,11 +29,11 @@
       "@/*": [
         "./src/*"
       ],
-      "@leda/*": [
-        "../leda/*"
+      "@chili/*": [
+        "../chili/*"
       ],
-      "@leda": [
-        "../leda/index"
+      "@chili": [
+        "../chili/index"
       ]
     }
   },
@@ -47,5 +47,4 @@
   ],
   "exclude": [
     "node_modules"
-  ]
-}
+  ]}

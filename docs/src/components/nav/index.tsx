@@ -76,7 +76,7 @@ export const MainNav = () => (
     </div>
     <ul>
       <NavLi to="/other/html">HTML</NavLi>
-      <NavLi to="/other/leda-provider">Leda provider</NavLi>
+      <NavLi to="/other/chili-provider">Chili provider</NavLi>
       <NavLi to="/other/utils">utils</NavLi>
     </ul>
 

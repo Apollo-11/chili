@@ -25,7 +25,7 @@ If applicable, add screenshots to help explain your problem.
  - OS: [e.g. Windows 10]
  - Browser [e.g. chrome, firefox]
  - Browser Version [e.g. 22]
- - Leda Version [e.g. 2.0.2]
+ - Chili Version [e.g. 2.0.2]
 
 **Additional context**
 Add any other context about the problem here.

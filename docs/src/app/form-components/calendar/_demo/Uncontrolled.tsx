@@ -1,4 +1,4 @@
-import { Calendar } from '@leda/index';
+import { Calendar } from '@chili/index';
 import { Live } from '@/components/live';
 
 export const Uncontrolled = () => (

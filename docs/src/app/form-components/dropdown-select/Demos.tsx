@@ -1,4 +1,4 @@
-import { DropDownSelect } from '@leda';
+import { DropDownSelect } from '@chili';
 import { Live } from '@/components/live';
 import { Section } from '@/components/typography';
 

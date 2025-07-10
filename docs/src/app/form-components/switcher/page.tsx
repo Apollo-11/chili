@@ -1,6 +1,6 @@
 'use client';
 
-import { Tabs, Tab } from '@leda/index';
+import { Tabs, Tab } from '@chili/index';
 import {
   CodeBlock, H1, Section, Td,
 } from '@/components/typography';

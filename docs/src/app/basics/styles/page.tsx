@@ -3,7 +3,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-curly-brace-presence */
 
-import * as L from '@leda';
+import * as L from '@chili';
 import Image from 'next/image';
 import {
   H1, H2, H3, P, Code, A,
@@ -18,10 +18,10 @@ const Page = () => (
     <Section>
       <H2>Default styles</H2>
       <P>
-        Leda has some default styles so it is ready to use immediately.
+        Chili has some default styles so it is ready to use immediately.
       </P>
       <P>
-        <Code>{"import 'leda/dist/styles/leda.base.css';"}</Code>
+        <Code>{"import 'chili/dist/styles/chili.base.css';"}</Code>
       </P>
 
       <P>
@@ -48,7 +48,7 @@ const Page = () => (
           Just add it after default styles import:
         </P>
         <P>
-          <Code>{"import 'leda/dist/styles/leda.base.css';"}</Code>
+          <Code>{"import 'chili/dist/styles/chili.base.css';"}</Code>
           <br />
           <Code>{"import 'your-variables.css';"}</Code>
         </P>

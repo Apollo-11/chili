@@ -57,7 +57,7 @@ interface PaginationMessages {
             Customize component text labels
           </P>
           <P>
-            Consider using <A href={PATHS.ledaProvider}>Leda provider</A> to set messages globally.
+            Consider using <A href={PATHS.chiliProvider}>Chili provider</A> to set messages globally.
           </P>
         </Td>
       </tr>

@@ -1,4 +1,4 @@
-import * as L from '@leda';
+import * as L from '@chili';
 import type { PropsWithChildren } from 'react';
 import { H2, THead, Table } from '@/components/typography';
 import { propsTableCommonHeaders } from '@/components/typography/Table';

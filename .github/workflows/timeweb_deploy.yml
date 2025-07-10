@@ -1,4 +1,4 @@
-name: Deploy Leda to Main Station
+name: Deploy Chili to Main Station
 on:
   push:
     branches: ["master"]
@@ -22,7 +22,7 @@ jobs:
           cache: "npm"
 
       # Step: Install dependencies
-      - name: Install leda dependencies
+      - name: Install chili dependencies
         run: npm ci
 
       - name: Build styles
@@ -106,7 +106,7 @@ jobs:
           username: deployer
           key: ${{ secrets.SERVER_SSH_KEY }}
           source: docs-build.zip
-          target: /var/www/leda/
+          target: /var/www/chili/
 
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
@@ -115,7 +115,7 @@ jobs:
           username: deployer # The user we set up on your server
           key: ${{ secrets.SERVER_SSH_KEY }} # Private key for authentication
           script: |
-            APP_DIR=/var/www/leda
+            APP_DIR=/var/www/chili
             ARTIFACT_NAME=docs-build.zip
 
             echo "==> Switching to app directory"
@@ -129,6 +129,6 @@ jobs:
             npm ci --omit=dev
 
             echo "==> Restarting PM2 process"
-            pm2 restart leda-docs || pm2 start npm --name "leda-docs" -- run start
+            pm2 restart chili-docs || pm2 start npm --name "chili-docs" -- run start
 
             echo "✅ Deployment complete"

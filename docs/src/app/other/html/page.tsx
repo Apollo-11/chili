@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
 import {
   H1, H2, P, Section, THead, Table, propsTableCommonHeaders,
@@ -12,7 +12,7 @@ const HTMLPage = () => (
     <H1>HTML components</H1>
 
     <P>
-      Leda has its own HTML tags, they are the same HTML tags with some more props
+      Chili has its own HTML tags, they are the same HTML tags with some more props
     </P>
 
     <Section>

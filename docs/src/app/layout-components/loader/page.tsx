@@ -1,6 +1,6 @@
 'use client';
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { Live } from '@/components/live';
 import { H1, Td } from '@/components/typography';
 import { CustomizationPropsTableSection, PropsTableSection } from '@/sections';

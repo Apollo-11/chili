@@ -1,7 +1,7 @@
 'use client';
 
 /* eslint-disable max-len */
-import * as L from '@leda';
+import * as L from '@chili';
 import React from 'react';
 import { Live } from '@/components/live';
 

@@ -2,7 +2,7 @@
 
 /* eslint-disable react/jsx-curly-brace-presence */
 
-import * as L from '@leda';
+import * as L from '@chili';
 import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
 import { CodeBlock, H1, Td } from '@/components/typography';
 import { Live } from '@/components/live';

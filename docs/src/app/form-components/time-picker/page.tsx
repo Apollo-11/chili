@@ -1,6 +1,6 @@
 'use client';
 
-import { Tabs, Tab } from '@leda/index';
+import { Tabs, Tab } from '@chili/index';
 import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
 import { H1, Section, Td } from '@/components/typography';
 import { PropsTableSection, ValidationSection } from '@/sections';

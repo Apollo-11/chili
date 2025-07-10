@@ -1,4 +1,4 @@
-import * as L from '@leda';
+import * as L from '@chili';
 
 export const Ul = ({
   children,
