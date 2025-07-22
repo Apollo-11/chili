@@ -23,6 +23,8 @@ export interface RadioGroupProps extends ValidationProps {
   children: React.ReactNode,
   /** Whole component disabled state */
   isDisabled?: boolean,
+  /** Default value */
+  defaultValue?: string | number | null,
   /** Name */
   name?: string,
   /** Change handler */

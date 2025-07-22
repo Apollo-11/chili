@@ -39,6 +39,11 @@ const RadioPage = () => (
             <Td>...</Td>
           </tr>
           <tr>
+            <Td>defaultValue</Td>
+            <Td>number | string | null</Td>
+            <Td>Default value</Td>
+          </tr>
+          <tr>
             <Td>onChange</Td>
             <Td>(ev: ChangeEvent) ={'>'} void</Td>
             <Td>Change handler</Td>
