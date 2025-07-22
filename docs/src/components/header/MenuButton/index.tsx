@@ -19,7 +19,7 @@ export const MenuButton = ({
         md:hidden"
   >
     <L.Icon
-      icon="menu"
+      icon={L.IconTypes.Icons.Menu}
       size={30}
       className="text-[#15803d]"
     />
