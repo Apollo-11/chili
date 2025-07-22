@@ -6,7 +6,7 @@ import type { ValidationProps } from '../Validation/types';
 
 export interface ResetEvent {
   component: {
-    value: null,
+    value: string | number | null,
     name?: string,
   },
 }
