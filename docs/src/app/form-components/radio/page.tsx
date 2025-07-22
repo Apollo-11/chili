@@ -29,6 +29,11 @@ const RadioPage = () => (
             <Td>RadioButton elements</Td>
           </tr>
           <tr>
+            <Td>defaultValue</Td>
+            <Td>number | string | null</Td>
+            <Td>Default value</Td>
+          </tr>
+          <tr>
             <Td>isDisabled</Td>
             <Td>boolean</Td>
             <Td>In case you {"don't"} want it to be active</Td>
@@ -39,11 +44,6 @@ const RadioPage = () => (
             <Td>...</Td>
           </tr>
           <tr>
-            <Td>defaultValue</Td>
-            <Td>number | string | null</Td>
-            <Td>Default value</Td>
-          </tr>
-          <tr>
             <Td>onChange</Td>
             <Td>(ev: ChangeEvent) ={'>'} void</Td>
             <Td>Change handler</Td>
@@ -52,7 +52,7 @@ const RadioPage = () => (
             <Td>theme</Td>
             <Td>
               PartialGlobalDefaultTheme[
-              typeof COMPONENTS_NAMESPACES.calendar
+              typeof COMPONENTS_NAMESPACES.radio
               ]
             </Td>
             <Td>...</Td>
@@ -97,7 +97,7 @@ const RadioPage = () => (
             <Td>theme</Td>
             <Td>
               PartialGlobalDefaultTheme[
-              typeof COMPONENTS_NAMESPACES.calendar
+              typeof COMPONENTS_NAMESPACES.radio
               ]
             </Td>
             <Td>...</Td>
