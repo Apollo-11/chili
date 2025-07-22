@@ -39,25 +39,25 @@ export const BaseLayout = ({
         <L.Div
           className="overflow-hidden md:flex md:flex-row"
         >
-        <L.Div
-          shouldRender={!isMobile || isMenuOpen}
-          onClick={(ev: React.MouseEvent<HTMLElement>) => {
-            if (isMobile && (ev.target as HTMLAnchorElement).href) { // see if it is a link
-              setTimeout(() => setIsMenuOpen(false), 200);
-            }
-          }}
-          className="
-            fixed z-10 h-screen
-            w-full overflow-y-scroll bg-white p-4 pb-24
-            md:static md:w-52 md:flex-none"
-        >
-          <MainNav />
-        </L.Div>
-        <L.Div
-          className="p-4 text-base md:flex-auto"
-        >
-          { children }
-        </L.Div>
+          <L.Div
+            shouldRender={!isMobile || isMenuOpen}
+            onClick={(ev: React.MouseEvent<HTMLElement>) => {
+              if (isMobile && (ev.target as HTMLAnchorElement).href) { // see if it is a link
+                setTimeout(() => setIsMenuOpen(false), 200);
+              }
+            }}
+            className="
+              fixed z-10 h-screen
+              w-full overflow-y-scroll bg-white p-4 pb-24
+              md:static md:w-52 md:flex-none"
+          >
+            <MainNav />
+          </L.Div>
+          <L.Div
+            className="p-4 text-base md:flex-auto"
+          >
+            { children }
+          </L.Div>
         </L.Div>
       </div>
     </div>

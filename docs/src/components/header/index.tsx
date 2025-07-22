@@ -1,6 +1,7 @@
 import * as L from '@chili';
 import Image from 'next/image';
 import { MenuButton } from './MenuButton';
+// eslint-disable-next-line import/extensions, import/no-relative-packages
 import packageJson from '../../../../package.json';
 
 export const MainHeader = ({

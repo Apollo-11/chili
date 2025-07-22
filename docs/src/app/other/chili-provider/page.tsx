@@ -2,7 +2,7 @@ import {
   H1, Td, P, TdCode, A,
 } from '@/components/typography';
 import { PropsTableSection } from '@/sections';
-import { MainDemo } from './MainDemo.tsx';
+import { MainDemo } from './MainDemo';
 import { PATHS } from '@/constants';
 
 const ChiliProviderPage = () => (

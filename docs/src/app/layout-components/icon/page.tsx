@@ -4,7 +4,7 @@ import { useState } from 'react';
 import * as L from '@chili';
 import { Live } from '@/components/live';
 import {
-  A, Code, H1, H2, P, Section, Td,
+  Code, H1, H2, P, Section, Td,
 } from '@/components/typography';
 import { PropsTableSection } from '@/sections';
 import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
