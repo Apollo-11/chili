@@ -31,5 +31,6 @@ export enum Icons {
   PlusSquare = 'plus-square',
   Square = 'square',
   Star = 'star',
+  Menu = 'menu',
   X = 'x',
 }
