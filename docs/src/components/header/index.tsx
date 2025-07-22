@@ -1,6 +1,6 @@
 import * as L from '@chili';
+import Image from 'next/image';
 import { MenuButton } from './MenuButton';
-import { greekFont } from '@/fonts';
 
 export const MainHeader = ({
   isMenuOpen,
@@ -11,7 +11,7 @@ export const MainHeader = ({
 }) => (
   <div className="
       sticky top-0 z-20 border-b
-      border-slate-400 bg-white
+      border-[#09090b] bg-[#09090b]
     "
   >
     <div
@@ -22,23 +22,19 @@ export const MainHeader = ({
     >
       <L.A
         href="/"
-        className={`
-          inline-block
-          max-w-7xl
-          p-4 pt-5
-          ${greekFont.className}
-        `}
+        className="inline-flex items-center max-w-7xl p-4 pt-5"
       >
-        <span
-          className={`
-            text-3xl
-          `}
-        >
-          <span className="text-red-600">
-            Chili
-          </span>
+        <Image
+          src="/chili_pepper.png"
+          alt="Chili pepper"
+          width={32}
+          height={32}
+          className="inline-block"
+        />
+        <span className="ml-2 text-3xl text-[#dc2626]">
+          Chilii-UI
         </span>
-        <span className="ml-2 text-xs">0.1.1</span>
+        <span className="ml-2 text-xs text-[#15803d]">0.3.1</span>
       </L.A>
       <div
         className="
@@ -51,12 +47,13 @@ export const MainHeader = ({
           href="https://github.com/chili-development/chili"
           target="_blank"
           className="
-            p-3
+            p-3 text-[#15803d]
             md:mr-4
           "
         >
           <L.Icon
             icon={L.IconTypes.Icons.Github}
+            className="text-[#15803d]"
           />
         </L.A>
         <MenuButton
