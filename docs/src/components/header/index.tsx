@@ -18,13 +18,13 @@ export const MainHeader = ({
   >
     <div
       className="
-        flex
+        mx-auto flex max-w-7xl
         justify-between
       "
     >
       <L.A
         href="/"
-        className="inline-block max-w-7xl p-4 pt-5"
+        className="inline-block p-4 pt-5"
       >
         <Image
           src="/chili_pepper.png"

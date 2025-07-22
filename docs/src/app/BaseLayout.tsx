@@ -35,9 +35,10 @@ export const BaseLayout = ({
         isMenuOpen={isMenuOpen}
         setIsMenuOpen={setIsMenuOpen}
       />
-      <L.Div
-        className="overflow-hidden md:flex md:flex-row"
-      >
+      <div className="mx-auto max-w-7xl">
+        <L.Div
+          className="overflow-hidden md:flex md:flex-row"
+        >
         <L.Div
           shouldRender={!isMobile || isMenuOpen}
           onClick={(ev: React.MouseEvent<HTMLElement>) => {
@@ -57,7 +58,8 @@ export const BaseLayout = ({
         >
           { children }
         </L.Div>
-      </L.Div>
+        </L.Div>
+      </div>
     </div>
   );
 };
