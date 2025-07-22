@@ -20,7 +20,7 @@ export const MenuButton = ({
   >
     <L.Icon
       icon={L.IconTypes.Icons.Menu}
-      size={30}
+      size={24}
       className="text-[#15803d]"
     />
   </L.Button>

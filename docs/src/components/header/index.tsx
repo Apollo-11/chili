@@ -35,7 +35,7 @@ export const MainHeader = ({
         />
         <span className="align-middle">
           <span className="ml-1 font-sans text-xl text-[#dc2626]">
-            Chilii-UI
+            Chili-UI
           </span>
           <span className="ml-2 text-base text-[#15803d]">
             {packageJson.version}
