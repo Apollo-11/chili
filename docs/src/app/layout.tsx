@@ -17,11 +17,9 @@ const RootLayout = ({
 }) => (
   <html lang="en">
     <body className={`${mainFont.className} bg-white`}>
-      <div className="mx-auto max-w-7xl">
-        <BaseLayout>
-          {children}
-        </BaseLayout>
-      </div>
+      <BaseLayout>
+        {children}
+      </BaseLayout>
       {process.env.MODE === 'prod' && (
         <>
           <Script src="/metrica.js" />
