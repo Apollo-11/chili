@@ -13,6 +13,7 @@ export const Uncontrolled = () => (
       onChange={({ component }) => {
         log(component.value)
       }}
+      defaultValue={2}
     >
       <L.RadioButton value={1}>One</L.RadioButton>
       <L.RadioButton value={2}>Two</L.RadioButton>

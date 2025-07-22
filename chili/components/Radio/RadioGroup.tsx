@@ -2,7 +2,7 @@ import React from 'react';
 import { isFunction, isBoolean } from 'lodash';
 import { RadioButton } from './RadioButton';
 import {
-  getClassNames, useTheme, useElement, useProps,
+  getClassNames, useTheme, useElement, useProps, useValue,
 } from '../../utils';
 import { Div } from '../Div';
 import { COMPONENTS_NAMESPACES } from '../../constants';
@@ -16,6 +16,7 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.
   const {
     children,
     className,
+    defaultValue,
     name,
     onChange,
     value: valueProp,
@@ -25,14 +26,15 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.
 
   const theme = useTheme(props.theme, COMPONENTS_NAMESPACES.radio);
 
-  const [valueState, setValueState] = React.useState<string | number | undefined | null>();
-
-  const value = valueProp === undefined ? valueState : valueProp;
+  const [value, setValueState] = useValue<string | number | null | undefined>(
+    valueProp,
+    defaultValue ?? null,
+  );
 
   const { isValid, InvalidMessage } = useValidation(props, {
     value,
   }, {
-    reset: createResetHandler(props, setValueState),
+    reset: createResetHandler(props, setValueState, defaultValue),
   });
 
   const combinedClassNames = getClassNames(
@@ -51,7 +53,7 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.
     Div,
     wrapperRender,
     props,
-    { value: valueState },
+    { value },
   );
 
   return (
