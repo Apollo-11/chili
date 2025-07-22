@@ -12,16 +12,16 @@ export const MenuButton = ({
     className="
         mr-2
         border-0
-        bg-white
+        bg-[#09090b]
         py-2
-        text-stone-900
-        hover:bg-white
+        text-[#15803d]
+        hover:bg-[#09090b]
         md:hidden"
   >
     <L.Icon
       icon="menu"
       size={30}
-      className="text-black"
+      className="text-[#15803d]"
     />
   </L.Button>
 );
