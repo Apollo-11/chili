@@ -30,15 +30,15 @@ export const MainHeader = ({
         <Image
           src="/chili_pepper.png"
           alt="Chili pepper"
-          width={50}
-          height={50}
+          width={70}
+          height={70}
           className="inline-block align-middle"
         />
         <span className="align-middle">
-          <span className="ml-1 font-sans text-xl text-[#dc2626]">
+          <span className="ml-1 font-sans text-[24px] text-[#dc2626]">
             Chili-UI
           </span>
-          <span className="ml-2 text-base text-[#15803d]">
+          <span className="ml-2 text-[20px] text-[#15803d]">
             {packageJson.version}
           </span>
         </span>
