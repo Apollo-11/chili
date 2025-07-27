@@ -25,7 +25,7 @@ export const MainHeader = ({
     >
       <L.A
         href="/"
-        className="inline-block p-4 pt-5"
+        className="inline-block px-4"
       >
         <Image
           src="/chili_pepper.png"
