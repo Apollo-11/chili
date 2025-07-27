@@ -48,7 +48,7 @@ export const BaseLayout = ({
             }}
             className="
               fixed z-10 h-screen
-              w-full overflow-y-scroll bg-white p-4 pb-24
+              w-full overflow-y-auto scrollbar-nice bg-white p-4 pb-24
               md:static md:w-52 md:flex-none"
           >
             <MainNav />
