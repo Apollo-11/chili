@@ -12,6 +12,10 @@
   background-color: var(--ld-input-element-bg-color);
 }
 
+.ld-input-element::placeholder {
+  color: var(--ld-input-placeholder-color);
+}
+
 .ld-input-element-wrapper {
   display: flex;
   justify-content: space-between;

@@ -147,6 +147,7 @@
   --ld-input-bg-color: var(--ld-bg-color);
   --ld-input-element-bg-color: transparent;
   --ld-input-bg-color-disabled: var(--ld-bg-color-disabled);
+  --ld-input-placeholder-color: var(--ld-base-color);
 
   --ld-invalid-message-color: var(--ld-color-danger);
 

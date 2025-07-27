@@ -75,6 +75,11 @@ const NumericTextBoxPage = () => (
         <Td>Focus handler</Td>
       </tr>
       <tr>
+        <Td>placeholder</Td>
+        <Td>string</Td>
+        <Td>Placeholder</Td>
+      </tr>
+      <tr>
         <Td>shouldTrimTrailingZeros</Td>
         <Td>boolean</Td>
         <Td>To trim or not to trim</Td>

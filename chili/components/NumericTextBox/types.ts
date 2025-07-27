@@ -115,6 +115,8 @@ export interface NumericTextBoxProps extends ValidationProps {
   onEnterPress?: (event: EnterPressEvent) => void,
   /** Focus handler */
   onFocus?: (event: FocusEvent) => void,
+  /** Placeholder */
+  placeholder?: string,
   /** Ref */
   ref?: React.Ref<HTMLElement>,
   /** To trim or not to trim */
