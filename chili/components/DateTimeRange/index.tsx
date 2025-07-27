@@ -4,8 +4,9 @@ import * as React from 'react';
 import { DateTimeInputRange } from '../../src/DateTimeInputRange';
 import { COMPONENT_TYPES } from '../../src/DateTimeInput/constants';
 import { useProps, useValue } from '../../utils';
+import { useValidation } from '../Validation';
 import type { DateTimeRangeProps } from './types';
-import { createChangeHandler } from './handlers';
+import { createChangeHandler, createResetHandler } from './handlers';
 
 export const DateTimeRange = React.forwardRef((rawProps: DateTimeRangeProps, ref: React.Ref<HTMLElement>) => {
   const props = useProps(rawProps);
@@ -17,6 +18,8 @@ export const DateTimeRange = React.forwardRef((rawProps: DateTimeRangeProps, ref
   } = props;
 
   const [value, setUncontrolledValue] = useValue<DateTimeRangeProps['value']>(valueProp, defaultValue);
+
+  useValidation(props, { value }, { reset: createResetHandler(props, setUncontrolledValue) });
 
   const handleChange = createChangeHandler(props, setUncontrolledValue);
 
