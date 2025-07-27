@@ -114,3 +114,40 @@ export const createEnterPressHandler = (
     onEnterPress(ev);
   }
 };
+
+export const createResetHandler = (
+  props: DateTimeInputRangeProps,
+  state: DateTimeInputRangeState,
+) => () => {
+  const { defaultValue = [null, null], format = 'dd.MM.yyyy', name, onChange } = props;
+
+  const date: [Date | null, Date | null] = [
+    typeof defaultValue[0] === 'string'
+      ? stringToDate(defaultValue[0], format)
+      : defaultValue[0],
+    typeof defaultValue[1] === 'string'
+      ? stringToDate(defaultValue[1], format)
+      : defaultValue[1],
+  ];
+
+  state.setDate(date);
+
+  if (isFunction(onChange)) {
+    const value: [string, string] = [
+      typeof defaultValue[0] === 'string'
+        ? defaultValue[0]
+        : formatDateTime(defaultValue[0], format),
+      typeof defaultValue[1] === 'string'
+        ? defaultValue[1]
+        : formatDateTime(defaultValue[1], format),
+    ];
+
+    onChange({
+      component: {
+        date,
+        value,
+        name,
+      },
+    });
+  }
+};
