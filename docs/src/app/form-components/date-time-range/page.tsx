@@ -8,12 +8,18 @@ import { Controlled } from './_demo/Controlled';
 import { Form } from './_demo/Form';
 import { Required } from './_demo/Required';
 import { Uncontrolled } from './_demo/Uncontrolled';
+import { DefaultValue } from './_demo/DefaultValue';
 
 const DateTimeRangePage = () => (
   <article>
     <H1>DateTimeRange</H1>
 
-    <PropsTableSection>
+  <PropsTableSection>
+      <tr>
+        <Td>defaultValue</Td>
+        <Td>[string, string] | [Date | null, Date | null]</Td>
+        <Td>Default value</Td>
+      </tr>
       <tr>
         <Td>format</Td>
         <Td>string</Td>
@@ -86,6 +92,9 @@ const DateTimeRangePage = () => (
         </Tab>
         <Tab title="Required" tabKey={3}>
           <Required />
+        </Tab>
+        <Tab title="Default value" tabKey={4}>
+          <DefaultValue />
         </Tab>
       </Tabs>
     </Section>

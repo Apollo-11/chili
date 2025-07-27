@@ -4,6 +4,8 @@ import type {
 } from '../../src/DateTimeInput/types';
 
 export interface DateTimePickerProps extends DateTimeInputProps {
+  /** Default value */
+  defaultValue?: string | Date | null,
   /** Date format, dd.MM.yyyy hh:mm by default */
   format?: string,
   /** Control opened state */
