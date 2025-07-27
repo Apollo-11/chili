@@ -57,6 +57,7 @@ export interface FocusEvent<T extends Value = Value> extends React.FocusEvent<HT
 }
 
 export interface DropDownSelectProps<T extends Value = Value> extends ValidationProps {
+  /** Browser autofill, off is the default value. Works as HTML autoComplete attribute */
   autoComplete?: string,
   boundingContainerRef?: React.RefObject<HTMLElement>,
   compareObjectsBy?: T extends object ? ((suggestionListItem: T) => unknown) | string : never,
