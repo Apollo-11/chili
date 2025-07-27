@@ -22,7 +22,7 @@ export interface DateRangeProps extends DateTimeInputRangeProps {
   /** Min range value */
   min?: Date,
   /** Input fields names */
-  name?: string | [string | undefined, string | undefined],
+  name?: string,
   /** Blur handler */
   onBlur?: (ev: BlurEvent) => void,
   /** Change handler */

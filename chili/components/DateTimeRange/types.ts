@@ -22,7 +22,7 @@ export interface DateTimeRangeProps extends DateTimeInputRangeProps {
   /** Min available date */
   min?: Date,
   /** Component name */
-  name?: string | [string | undefined, string | undefined],
+  name?: string,
   /** Blur handler */
   onBlur?: (ev: BlurEvent) => void,
   /** Change handler */
