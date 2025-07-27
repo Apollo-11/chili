@@ -10,8 +10,9 @@ import {
 } from './helpers';
 import { useCustomElements, useDateRange } from './hooks';
 import {
-  createChangeHandler, createEnterPressHandler, handleErrors,
+  createChangeHandler, createEnterPressHandler, handleErrors, createResetHandler,
 } from './handlers';
+import { useValidation } from '../../components/Validation';
 import type { DateTimeInputRangeProps, DateTimeInputRangeState } from './types';
 
 export const DateTimeInputRange = React.forwardRef((props: DateTimeInputRangeProps, ref: React.Ref<HTMLElement>) => {
@@ -57,9 +58,13 @@ export const DateTimeInputRange = React.forwardRef((props: DateTimeInputRangePro
 
   const toDateTimeInputRef = React.useRef<HTMLInputElement | null>(null);
 
-  const {
+  const {    
     date, setDate,
   } = state;
+
+  useValidation(props, { value: date }, {
+    reset: createResetHandler(props, state),
+  });
 
   const value = isNil(valueProp) ? date : valueProp;
 
