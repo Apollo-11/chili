@@ -15,7 +15,7 @@ export const NavLi = ({ to, children }: { to: string, children: ReactNode }) => 
         href={to}
         className={isActive
           ? 'inline-block border-l border-slate-800 py-1 pl-2'
-          : 'inline-block border-l py-1 pl-2 text-sky-600 hover:border-sky-200 hover:text-sky-800'}
+          : 'inline-block border-l py-1 pl-2 text-green-700 hover:border-green-200 hover:text-green-800'}
       >
         {children}
       </Link>
