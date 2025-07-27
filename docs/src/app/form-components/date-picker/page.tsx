@@ -9,6 +9,7 @@ import { Form } from './_demo/Form';
 import { Required } from './_demo/Required';
 import { Reset } from './_demo/Reset';
 import { Uncontrolled } from './_demo/Uncontrolled';
+import { DefaultValue } from './_demo/DefaultValue';
 
 const DatePickerPage = () => (
   <article>
@@ -114,6 +115,9 @@ const DatePickerPage = () => (
         </Tab>
         <Tab title="Required" tabKey={4}>
           <Required />
+        </Tab>
+        <Tab title="Default value" tabKey={5}>
+          <DefaultValue />
         </Tab>
       </Tabs>
     </Section>
