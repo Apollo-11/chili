@@ -7,7 +7,7 @@ import {
 import { themes } from 'prism-react-renderer';
 import { liveFont } from '@/fonts';
 
-const liveTheme = themes.vsLight;
+const liveTheme = themes.github;
 liveTheme.plain.backgroundColor = 'transparent';
 
 export const Live = ({
