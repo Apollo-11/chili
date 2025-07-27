@@ -1,6 +1,9 @@
 import { isFunction } from 'lodash';
 import type { SetState } from '../../commonTypes';
-import type { DateRangeProps, CustomRangeEvent } from './types';
+import type { DateRangeProps } from './types';
+import type {
+  CustomRangeEvent,
+} from '../../src/DateTimeInputRange/types';
 
 export const createChangeHandler = (
   props: DateRangeProps,

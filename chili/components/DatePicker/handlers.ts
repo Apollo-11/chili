@@ -1,6 +1,7 @@
 import { isFunction } from 'lodash';
 import type { SetState } from '../../commonTypes';
-import type { DatePickerProps, ChangeEvent } from './types';
+import type { DatePickerProps } from './types';
+import type { ChangeEvent } from '../../src/DateTimeInput/types';
 
 export const createChangeHandler = (
   props: DatePickerProps,
