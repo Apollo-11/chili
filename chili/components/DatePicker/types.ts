@@ -9,6 +9,8 @@ import type {
 import type { PartialGlobalDefaultTheme } from '../../utils/useTheme';
 
 export interface DatePickerProps extends DateTimeInputProps {
+  /** Default value */
+  defaultValue?: string | Date | null,
   /** Date format, dd.MM.yyyy by default */
   format?: string,
   /** Control opened state */

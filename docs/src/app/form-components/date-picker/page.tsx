@@ -16,6 +16,11 @@ const DatePickerPage = () => (
 
     <PropsTableSection>
       <tr>
+        <Td>defaultValue</Td>
+        <Td>string | Date | null</Td>
+        <Td>Default value</Td>
+      </tr>
+      <tr>
         <Td>format</Td>
         <Td>string</Td>
         <Td>dd.MM.yyyy is default</Td>
