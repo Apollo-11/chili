@@ -7,8 +7,16 @@ import {
 import { themes } from 'prism-react-renderer';
 import { liveFont } from '@/fonts';
 
-const liveTheme = themes.vsLight;
+// base theme from VS Light but adjust to have green tones
+const liveTheme = { ...themes.vsLight };
 liveTheme.plain.backgroundColor = 'transparent';
+const BLUE_COLORS = ['#005cc5', '#0969da', '#79c0ff', '#539bf5'];
+liveTheme.styles = liveTheme.styles.map((s) => {
+  if (s.style && BLUE_COLORS.includes(s.style.color)) {
+    return { ...s, style: { ...s.style, color: '#2da44e' } };
+  }
+  return s;
+});
 
 export const DatesLive = ({
   scope,

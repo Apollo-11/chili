@@ -7,8 +7,17 @@ import {
 import { themes } from 'prism-react-renderer';
 import { liveFont } from '@/fonts';
 
-const liveTheme = themes.github;
+// use the GitHub theme but tweak colors slightly
+const liveTheme = { ...themes.github };
 liveTheme.plain.backgroundColor = 'transparent';
+// change default blue accents to a green tone
+const BLUE_COLORS = ['#005cc5', '#0969da', '#79c0ff', '#539bf5'];
+liveTheme.styles = liveTheme.styles.map((s) => {
+  if (s.style && BLUE_COLORS.includes(s.style.color)) {
+    return { ...s, style: { ...s.style, color: '#2da44e' } };
+  }
+  return s;
+});
 
 export const Live = ({
   scope,
