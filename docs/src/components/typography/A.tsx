@@ -8,7 +8,7 @@ export const A = ({
   ...rest
 }: AProps) => {
   const classNames = classnames(
-    'text-sky-600',
+    'text-green-700',
     'underline',
     className,
   );
