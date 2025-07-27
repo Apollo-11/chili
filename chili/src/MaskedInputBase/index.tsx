@@ -19,6 +19,7 @@ export const MaskedInputBase = React.forwardRef((props: MaskedInputBaseProps, re
     className,
     mask,
     value,
+    autoComplete,
     placeholderChar = DEFAULT_PLACEHOLDER_CHAR,
     placeholder,
     isDisabled = false,
@@ -90,6 +91,7 @@ export const MaskedInputBase = React.forwardRef((props: MaskedInputBaseProps, re
     <input
       disabled={isDisabled}
       className={className}
+      autoComplete={autoComplete}
       maxLength={mask.length + 1}
       onBlur={handleBlur}
       onFocus={handleFocus}

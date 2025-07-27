@@ -68,6 +68,7 @@ export interface MaskedInputBaseProps {
   isDisabled?: boolean,
   mask: string,
   maxLength?: number,
+  autoComplete?: string,
   name?: string,
   onBlur?: (event: BlurEvent) => void,
   onChange: (event: ChangeEvent) => void,

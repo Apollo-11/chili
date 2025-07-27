@@ -23,6 +23,8 @@ export interface ResetEvent {
 export type ChangeEvent = BaseChangeEvent | ResetEvent;
 
 export interface MaskedInputProps extends ValidationProps {
+  /** Browser autofill, off is the default value. Works as HTML autoComplete attribute */
+  autoComplete?: string,
   /** Default value */
   defaultValue?: string,
   /** Input customizator. It replaces MaskedInputBase! */

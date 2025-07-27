@@ -4,7 +4,7 @@
 
 import * as L from '@chili';
 import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
-import { CodeBlock, H1, Td } from '@/components/typography';
+import { A, P, CodeBlock, H1, Td } from '@/components/typography';
 import { Live } from '@/components/live';
 import { CustomizationPropsTableSection, PropsTableSection, ValidationSection } from '@/sections';
 import { Demos } from './Demos';
@@ -13,6 +13,23 @@ const MaskedInputPage = () => (
   <article>
     <H1>MaskedInput</H1>
     <PropsTableSection>
+      <tr>
+        <Td>autoComplete</Td>
+        <Td>string</Td>
+        <Td>
+          <P>Browser autofill, off is the default value.</P>
+          <P>Works as&nbsp;
+            <A
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete"
+              target="_blank"
+              className="text-cyan-700 underline"
+              rel="noreferrer"
+            >
+              HTML autoComplete attribute
+            </A>
+          </P>
+        </Td>
+      </tr>
       <tr>
         <Td>defaultValue</Td>
         <Td>string | null</Td>

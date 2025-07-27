@@ -23,6 +23,7 @@ exports[`MaskedInput SNAPSHOTS should render different component states should r
           >
             <Input
               aria-invalid={false}
+              autoComplete="off"
               className="masked-input-element"
               disabled={true}
               mask="+# (###) ###-##-##"
@@ -45,6 +46,7 @@ exports[`MaskedInput SNAPSHOTS should render different component states should r
               >
                 <input
                   aria-invalid={false}
+                  autoComplete="off"
                   className="masked-input-element"
                   disabled={true}
                   maxLength={19}
@@ -99,6 +101,7 @@ exports[`MaskedInput SNAPSHOTS should render different component states should r
           >
             <Input
               aria-invalid={false}
+              autoComplete="off"
               className="masked-input-element"
               mask="+# (###) ###-##-##"
               onBlur={[Function]}
@@ -119,6 +122,7 @@ exports[`MaskedInput SNAPSHOTS should render different component states should r
               >
                 <input
                   aria-invalid={false}
+                  autoComplete="off"
                   className="masked-input-element"
                   disabled={false}
                   maxLength={19}
