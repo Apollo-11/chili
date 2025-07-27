@@ -1,7 +1,8 @@
 import type * as React from 'react';
-import { isFunction } from 'lodash';
+import { isFunction, isDate } from 'lodash';
 import type { DateTimeInputProps, AllActions } from '../types';
 import { setDate, setValue } from '../actions';
+import { stringToDate, formatDateTime } from '../helpers';
 
 export const createResetHandler = ({
   props,
@@ -10,14 +11,25 @@ export const createResetHandler = ({
   props: DateTimeInputProps,
   dispatch: React.Dispatch<AllActions>,
 }) => () => {
-  const date = null;
-  const value = '';
+  const { defaultValue, format = 'dd.MM.yyyy', name, onChange } = props;
+
+  const date = (() => {
+    if (isDate(defaultValue)) return defaultValue;
+    if (typeof defaultValue === 'string') return stringToDate(defaultValue, format);
+    return null;
+  })();
+
+  const value = (() => {
+    if (isDate(defaultValue)) return formatDateTime(defaultValue, format);
+    if (typeof defaultValue === 'string') return defaultValue;
+    return '';
+  })();
   dispatch(setValue(value));
   dispatch(setDate(date));
-  if (isFunction(props.onChange)) {
-    props.onChange({
+  if (isFunction(onChange)) {
+    onChange({
       component: {
-        name: props.name,
+        name,
         date,
         value,
       },

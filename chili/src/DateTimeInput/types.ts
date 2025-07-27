@@ -105,6 +105,8 @@ export interface DateTimeInputProps extends ValidationProps {
   onFocus?: (ev: FocusEvent) => void,
   /** Placeholder */
   placeholder?: string,
+  /** Default value */
+  defaultValue?: string | Date | null,
   /** Theme */
   theme?: PartialGlobalDefaultTheme[typeof COMPONENTS_NAMESPACES.dateTimeInput],
   /** Component type */
