@@ -7,7 +7,7 @@ import { VIEW_TYPES } from '../CalendarBase/constants';
 import { MaskedInputBase } from '../MaskedInputBase';
 import { setDate, setViewDate } from './actions';
 import {
-  stringToDate,
+  stringToDate, formatDateTime,
 } from './helpers';
 import { stateReducer } from './reducer';
 import type {
@@ -59,7 +59,7 @@ export const useDateTimeInputEffects = ({
 
 export const useDateTimeInputState = (props: DateTimeInputProps): [DateTimeInputState, React.Dispatch<AllActions>] => {
   const {
-    value: valueProp, format, min, max,
+    value: valueProp, defaultValue, format = 'dd.MM.yyyy', min, max,
   } = props;
 
   // if today's date is out of min/max range - open the calendar with the min/max date instead
@@ -69,11 +69,25 @@ export const useDateTimeInputState = (props: DateTimeInputProps): [DateTimeInput
   // today's date, the time is 00:00
   const today = new Date();
 
-  const stringValue = isDate(valueProp) || valueProp === null ? '' : valueProp;
+  const initialPropValue = valueProp === undefined ? defaultValue : valueProp;
+
+  const initialDate = (() => {
+    if (isDate(initialPropValue)) return initialPropValue;
+    if (typeof initialPropValue === 'string') return stringToDate(initialPropValue, format);
+    return null;
+  })();
+
+  const initialValue = (() => {
+    if (isDate(initialPropValue)) return formatDateTime(initialPropValue, format);
+    if (typeof initialPropValue === 'string') return initialPropValue;
+    return '';
+  })();
+
+  const stringValue = isDate(initialPropValue) || initialPropValue === null || initialPropValue === undefined ? '' : initialPropValue as string;
 
   const initialState = {
-    date: null,
-    value: '',
+    date: initialDate,
+    value: initialValue,
     isValid: true,
     isFocused: false,
     isOpen: false,
