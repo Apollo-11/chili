@@ -7,14 +7,27 @@ import {
 import { themes } from 'prism-react-renderer';
 import { liveFont } from '@/fonts';
 
-// base theme from VS Light but adjust to have green tones
-const liveTheme = { ...themes.vsLight };
+// use the GitHub theme but tweak colors slightly
+const liveTheme = { ...themes.github };
 liveTheme.plain.backgroundColor = 'transparent';
-const BLUE_COLORS = ['#005cc5', '#0969da', '#79c0ff', '#539bf5'];
+// change default blue accents to a green tone
 liveTheme.styles = liveTheme.styles.map((s) => {
-  if (s.style && BLUE_COLORS.includes(s.style.color)) {
-    return { ...s, style: { ...s.style, color: '#2da44e' } };
+  if (s.style && s.style.color === '#00009f') {
+    return { ...s, style: { ...s.style, color: '#01665d' } };
   }
+
+  if (s.style && s.style.color === '#00a4db') {
+    return { ...s, style: { ...s.style, color: '#13a555' } };
+  }
+
+  if (s.style && s.style.color === '#e3116c') {
+    return { ...s, style: { ...s.style, color: '#d51c13' } };
+  }
+
+  if (s.style && s.style.color === '#393A34') {
+    return { ...s, style: { ...s.style, color: '#833700' } };
+  }
+
   return s;
 });
 
