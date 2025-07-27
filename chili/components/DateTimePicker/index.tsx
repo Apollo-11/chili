@@ -24,6 +24,7 @@ export const DateTimePicker = React.forwardRef((rawProps: DateTimePickerProps, r
     <DateTimeInput
       {...restProps}
       format={props.format || 'dd.MM.yyyy hh:mm'}
+      defaultValue={defaultValue}
       value={value}
       onChange={handleChange}
       ref={ref}

@@ -46,6 +46,8 @@ export interface DelimiterProps {
 }
 
 export interface DateTimeInputRangeProps {
+  /** Default value */
+  defaultValue?: [string, string] | [Date | null, Date | null],
   boundingContainerRef?: React.RefObject<HTMLElement>,
   className?: string,
   max?: Date,
