@@ -18,8 +18,8 @@ const DropDownSelectPage = () => (
 
     <PropsTableSection>
       <tr>
-        <Td>autoComplete</Td>
-        <Td>string</Td>
+        <TdCode>autoComplete</TdCode>
+        <TdCode>string</TdCode>
         <Td>
           <P>Browser autofill, off is the default value.</P>
           <P>Works as&nbsp;
