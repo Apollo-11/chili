@@ -14,6 +14,7 @@ import { getValue, getValueToValidate } from './helpers';
 
 export const MaskedInput = React.forwardRef((props: MaskedInputProps, ref: React.Ref<HTMLElement>) => {
   const {
+    autoComplete = 'off',
     className,
     defaultValue,
     inputRender,
@@ -138,6 +139,7 @@ export const MaskedInput = React.forwardRef((props: MaskedInputProps, ref: React
           {...restProps}
           aria-invalid={!isValid}
           aria-required={isRequired}
+          autoComplete={autoComplete}
           className={theme.input}
           isDisabled={isDisabled}
           mask={mask}
