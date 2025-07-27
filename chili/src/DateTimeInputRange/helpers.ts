@@ -10,13 +10,15 @@ export const isDateValue = (value: DateTimeInputRangeProps['value']): value is [
   && (isNil(value[1]) || isDate(value[1]));
 
 export const getDateRangeFromValue = (props: DateTimeInputRangeProps): [Date | null, Date | null] => {
-  const { value: valueProp, format } = props;
+  const { value: valueProp, defaultValue, format } = props;
 
-  if (!valueProp) return [null, null];
+  const currentValue = valueProp === undefined ? defaultValue : valueProp;
 
-  if (isDateValue(valueProp)) return valueProp;
+  if (!currentValue) return [null, null];
 
-  return [stringToDate(valueProp[0], format), stringToDate(valueProp[1], format)];
+  if (isDateValue(currentValue)) return currentValue;
+
+  return [stringToDate(currentValue[0], format), stringToDate(currentValue[1], format)];
 };
 
 export const getPlaceholder = (placeholder?: [string | undefined, string | undefined] | string): [string | undefined, string | undefined] => {

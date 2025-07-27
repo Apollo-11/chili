@@ -41,6 +41,7 @@ export const DateTimeInputRange = React.forwardRef((props: DateTimeInputRangePro
     placeholder: placeholderProp,
     theme: themeProp,
     type,
+    defaultValue,
     value: valueProp,
     weeksRowRender,
     wrapperRangeRender,
@@ -123,6 +124,7 @@ export const DateTimeInputRange = React.forwardRef((props: DateTimeInputRangePro
         onEnterPress={handleEnterPress('from')}
         onFocus={onFocus}
         placeholder={placeholders[0]}
+        defaultValue={defaultValue?.[0] ?? null}
         theme={theme.from}
         type={type}
         value={value[0]}
@@ -155,6 +157,7 @@ export const DateTimeInputRange = React.forwardRef((props: DateTimeInputRangePro
         onFocus={onFocus}
         placeholder={placeholders[1]}
         ref={toDateTimeInputRef}
+        defaultValue={defaultValue?.[1] ?? null}
         theme={theme.to}
         type={type}
         value={value[1]}
