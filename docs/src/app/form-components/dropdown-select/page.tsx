@@ -5,7 +5,12 @@
 import * as L from '@chili';
 import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
 import {
-  CodeBlock, H1, P, A, Td,
+  CodeBlock,
+  H1,
+  P,
+  A,
+  Td,
+  TdCode,
 } from '@/components/typography';
 import { Live } from '@/components/live';
 import { PropsTableSection, ValidationSection, CustomizationPropsTableSection } from '@/sections';
