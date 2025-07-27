@@ -167,6 +167,7 @@ export const DateTimeInput = React.forwardRef((props: DateTimeInputProps, ref: R
           placeholder={placeholder}
           ref={maskedInputRef}
           value={inputValue}
+          inputMode="numeric"
         />
         {type !== COMPONENT_TYPES.TIME_ONLY && (
         <Icon
