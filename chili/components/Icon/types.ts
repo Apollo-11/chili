@@ -25,7 +25,6 @@ export enum Icons {
   Circle = 'circle',
   Eye = 'eye',
   EyeOff = 'eye-off',
-  Github = 'github',
   Loader = 'loader',
   MinusSquare = 'minus-square',
   PlusSquare = 'plus-square',
