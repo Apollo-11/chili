@@ -55,10 +55,16 @@ export const MainHeader = ({
           target="_blank"
           className="p-3 md:mr-4"
         >
-          <L.Icon
-            icon={L.IconTypes.Icons.Github}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="currentColor"
             className="text-[#15803d]"
-          />
+          >
+            <path d="M12 0c-1.66 0-3 1.34-3 3v2.1c-2.09.5-3 1.71-3 3.4v3.5c0 2.64 1.81 4.83 5 5.4-.31.26-.5.71-.5 1.6V22l2.5-1 2.5 1v-3c0-.89-.19-1.34-.5-1.6 3.19-.57 5-2.76 5-5.4V8.5c0-1.69-.91-2.9-3-3.4V3c0-1.66-1.34-3-3-3z" />
+          </svg>
         </L.A>
         <MenuButton
           isMenuOpen={isMenuOpen}
