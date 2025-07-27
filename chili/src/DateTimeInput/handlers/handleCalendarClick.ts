@@ -97,6 +97,8 @@ export const handleDatesSelect = (payload: DatesSelectPayload): void => {
 
     dispatch(setOpen(false));
 
+    if (maskedInputRef && maskedInputRef.current) maskedInputRef.current.focus();
+
     if (type === COMPONENT_TYPES.DATE_TIME) {
       updateInputSelection(maskedInputRef, format);
     }

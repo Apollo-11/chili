@@ -24,14 +24,8 @@ export const createCalendarIconMouseDownHandler = ({
 
     dispatch(setOpen(true));
   } else dispatch(setOpen(false));
-
-  setTimeout(() => {
-    if (maskedInputRef.current) maskedInputRef.current.focus();
-  }, 0);
 };
 
-export const createCalendarMouseDownHandler = ({ maskedInputRef }: HandlersData) => (ev: React.MouseEvent<HTMLDivElement>): void => {
+export const createCalendarMouseDownHandler = () => (ev: React.MouseEvent<HTMLDivElement>): void => {
   ev.preventDefault();
-
-  if (maskedInputRef.current) maskedInputRef.current.focus();
 };
