@@ -7,6 +7,8 @@ import type {
 } from '../../src/DateTimeInputRange/types';
 
 export interface DateTimeRangeProps extends DateTimeInputRangeProps {
+  /** Default value */
+  defaultValue?: [string, string] | [Date | null, Date | null],
   /** Date format, dd.MM.yyyy hh:mm by default */
   format?: string,
   /** Disabled input state */

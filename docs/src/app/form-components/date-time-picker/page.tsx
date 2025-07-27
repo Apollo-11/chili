@@ -9,12 +9,18 @@ import { Form } from './_demo/Form';
 import { Required } from './_demo/Required';
 import { Reset } from './_demo/Reset';
 import { Uncontrolled } from './_demo/Uncontrolled';
+import { DefaultValue } from './_demo/DefaultValue';
 
 const DateTimePickerPage = () => (
   <article>
     <H1>DateTimePicker</H1>
 
     <PropsTableSection>
+      <tr>
+        <Td>defaultValue</Td>
+        <Td>string | Date | null</Td>
+        <Td>Default value</Td>
+      </tr>
       <tr>
         <Td>format</Td>
         <Td>string</Td>
@@ -105,6 +111,9 @@ const DateTimePickerPage = () => (
         </Tab>
         <Tab title="Required" tabKey={4}>
           <Required />
+        </Tab>
+        <Tab title="Default value" tabKey={5}>
+          <DefaultValue />
         </Tab>
       </Tabs>
     </Section>
