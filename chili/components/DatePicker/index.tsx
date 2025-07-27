@@ -23,6 +23,7 @@ export const DatePicker = React.forwardRef((rawProps: DatePickerProps, ref: Reac
   return (
     <DateTimeInput
       {...restProps}
+      defaultValue={defaultValue}
       value={value}
       onChange={handleChange}
       format={props.format || 'dd.MM.yyyy'}
