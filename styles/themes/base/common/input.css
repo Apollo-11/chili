@@ -1,45 +1,44 @@
 .ld-input-element {
-  font-size: var(--ld-input-font-size);
-  line-height: var(--ld-input-line-height);
-  padding-block: var(--ld-input-padding-block);
-  padding-inline: var(--ld-input-padding-inline);
+  font-size: var(--chili-input-font-size);
+  line-height: var(--chili-input-line-height);
+  padding-block: var(--chili-input-padding-block);
+  padding-inline: var(--chili-input-padding-inline);
   border: none;
-  border-radius: var(--ld-input-border-radius);
+  border-radius: var(--chili-input-border-radius);
   flex-grow: 2;
   cursor: inherit;
   inline-size: 100%;
   outline: none;
-  background-color: var(--ld-input-element-bg-color);
+  background-color: var(--chili-input-element-bg-color);
 }
 
 .ld-input-element::placeholder {
-  color: var(--ld-input-placeholder-color);
+  color: var(--chili-input-placeholder-color);
 }
 
 .ld-input-element-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--ld-input-text-color);
-  border: var(--ld-input-border-width) solid var(--ld-input-border-color);
-  border-radius: var(--ld-input-border-radius);
-  background-color: var(--ld-input-bg-color);
+  color: var(--chili-input-text-color);
+  border: var(--chili-input-border-width) solid var(--chili-input-border-color);
+  border-radius: var(--chili-input-border-radius);
+  background-color: var(--chili-input-bg-color);
 
   &:hover {
-    border-color: var(--ld-input-border-color-hover);
+    border-color: var(--chili-input-border-color-hover);
   }
-
 }
 
 .ld-input-icon {
-  color: var(--ld-input-close-icon-color);
-  padding: var(--ld-input-close-icon-padding);
+  color: var(--chili-input-close-icon-color);
+  padding: var(--chili-input-close-icon-padding);
   block-size: 100%;
-  inline-size: var(--ld-input-close-icon-size);
-  border-radius: var(--ld-input-close-icon-border-radius);
+  inline-size: var(--chili-input-close-icon-size);
+  border-radius: var(--chili-input-close-icon-border-radius);
   cursor: pointer;
 
   &:hover {
-    color: var(--ld-input-close-icon-color-hover);
+    color: var(--chili-input-close-icon-color-hover);
   }
 }

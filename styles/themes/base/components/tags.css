@@ -5,23 +5,23 @@
 .ld-tag {
   display: flex;
   align-items: center;
-  min-inline-size: var(--ld-tag-min-inline-size);
-  padding: var(--ld-tag-padding);
-  margin-inline-end: var(--ld-tag-margin-inline-end);
-  block-size: var(--ld-tag-block-size);
-  background-color: var(--ld-tag-bg);
-  border: var(--ld-tag-border);
-  border-radius: var(--ld-tag-border-radius);
-  transition: var(--ld-tag-transition);
+  min-inline-size: var(--chili-tag-min-inline-size);
+  padding: var(--chili-tag-padding);
+  margin-inline-end: var(--chili-tag-margin-inline-end);
+  block-size: var(--chili-tag-block-size);
+  background-color: var(--chili-tag-bg);
+  border: var(--chili-tag-border);
+  border-radius: var(--chili-tag-border-radius);
+  transition: var(--chili-tag-transition);
   &:hover {
     .ld-tag-icon {
-      color: var(--ld-tag-icon-color-hover);
+      color: var(--chili-tag-icon-color-hover);
     }
   }
 }
 
 .ld-tag-icon {
-  color: var(--ld-tag-icon-color);
-  padding: var(--ld-tag-icon-padding);
+  color: var(--chili-tag-icon-color);
+  padding: var(--chili-tag-icon-padding);
   cursor: pointer;
 }

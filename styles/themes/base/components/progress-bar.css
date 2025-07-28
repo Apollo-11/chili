@@ -1,11 +1,11 @@
 .ld-progressbar-wrapper {
-  background: var(--ld-progressbar-bg);
-  height: var(--ld-progressbar-height);
+  background: var(--chili-progressbar-bg);
+  height: var(--chili-progressbar-height);
   position: relative;
 }
 
 .ld-progressbar-fill {
-  background: var(--ld-progressbar-bg-fill);
+  background: var(--chili-progressbar-bg-fill);
   transition: width 0.25s linear;
   display: flex;
   justify-content: center;
@@ -16,6 +16,6 @@
 }
 
 .ld-progressbar-value {
-  font-size: var(--ld-progressbar-value-font-size);
-  color: var(--ld-progressbar-value-text-color);
+  font-size: var(--chili-progressbar-value-font-size);
+  color: var(--chili-progressbar-value-text-color);
 }

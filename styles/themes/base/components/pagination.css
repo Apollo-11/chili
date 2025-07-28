@@ -4,25 +4,25 @@
 }
 
 .ld-pagination-button {
-  margin-inline: var(--ld-pagination-button-margin-inline);
-  width: var(--ld-pagination-button-size);
-  height: var(--ld-pagination-button-size);
+  margin-inline: var(--chili-pagination-button-margin-inline);
+  width: var(--chili-pagination-button-size);
+  height: var(--chili-pagination-button-size);
   display: flex;
   align-items: center;
   justify-content: center;
   order: 2;
-  color: var(--ld-pagination-button-color);
+  color: var(--chili-pagination-button-color);
   cursor: pointer;
 
   &:hover {
-    color: var(--ld-pagination-button-color-hover);
+    color: var(--chili-pagination-button-color-hover);
   }
 }
 
 .ld-pagination-controls {
-  color: var(--ld-pagination-control-color);
+  color: var(--chili-pagination-control-color);
   &:hover {
-    color: var(--ld-pagination-control-color-hover);
+    color: var(--chili-pagination-control-color-hover);
   }
 }
 
@@ -35,8 +35,8 @@
 .ld-pagination-number-selected {
   font-weight: bold;
   cursor: default;
-  font-size: var(--ld-pagination-number-selected-font-size);
-  color: var(--ld-pagination-number-selected-color);
+  font-size: var(--chili-pagination-number-selected-font-size);
+  color: var(--chili-pagination-number-selected-color);
 }
 
 .ld-pagination-options-wrapper {
@@ -48,12 +48,12 @@
 }
 
 .ld-pagination-options {
-  width: var(--ld-pagination-options-dropdown-width);
+  width: var(--chili-pagination-options-dropdown-width);
 }
 
 .ld-pagination-options-label {
-  margin-inline-end: var(--ld-pagination-options-label-margin-inline-end);
-  color: var(--ld-pagination-options-label-color);
+  margin-inline-end: var(--chili-pagination-options-label-margin-inline-end);
+  color: var(--chili-pagination-options-label-color);
 }
 
 .ld-pagination-info-label {
@@ -61,14 +61,14 @@
   flex: 1;
   order: 3;
   justify-content: flex-end;
-  color: var(--ld-pagination-info-label-color);
+  color: var(--chili-pagination-info-label-color);
 }
 
 .ld-pagination-disabled {
-  color: var(--ld-pagination-disabled-color);
+  color: var(--chili-pagination-disabled-color);
   cursor: not-allowed;
-  
+
   &:hover {
-    color: var(--ld-pagination-disabled-color);
+    color: var(--chili-pagination-disabled-color);
   }
 }

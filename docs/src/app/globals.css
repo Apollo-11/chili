@@ -28,7 +28,7 @@ body {
 
 /* rewrite tailwind default styles */
 /* button, [type='button'], [type='reset'], [type='submit'] {
-  background-color: var(--ld-btn-bg-color);
+  background-color: var(--chili-btn-bg-color);
 } */
 
 /* custom scrollbar for navigation menu */

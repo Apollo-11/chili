@@ -1,37 +1,37 @@
 .ld-switcher-handler {
   cursor: pointer;
-  border-radius: var(--ld-switcher-handler-border-radius);
+  border-radius: var(--chili-switcher-handler-border-radius);
   transition: all 0.1s linear;
-  height: var(--ld-switcher-handler-size);
-  width: var(--ld-switcher-handler-size);
-  border: var(--ld-switcher-handler-border);
-  background: var(--ld-switcher-handler-bg);
+  height: var(--chili-switcher-handler-size);
+  width: var(--chili-switcher-handler-size);
+  border: var(--chili-switcher-handler-border);
+  background: var(--chili-switcher-handler-bg);
 }
 
 .ld-switcher {
   vertical-align: middle;
   display: inline-block;
   cursor: pointer;
-  background: var(--ld-switcher-wrapper-bg); 
-  border-radius: var(--ld-switcher-handler-border-radius);
-  width: var(--ld-switcher-wrapper-width);
+  background: var(--chili-switcher-wrapper-bg);
+  border-radius: var(--chili-switcher-handler-border-radius);
+  width: var(--chili-switcher-wrapper-width);
 
   &:hover .ld-switcher-handler {
-      background: var(--ld-switcher-handler-bg-hovered);
+    background: var(--chili-switcher-handler-bg-hovered);
   }
 }
 
 .ld-switcher-active {
-  background-color: var(--ld-switcher-active-color);
-  
+  background-color: var(--chili-switcher-active-color);
+
   .ld-switcher-handler {
     transform: translateX(100%);
-    background: var(--ld-switcher-handler-bg);
+    background: var(--chili-switcher-handler-bg);
   }
 
   &:hover {
     .ld-switcher-handler {
-      background-color: var(--ld-switcher-handler-bg-hovered);
+      background-color: var(--chili-switcher-handler-bg-hovered);
     }
   }
 }
@@ -39,20 +39,20 @@
 .ld-switcher-disabled {
   pointer-events: none;
   cursor: not-allowed;
-  background: var(--ld-switcher-wrapper-bg-disabled);
+  background: var(--chili-switcher-wrapper-bg-disabled);
   .ld-switcher-handler {
-    background-color: var(--ld-switcher-handler-bg-disabled);
+    background-color: var(--chili-switcher-handler-bg-disabled);
   }
 }
 
 .ld-switcher-active.ld-switcher-disabled {
-  background-color: var(--ld-switcher-handler-bg-disabled);
+  background-color: var(--chili-switcher-handler-bg-disabled);
   .ld-switcher-handler {
-    background-color: var(--ld-switcher-handler-bg-disabled);
+    background-color: var(--chili-switcher-handler-bg-disabled);
   }
 }
 
 .ld-switcher-label:not(:empty) {
-  margin-inline-start: var(--ld-switcher-label-margin-inline-start);
+  margin-inline-start: var(--chili-switcher-label-margin-inline-start);
   cursor: pointer;
 }

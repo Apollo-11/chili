@@ -2,295 +2,302 @@
   /* base variables
   base variables must not be used in CSS classes directly
   use base variables in component variables only */
-  --ld-border-radius: 4px;
-  --ld-font-size: .875rem;
-  --ld-line-height: 1.5rem;
-  --ld-font-weight: 800;
-  --ld-padding-block: .4rem;
-  --ld-padding-inline: 1rem;
+  --chili-border-radius: 4px;
+  --chili-font-size: 0.875rem;
+  --chili-line-height: 1.5rem;
+  --chili-font-weight: 800;
+  --chili-padding-block: 0.4rem;
+  --chili-padding-inline: 1rem;
 
-  --ld-color-danger: #dc2626;  /* tailwind red 600 */
-  --ld-color-success: #15803d; /* tailwind green 700 */
+  --chili-color-danger: #dc2626; /* tailwind red 600 */
+  --chili-color-success: #15803d; /* tailwind green 700 */
 
-  --ld-font-color: #09090b; /* tailwind neutral 950 */
-  --ld-font-color-hihglight: #7f1d1d; /* tailwind neutral 950 */
-  
+  --chili-font-color: #09090b; /* tailwind neutral 950 */
+  --chili-font-color-hihglight: #7f1d1d; /* tailwind neutral 950 */
+
   /* borders and clickable elements */
-  --ld-base-color: #a3a3a3; /* tailwind neutral 400 */
-  --ld-base-color-hover: #09090b; /* tailwind neutral 950 */
-  --ld-base-color-disabled: #a3a3a3; /* tailwind neutral 400 */
+  --chili-base-color: #a3a3a3; /* tailwind neutral 400 */
+  --chili-base-color-hover: #09090b; /* tailwind neutral 950 */
+  --chili-base-color-disabled: #a3a3a3; /* tailwind neutral 400 */
 
   /* component elements backgrounds */
-  --ld-bg-color: white;
-  --ld-bg-color-hover: #e5e5e5; /* tailwind neutral 200 */
-  --ld-bg-color-selected: #a3a3a3; /* tailwind neutral 400 */
-  --ld-bg-color-active: #f5f5f5; /* tailwind neutral 100 */
-  --ld-bg-color-disabled: #e5e5e5; /* tailwind neutral 200 */
+  --chili-bg-color: white;
+  --chili-bg-color-hover: #e5e5e5; /* tailwind neutral 200 */
+  --chili-bg-color-selected: #a3a3a3; /* tailwind neutral 400 */
+  --chili-bg-color-active: #f5f5f5; /* tailwind neutral 100 */
+  --chili-bg-color-disabled: #e5e5e5; /* tailwind neutral 200 */
 
   /* inverted font color elemets (buttons, tooltips etc.) */
-  --ld-font-inverted-color: white;  
-  --ld-bg-inverted-color: #737373; /* tailwind neutral 500 */
-  --ld-bg-inverted-color-hover: #a3a3a3; /* tailwind neutral 400 */
-  --ld-bg-inverted-color-selected: #525252; /* tailwind neutral 600 */
-  --ld-bg-inverted-color-disabled: #d4d4d4; /* tailwind neutral 300 */
-
+  --chili-font-inverted-color: white;
+  --chili-bg-inverted-color: #737373; /* tailwind neutral 500 */
+  --chili-bg-inverted-color-hover: #a3a3a3; /* tailwind neutral 400 */
+  --chili-bg-inverted-color-selected: #525252; /* tailwind neutral 600 */
+  --chili-bg-inverted-color-disabled: #d4d4d4; /* tailwind neutral 300 */
 
   /* component variables
   do not use component variables in other component variables */
-  --ld-btn-font-size: var(--ld-font-size);
-  --ld-btn-font-weight: var(--ld-font-weight);
-  --ld-btn-border-radius: var(--ld-border-radius);
-  --ld-btn-min-width: 0;
-  --ld-btn-line-height: var(--ld-line-height);
-  --ld-btn-text-color: var(--ld-font-inverted-color);
-  --ld-btn-border-width: 2px;
-  --ld-btn-padding-inline: var(--ld-padding-inline); 
-  --ld-btn-padding-block: calc(var(--ld-padding-block) - var(--ld-btn-border-width));
-  --ld-btn-border-color: var(--ld-bg-inverted-color);
-  --ld-btn-bg-color: var(--ld-bg-inverted-color);
-  --ld-btn-border-color-disabled: var(--ld-bg-inverted-color-disabled);
-  --ld-btn-bg-color-disabled: var(--ld-bg-inverted-color-disabled);
-  --ld-btn-text-color-hover: var(--ld-font-inverted-color);
-  --ld-btn-border-color-hover: var(--ld-bg-inverted-color-hover);
-  --ld-btn-bg-color-hover: var(--ld-bg-inverted-color-hover);
+  --chili-btn-font-size: var(--chili-font-size);
+  --chili-btn-font-weight: var(--chili-font-weight);
+  --chili-btn-border-radius: var(--chili-border-radius);
+  --chili-btn-min-width: 0;
+  --chili-btn-line-height: var(--chili-line-height);
+  --chili-btn-text-color: var(--chili-font-inverted-color);
+  --chili-btn-border-width: 2px;
+  --chili-btn-padding-inline: var(--chili-padding-inline);
+  --chili-btn-padding-block: calc(
+    var(--chili-padding-block) - var(--chili-btn-border-width)
+  );
+  --chili-btn-border-color: var(--chili-bg-inverted-color);
+  --chili-btn-bg-color: var(--chili-bg-inverted-color);
+  --chili-btn-border-color-disabled: var(--chili-bg-inverted-color-disabled);
+  --chili-btn-bg-color-disabled: var(--chili-bg-inverted-color-disabled);
+  --chili-btn-text-color-hover: var(--chili-font-inverted-color);
+  --chili-btn-border-color-hover: var(--chili-bg-inverted-color-hover);
+  --chili-btn-bg-color-hover: var(--chili-bg-inverted-color-hover);
 
-  --ld-btn-group-active-color: var(--ld-bg-inverted-color-selected);
-  --ld-btn-group-active-text-color: var(--ld-font-inverted-color);
-  --ld-btn-group-border-width: 2px;
-  --ld-btn-group-border-inline-width: 1px;
+  --chili-btn-group-active-color: var(--chili-bg-inverted-color-selected);
+  --chili-btn-group-active-text-color: var(--chili-font-inverted-color);
+  --chili-btn-group-border-width: 2px;
+  --chili-btn-group-border-inline-width: 1px;
 
-  --ld-calendar-width: 290px;
-  --ld-calendar-bg: var(--ld-bg-color);
-  --ld-calendar-box-shadow: 0 1rem 2rem 0 var(--ld-base-color);
-  --ld-calendar-border-radius: var(--ld-border-radius);
-  --ld-calendar-z-index: 2;
-  --ld-calendar-padding: 10px;
-  --ld-calendar-header-padding: 10px;
-  --ld-calendar-footer-padding: 10px;
-  --ld-calendar-date-cell-size: 32px;
-  --ld-calendar-date-cell-border-radius: 50%;
-  --ld-calendar-date-font-color: var(--ld-font-color);
-  --ld-calendar-bg-hover: var(--ld-bg-color-hover);
-  --ld-calendar-bg-active: var(--ld-bg-color-active);
-  --ld-calendar-day-off-color: var(--ld-font-color-hihglight);
-  --ld-calendar-different-date-color: var(--ld-base-color);
-  --ld-calendar-bg-selected: var(--ld-bg-color-selected);
-  --ld-calendar-disabled-color: var(--ld-base-color-disabled);
-  --ld-calendar-disabled-bg-hover: var(--ld-bg-color);
-  --ld-calendar-header-font-size: 1rem;
-  --ld-calendar-header-color: var(--ld-base-color);
-  --ld-calendar-header-color-hover: var(--ld-base-color-hover);
-  --ld-calendar-footer-color: var(--ld-base-color);
-  --ld-calendar-footer-color-hover: var(--ld-base-color-hover);
-  --ld-calendar-month-cell-size: 70px;
-  --ld-calendar-month-cell-border-radius: 4px;
-  --ld-calendar-month-cell-margin: 2px;
-  --ld-calendar-year-cell-size: 70px;
-  --ld-calendar-year-cell-border-radius: 4px;
-  --ld-calendar-year-cell-margin: 2px;
-  --ld-calendar-button-color: var(--ld-base-color);
-  --ld-calendar-button-color-hover: var(--ld-base-color-hover);
-  --ld-calendar-week-day-color: var(--ld-base-color);
-  --ld-calendar-week-day-font-size: 0.75rem;
+  --chili-calendar-width: 290px;
+  --chili-calendar-bg: var(--chili-bg-color);
+  --chili-calendar-box-shadow: 0 1rem 2rem 0 var(--chili-base-color);
+  --chili-calendar-border-radius: var(--chili-border-radius);
+  --chili-calendar-z-index: 2;
+  --chili-calendar-padding: 10px;
+  --chili-calendar-header-padding: 10px;
+  --chili-calendar-footer-padding: 10px;
+  --chili-calendar-date-cell-size: 32px;
+  --chili-calendar-date-cell-border-radius: 50%;
+  --chili-calendar-date-font-color: var(--chili-font-color);
+  --chili-calendar-bg-hover: var(--chili-bg-color-hover);
+  --chili-calendar-bg-active: var(--chili-bg-color-active);
+  --chili-calendar-day-off-color: var(--chili-font-color-hihglight);
+  --chili-calendar-different-date-color: var(--chili-base-color);
+  --chili-calendar-bg-selected: var(--chili-bg-color-selected);
+  --chili-calendar-disabled-color: var(--chili-base-color-disabled);
+  --chili-calendar-disabled-bg-hover: var(--chili-bg-color);
+  --chili-calendar-header-font-size: 1rem;
+  --chili-calendar-header-color: var(--chili-base-color);
+  --chili-calendar-header-color-hover: var(--chili-base-color-hover);
+  --chili-calendar-footer-color: var(--chili-base-color);
+  --chili-calendar-footer-color-hover: var(--chili-base-color-hover);
+  --chili-calendar-month-cell-size: 70px;
+  --chili-calendar-month-cell-border-radius: 4px;
+  --chili-calendar-month-cell-margin: 2px;
+  --chili-calendar-year-cell-size: 70px;
+  --chili-calendar-year-cell-border-radius: 4px;
+  --chili-calendar-year-cell-margin: 2px;
+  --chili-calendar-button-color: var(--chili-base-color);
+  --chili-calendar-button-color-hover: var(--chili-base-color-hover);
+  --chili-calendar-week-day-color: var(--chili-base-color);
+  --chili-calendar-week-day-font-size: 0.75rem;
 
-  --ld-checkbox-size: 1rem;
-  --ld-checkbox-margin-inline-end: .5rem;
-  --ld-checkbox-color-disabled: var(--ld-base-color-disabled);
+  --chili-checkbox-size: 1rem;
+  --chili-checkbox-margin-inline-end: 0.5rem;
+  --chili-checkbox-color-disabled: var(--chili-base-color-disabled);
 
-  --ld-collapse-border-radius: var(--ld-border-radius);
-  --ld-collapse-border-color: var(--ld-base-color);
-  --ld-collapse-border: 1px solid var(--ld-base-color);
-  --ld-collapse-summary-padding-inline: 1rem;
-  --ld-collapse-summary-padding-block: .5rem;
-  --ld-collapse-content-padding-inline: 1rem;
-  --ld-collapse-content-padding-block: 1rem;
-  --ld-collapse-border-color-hover: var(--ld-base-color-hover);
-  --ld-collapse-bg-color-disabled: var(--ld-bg-color-disabled);
-  --ld-collapse-icon-trabsition: transform 0.2s linear;
-  
-  --ld-datepicker-disabled-bg: var(--ld-bg-color-disabled);
-  
-  --ld-date-range-delimeter-width: 10%;
-  --ld-date-range-delimeter-min-width: 2rem;
+  --chili-collapse-border-radius: var(--chili-border-radius);
+  --chili-collapse-border-color: var(--chili-base-color);
+  --chili-collapse-border: 1px solid var(--chili-base-color);
+  --chili-collapse-summary-padding-inline: 1rem;
+  --chili-collapse-summary-padding-block: 0.5rem;
+  --chili-collapse-content-padding-inline: 1rem;
+  --chili-collapse-content-padding-block: 1rem;
+  --chili-collapse-border-color-hover: var(--chili-base-color-hover);
+  --chili-collapse-bg-color-disabled: var(--chili-bg-color-disabled);
+  --chili-collapse-icon-trabsition: transform 0.2s linear;
 
-  --ld-drop-down-suggestion-padding-inline: var(--ld-padding-inline); 
-  --ld-drop-down-suggestion-padding-block: .5rem; 
-  --ld-drop-down-suggestion-border-radius: var(--ld-border-radius);
-  --ld-drop-down-suggestion-bg: var(--ld-bg-color);
-  --ld-drop-down-suggestion-bg-hover: var(--ld-bg-color-hover);
-  --ld-drop-down-suggestion-bg-selected: var(--ld-bg-color-selected);
-  --ld-drop-down-suggestion-bg-highlighted: var(--ld-bg-color-hover);
-  --ld-drop-down-suggestion-container-border-width: 1px; 
-  --ld-drop-down-suggestion-container-border-color: var(--ld-bg-color);
-  --ld-drop-down-suggestion-container-border-radius: var(--ld-border-radius);
-  --ld-drop-down-suggestion-container-max-block-size: 200px;
-  --ld-drop-down-suggestion-container-nodata-block-size: 80px;
-  --ld-drop-down-suggestion-container-box-shadow: 0px 3px 10px var(--ld-base-color);
-  --ld-drop-down-suggestion-container-margin-top: 3px;
-  --ld-drop-down-no-data-color: var(--ld-base-color);
+  --chili-datepicker-disabled-bg: var(--chili-bg-color-disabled);
 
-  --ld-input-font-size: var(--ld-font-size);
-  --ld-input-line-height: var(--ld-line-height);
-  --ld-input-font-weight: var(--ld-font-weight);
-  --ld-input-text-color: var(--ld-font-color);
-  --ld-input-border-color: var(--ld-base-color);
-  --ld-input-border-color-hover: var(--ld-base-color-hover);
-  --ld-input-border-radius: var(--ld-border-radius);
-  --ld-input-border-width: 1px;
-  --ld-input-padding-block: calc(var(--ld-padding-block) - var(--ld-input-border-width));
-  --ld-input-padding-inline: var(--ld-padding-inline);
-  --ld-input-close-icon-color: var(--ld-base-color);
-  --ld-input-close-icon-color-hover: var(--ld-base-color);
-  --ld-input-close-icon-size: 2.25rem; 
-  --ld-input-close-icon-padding: .5rem;
-  --ld-input-close-icon-border-radius: var(--ld-border-radius);
-  --ld-input-bg-color: var(--ld-bg-color);
-  --ld-input-element-bg-color: transparent;
-  --ld-input-bg-color-disabled: var(--ld-bg-color-disabled);
-  --ld-input-placeholder-color: var(--ld-base-color);
+  --chili-date-range-delimeter-width: 10%;
+  --chili-date-range-delimeter-min-width: 2rem;
 
-  --ld-invalid-message-color: var(--ld-color-danger);
+  --chili-drop-down-suggestion-padding-inline: var(--chili-padding-inline);
+  --chili-drop-down-suggestion-padding-block: 0.5rem;
+  --chili-drop-down-suggestion-border-radius: var(--chili-border-radius);
+  --chili-drop-down-suggestion-bg: var(--chili-bg-color);
+  --chili-drop-down-suggestion-bg-hover: var(--chili-bg-color-hover);
+  --chili-drop-down-suggestion-bg-selected: var(--chili-bg-color-selected);
+  --chili-drop-down-suggestion-bg-highlighted: var(--chili-bg-color-hover);
+  --chili-drop-down-suggestion-container-border-width: 1px;
+  --chili-drop-down-suggestion-container-border-color: var(--chili-bg-color);
+  --chili-drop-down-suggestion-container-border-radius: var(
+    --chili-border-radius
+  );
+  --chili-drop-down-suggestion-container-max-block-size: 200px;
+  --chili-drop-down-suggestion-container-nodata-block-size: 80px;
+  --chili-drop-down-suggestion-container-box-shadow: 0px 3px 10px
+    var(--chili-base-color);
+  --chili-drop-down-suggestion-container-margin-top: 3px;
+  --chili-drop-down-no-data-color: var(--chili-base-color);
 
-  --ld-loader-wrapper-min-height: 200px;
-  --ld-loader-bg-color: rgba(255,255,255, 0.8);
-  --ld-loader-size: 30px;
-  --ld-loader-animation: r-to-left 2s linear infinite;
-  --ld-loader-color: var(--ld-base-color);
-  --ld-loader-fullscreen-z-index: 10100;
-  --ld-loader-container-border-radius: var(--ld-border-radius);
+  --chili-input-font-size: var(--chili-font-size);
+  --chili-input-line-height: var(--chili-line-height);
+  --chili-input-font-weight: var(--chili-font-weight);
+  --chili-input-text-color: var(--chili-font-color);
+  --chili-input-border-color: var(--chili-base-color);
+  --chili-input-border-color-hover: var(--chili-base-color-hover);
+  --chili-input-border-radius: var(--chili-border-radius);
+  --chili-input-border-width: 1px;
+  --chili-input-padding-block: calc(
+    var(--chili-padding-block) - var(--chili-input-border-width)
+  );
+  --chili-input-padding-inline: var(--chili-padding-inline);
+  --chili-input-close-icon-color: var(--chili-base-color);
+  --chili-input-close-icon-color-hover: var(--chili-base-color);
+  --chili-input-close-icon-size: 2.25rem;
+  --chili-input-close-icon-padding: 0.5rem;
+  --chili-input-close-icon-border-radius: var(--chili-border-radius);
+  --chili-input-bg-color: var(--chili-bg-color);
+  --chili-input-element-bg-color: transparent;
+  --chili-input-bg-color-disabled: var(--chili-bg-color-disabled);
+  --chili-input-placeholder-color: var(--chili-base-color);
 
-  --ld-modal-wrapper-z-index: 10000;
-  --ld-modal-wrapper-bg: rgba(0,0,0,0.6);
-  --ld-modal-wrapper-backdrop-filter: blur(3px);
-  --ld-modal-z-index: 10002;
-  --ld-modal-top: 64px;
-  --ld-modal-border-radius: 5px;
-  --ld-modal-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.2);
-  --ld-modal-cross-right: -20px;
-  --ld-modal-cross-top: 15px;
-  --ld-modal-cross-size: 35px;
-  --ld-modal-cross-color: var(--ld-bg-color);
-  --ld-modal-body-bg: var(--ld-bg-color);
-  --ld-modal-border: 1px solid #e7e5e4; /* tw-stone-200 */
-  --ld-modal-heading-padding: 25px 30px;
-  --ld-modal-footer-padding: 25px 30px;
-  --ld-modal-body-padding: 15px 30px;
-  --ld-modal-heading-font-size: 1.5rem;
-  --ld-modal-heading-font-weight: 600;
-  --ld-modal-heading-bg: var(--ld-bg-color);
-  --ld-modal-footer-bg: var(--ld-bg-color);
-  --ld-modal-width: 500px;
-  --ld-modal-max-width: 90%;
+  --chili-invalid-message-color: var(--chili-color-danger);
 
-  --ld-multiselect-placeholder-color: var(--ld-base-color);
-  --ld-multiselect-placeholder-padding: 3px 0 0 var(--ld-padding-inline);
-  --ld-multiselect-tags-container-padding: 2px;
-  --ld-multiselect-tag-margin: 4px;
-  --ld-multiselect-tags-union-margin: var(--ld-multiselect-tag-margin) 1rem;
-  --ld-multiselect-input-padding: 0 0 0 10px;
-  --ld-multiselect-input-height: 30px;
-  --ld-multiselect-bg-color: white;
-  --ld-multiselect-border: 1px solid var(--ld-base-color);
-  --ld-multiselect-border-radius: var(--ld-border-radius);
-  --ld-multiselect-clear-icon-top: 4px;
-  --ld-multiselect-clear-icon-right: 4px;
-  --ld-multiselect-clear-icon-padding: 3px;
-  --ld-multiselect-clear-icon-color: var(--ld-base-color);
-  --ld-multiselect-clear-icon-color-hover: var(--ld-base-color-hover);
+  --chili-loader-wrapper-min-height: 200px;
+  --chili-loader-bg-color: rgba(255, 255, 255, 0.8);
+  --chili-loader-size: 30px;
+  --chili-loader-animation: r-to-left 2s linear infinite;
+  --chili-loader-color: var(--chili-base-color);
+  --chili-loader-fullscreen-z-index: 10100;
+  --chili-loader-container-border-radius: var(--chili-border-radius);
 
-  --ld-numeric-arrow-width: 2rem;
-  --ld-numeric-arrow-padding-inline: .5rem;
+  --chili-modal-wrapper-z-index: 10000;
+  --chili-modal-wrapper-bg: rgba(0, 0, 0, 0.6);
+  --chili-modal-wrapper-backdrop-filter: blur(3px);
+  --chili-modal-z-index: 10002;
+  --chili-modal-top: 64px;
+  --chili-modal-border-radius: 5px;
+  --chili-modal-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2);
+  --chili-modal-cross-right: -20px;
+  --chili-modal-cross-top: 15px;
+  --chili-modal-cross-size: 35px;
+  --chili-modal-cross-color: var(--chili-bg-color);
+  --chili-modal-body-bg: var(--chili-bg-color);
+  --chili-modal-border: 1px solid #e7e5e4; /* tw-stone-200 */
+  --chili-modal-heading-padding: 25px 30px;
+  --chili-modal-footer-padding: 25px 30px;
+  --chili-modal-body-padding: 15px 30px;
+  --chili-modal-heading-font-size: 1.5rem;
+  --chili-modal-heading-font-weight: 600;
+  --chili-modal-heading-bg: var(--chili-bg-color);
+  --chili-modal-footer-bg: var(--chili-bg-color);
+  --chili-modal-width: 500px;
+  --chili-modal-max-width: 90%;
 
-  --ld-numeric-range-delimeter-width: 2rem;
+  --chili-multiselect-placeholder-color: var(--chili-base-color);
+  --chili-multiselect-placeholder-padding: 3px 0 0 var(--chili-padding-inline);
+  --chili-multiselect-tags-container-padding: 2px;
+  --chili-multiselect-tag-margin: 4px;
+  --chili-multiselect-tags-union-margin: var(--chili-multiselect-tag-margin)
+    1rem;
+  --chili-multiselect-input-padding: 0 0 0 10px;
+  --chili-multiselect-input-height: 30px;
+  --chili-multiselect-bg-color: white;
+  --chili-multiselect-border: 1px solid var(--chili-base-color);
+  --chili-multiselect-border-radius: var(--chili-border-radius);
+  --chili-multiselect-clear-icon-top: 4px;
+  --chili-multiselect-clear-icon-right: 4px;
+  --chili-multiselect-clear-icon-padding: 3px;
+  --chili-multiselect-clear-icon-color: var(--chili-base-color);
+  --chili-multiselect-clear-icon-color-hover: var(--chili-base-color-hover);
 
-  --ld-pagination-button-margin-inline: 5px;
-  --ld-pagination-button-size: 24px;
-  --ld-pagination-button-color: var(--ld-font-color);
-  --ld-pagination-button-color-hover: var(--ld-font-color);
-  --ld-pagination-control-color: var(--ld-base-color);
-  --ld-pagination-control-color-hover: var(--ld-font-color);
-  --ld-pagination-number-selected-font-size: 1.1rem;
-  --ld-pagination-number-selected-color: var(--ld-font-color);
-  --ld-pagination-options-dropdown-width: 100px;
-  --ld-pagination-options-label-color: var(--ld-font-color);
-  --ld-pagination-options-label-margin-inline-end: 1rem;
-  --ld-pagination-info-label-color: var(--ld-font-color);
-  --ld-pagination-disabled-color: var(--ld-base-color-disabled);
+  --chili-numeric-arrow-width: 2rem;
+  --chili-numeric-arrow-padding-inline: 0.5rem;
 
-  --ld-password-rule-text-color: var(--ld-font-color-hihglight);
+  --chili-numeric-range-delimeter-width: 2rem;
 
-  --ld-progressbar-bg: var(--ld-bg-inverted-color-disabled);
-  --ld-progressbar-bg-fill: var(--ld-color-success);
-  --ld-progressbar-height: 20px;
-  --ld-progressbar-value-text-color: var(--ld-font-inverted-color);
-  --ld-progressbar-value-font-size: 12px;
+  --chili-pagination-button-margin-inline: 5px;
+  --chili-pagination-button-size: 24px;
+  --chili-pagination-button-color: var(--chili-font-color);
+  --chili-pagination-button-color-hover: var(--chili-font-color);
+  --chili-pagination-control-color: var(--chili-base-color);
+  --chili-pagination-control-color-hover: var(--chili-font-color);
+  --chili-pagination-number-selected-font-size: 1.1rem;
+  --chili-pagination-number-selected-color: var(--chili-font-color);
+  --chili-pagination-options-dropdown-width: 100px;
+  --chili-pagination-options-label-color: var(--chili-font-color);
+  --chili-pagination-options-label-margin-inline-end: 1rem;
+  --chili-pagination-info-label-color: var(--chili-font-color);
+  --chili-pagination-disabled-color: var(--chili-base-color-disabled);
 
-  --ld-radio-color: var(--ld-base-color);
-  --ld-radio-color-hover: var(--ld-base-color-hover);
-  --ld-radio-color-disabled: var(--ld-bg-color-disabled);
-  --ld-radio-contrast-color: var(--ld-bg-color);
-  --ld-radio-active-color: var(--ld-base-color);
-  --ld-radio-active-color-hover: var(--ld-base-color-hover);
-  --ld-radio-active-color-disabled: var(--ld-bg-color-disabled);
-  --ld-radio-active-contrast-color: var(--ld-bg-color);
+  --chili-password-rule-text-color: var(--chili-font-color-hihglight);
 
-  --ld-rating-base-color: var(--ld-base-color);
-  --ld-rating-active-color: var(--ld-font-color);
-  --ld-rating-icon-width: 2rem;
-  --ld-rating-icon-padding: 2px;
+  --chili-progressbar-bg: var(--chili-bg-inverted-color-disabled);
+  --chili-progressbar-bg-fill: var(--chili-color-success);
+  --chili-progressbar-height: 20px;
+  --chili-progressbar-value-text-color: var(--chili-font-inverted-color);
+  --chili-progressbar-value-font-size: 12px;
 
-  --ld-switcher-active-color: var(--ld-color-success);
-  --ld-switcher-handler-bg: var(--ld-bg-color);
-  --ld-switcher-handler-bg-hovered: var(--ld-bg-color);
-  --ld-switcher-handler-bg-disabled: var(--ld-base-color);
-  --ld-switcher-handler-border: 1px solid var(--ld-base-color);
-  --ld-switcher-handler-border-radius: 10px;
-  --ld-switcher-handler-size: 17px;
-  --ld-switcher-wrapper-bg: var(--ld-base-color);
-  --ld-switcher-wrapper-bg-disabled: var(--ld-bg-color-disabled);
-  --ld-switcher-wrapper-width: 34px;
-  --ld-switcher-label-margin-inline-start: .5rem;
+  --chili-radio-color: var(--chili-base-color);
+  --chili-radio-color-hover: var(--chili-base-color-hover);
+  --chili-radio-color-disabled: var(--chili-bg-color-disabled);
+  --chili-radio-contrast-color: var(--chili-bg-color);
+  --chili-radio-active-color: var(--chili-base-color);
+  --chili-radio-active-color-hover: var(--chili-base-color-hover);
+  --chili-radio-active-color-disabled: var(--chili-bg-color-disabled);
+  --chili-radio-active-contrast-color: var(--chili-bg-color);
 
-  --ld-tabs-border-bottom: 1px solid var(--ld-base-color);
-  --ld-tabs-tab-padding: 9px 14px;
-  --ld-tabs-tab-text-color-hover: var(--ld-base-color-hover);
-  --ld-tabs-tab-active-border: 3px solid var(--ld-base-color);
-  --ld-tabs-disabled-color: var(--ld-base-color);
-  --ld-tabs-arrow-color: var(--ld-base-color);
-  --ld-tabs-arrow-color-hover: var(--ld-base-color-hover);
-  --ld-tabs-arrow-shadow: 0px 0px 5px 2px;
-  --ld-tabs-arrow-size: 1.5rem;
-  --ld-tabs-arrow-top: 10px;
-  --ld-tabs-arrow-padding-inner: 2px;
-  --ld-tabs-arrow-bg: var(--ld-bg-color);
+  --chili-rating-base-color: var(--chili-base-color);
+  --chili-rating-active-color: var(--chili-font-color);
+  --chili-rating-icon-width: 2rem;
+  --chili-rating-icon-padding: 2px;
 
-  --ld-tag-min-inline-size: 3rem;
-  --ld-tag-block-size: 1.75rem;
-  --ld-tag-padding: 2px 2px 2px 16px;
-  --ld-tag-margin-inline-end: 8px;
-  --ld-tag-border-color: var(--ld-base-color);
-  --ld-tag-border: 1px solid var(--ld-base-color);
-  --ld-tag-border-radius: var(--ld-border-radius);
-  --ld-tag-bg: var(--ld-bg-color-active);
-  --ld-tag-icon-color: var(--ld-base-color);
-  --ld-tag-icon-padding: 3px;
-  --ld-tag-icon-color-hover: var(--ld-base-color-hover);
-  --ld-tag-transition: 250ms ease-out;
+  --chili-switcher-active-color: var(--chili-color-success);
+  --chili-switcher-handler-bg: var(--chili-bg-color);
+  --chili-switcher-handler-bg-hovered: var(--chili-bg-color);
+  --chili-switcher-handler-bg-disabled: var(--chili-base-color);
+  --chili-switcher-handler-border: 1px solid var(--chili-base-color);
+  --chili-switcher-handler-border-radius: 10px;
+  --chili-switcher-handler-size: 17px;
+  --chili-switcher-wrapper-bg: var(--chili-base-color);
+  --chili-switcher-wrapper-bg-disabled: var(--chili-bg-color-disabled);
+  --chili-switcher-wrapper-width: 34px;
+  --chili-switcher-label-margin-inline-start: 0.5rem;
 
-  --ld-textarea-height: 120px;
-  --ld-textarea-padding: 1rem var(--ld-padding-inline);
-  --ld-textarea-border: 1px solid  var(--ld-base-color);
-  --ld-textarea-border-color-hover: var(--ld-base-color-hover);
-  --ld-textarea-border-radius: var(--ld-border-radius);
+  --chili-tabs-border-bottom: 1px solid var(--chili-base-color);
+  --chili-tabs-tab-padding: 9px 14px;
+  --chili-tabs-tab-text-color-hover: var(--chili-base-color-hover);
+  --chili-tabs-tab-active-border: 3px solid var(--chili-base-color);
+  --chili-tabs-disabled-color: var(--chili-base-color);
+  --chili-tabs-arrow-color: var(--chili-base-color);
+  --chili-tabs-arrow-color-hover: var(--chili-base-color-hover);
+  --chili-tabs-arrow-shadow: 0px 0px 5px 2px;
+  --chili-tabs-arrow-size: 1.5rem;
+  --chili-tabs-arrow-top: 10px;
+  --chili-tabs-arrow-padding-inner: 2px;
+  --chili-tabs-arrow-bg: var(--chili-bg-color);
 
-  --ld-tooltip-z-index: 10070;
-  --ld-tooltip-max-width: 280px;
-  --ld-tooltip-min-width: 50px;
-  --ld-tooltip-text-color: var(--ld-font-inverted-color);
-  --ld-tooltip-bg-color: var(--ld-bg-inverted-color-selected);
-  --ld-tooltip-border-radius: var(--ld-border-radius);
-  --ld-tooltip-transition: opacity .2s;
-  --ld-tooltip-padding: .5rem 1rem;
-  --ld-tooltip-arrow-length: 7px;
-  --ld-tooltip-arrow-width: 4px;
+  --chili-tag-min-inline-size: 3rem;
+  --chili-tag-block-size: 1.75rem;
+  --chili-tag-padding: 2px 2px 2px 16px;
+  --chili-tag-margin-inline-end: 8px;
+  --chili-tag-border-color: var(--chili-base-color);
+  --chili-tag-border: 1px solid var(--chili-base-color);
+  --chili-tag-border-radius: var(--chili-border-radius);
+  --chili-tag-bg: var(--chili-bg-color-active);
+  --chili-tag-icon-color: var(--chili-base-color);
+  --chili-tag-icon-padding: 3px;
+  --chili-tag-icon-color-hover: var(--chili-base-color-hover);
+  --chili-tag-transition: 250ms ease-out;
+
+  --chili-textarea-height: 120px;
+  --chili-textarea-padding: 1rem var(--chili-padding-inline);
+  --chili-textarea-border: 1px solid var(--chili-base-color);
+  --chili-textarea-border-color-hover: var(--chili-base-color-hover);
+  --chili-textarea-border-radius: var(--chili-border-radius);
+
+  --chili-tooltip-z-index: 10070;
+  --chili-tooltip-max-width: 280px;
+  --chili-tooltip-min-width: 50px;
+  --chili-tooltip-text-color: var(--chili-font-inverted-color);
+  --chili-tooltip-bg-color: var(--chili-bg-inverted-color-selected);
+  --chili-tooltip-border-radius: var(--chili-border-radius);
+  --chili-tooltip-transition: opacity 0.2s;
+  --chili-tooltip-padding: 0.5rem 1rem;
+  --chili-tooltip-arrow-length: 7px;
+  --chili-tooltip-arrow-width: 4px;
 }

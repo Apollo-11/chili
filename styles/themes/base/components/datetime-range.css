@@ -8,8 +8,8 @@
 }
 
 .ld-daterange-delimiter {
-  width: var(--ld-date-range-delimeter-width);
-  min-width: var(--ld-date-range-delimeter-min-width);
+  width: var(--chili-date-range-delimeter-width);
+  min-width: var(--chili-date-range-delimeter-min-width);
   display: flex;
   justify-content: center;
   align-items: center;

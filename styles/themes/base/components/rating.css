@@ -3,14 +3,14 @@
 }
 
 .ld-rating-item {
-  padding: var(--ld-rating-icon-padding);
-  width: var(--ld-rating-icon-width);
+  padding: var(--chili-rating-icon-padding);
+  width: var(--chili-rating-icon-width);
   cursor: pointer;
-  color: var(--ld-rating-base-color);
+  color: var(--chili-rating-base-color);
 }
 
 .ld-filled {
-  color: var(--ld-rating-active-color);
+  color: var(--chili-rating-active-color);
 }
 
 .ld-rating-disabled {

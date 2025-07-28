@@ -8,14 +8,14 @@
     content: " ";
     width: 16px;
     height: 16px;
-    border: 1px solid var(--ld-radio-color);
-    background-color: var(--ld-radio-contrast-color);
+    border: 1px solid var(--chili-radio-color);
+    background-color: var(--chili-radio-contrast-color);
     border-radius: 50%;
     position: absolute;
     top: 3px;
     left: 0;
   }
-  
+
   &::after {
     content: " ";
     width: 6px;
@@ -27,7 +27,7 @@
   }
 
   &:hover::before {
-    border: 1px solid var(--ld-radio-color-hover);
+    border: 1px solid var(--chili-radio-color-hover);
   }
 }
 
@@ -40,12 +40,12 @@
 
   &:checked + .ld-radio-label {
     &::after {
-      background-color: var(--ld-radio-active-contrast-color);
+      background-color: var(--chili-radio-active-contrast-color);
     }
 
     &::before {
-      background-color: var(--ld-radio-active-color);
-      border-color: var(--ld-radio-active-color);
+      background-color: var(--chili-radio-active-color);
+      border-color: var(--chili-radio-active-color);
     }
   }
 
@@ -53,19 +53,19 @@
     cursor: not-allowed;
 
     &::before {
-      border: 1px solid var(--ld-radio-active-color-disabled);
-      background-color: var(--ld-radio-active-color-disabled);
+      border: 1px solid var(--chili-radio-active-color-disabled);
+      background-color: var(--chili-radio-active-color-disabled);
     }
 
     &:hover {
       &::before {
-        border: 1px solid var(--ld-radio-active-color-disabled);
-        background-color: var(--ld-radio-active-color-disabled);
+        border: 1px solid var(--chili-radio-active-color-disabled);
+        background-color: var(--chili-radio-active-color-disabled);
       }
     }
   }
 
   &:checked:disabled + .ld-radio-label::after {
-    background-color: var(--ld-radio-contrast-color);
+    background-color: var(--chili-radio-contrast-color);
   }
 }

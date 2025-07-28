@@ -1,54 +1,58 @@
 .ld-btn {
   display: inline-block;
-  color: var(--ld-btn-text-color);
-  background-color: var(--ld-btn-bg-color);
-  border-radius: var(--ld-btn-border-radius);
-  border: var(--ld-btn-border-width) solid var(--ld-btn-border-color);
-  font-size: var(--ld-btn-font-size);
-  font-weight: var(--ld-btn-font-weight);
-  padding-block: var(--ld-btn-padding-block);
-  padding-inline: var(--ld-btn-padding-inline);
-  line-height: var(--ld-btn-line-height);
-  min-inline-size: var(--ld-btn-min-width);
+  color: var(--chili-btn-text-color);
+  background-color: var(--chili-btn-bg-color);
+  border-radius: var(--chili-btn-border-radius);
+  border: var(--chili-btn-border-width) solid var(--chili-btn-border-color);
+  font-size: var(--chili-btn-font-size);
+  font-weight: var(--chili-btn-font-weight);
+  padding-block: var(--chili-btn-padding-block);
+  padding-inline: var(--chili-btn-padding-inline);
+  line-height: var(--chili-btn-line-height);
+  min-inline-size: var(--chili-btn-min-width);
   cursor: pointer;
-  transition: color .15s ease-in-out,
-    background-color .15s ease-in-out,
-    border-color .15s ease-in-out;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out;
   position: relative;
 
   &:hover {
-    background-color: var(--ld-btn-bg-color-hover);
-    border-color: var(--ld-btn-border-color-hover);
-    color: var(--ld-btn-text-color-hover);
+    background-color: var(--chili-btn-bg-color-hover);
+    border-color: var(--chili-btn-border-color-hover);
+    color: var(--chili-btn-text-color-hover);
   }
 
   .ld-loading {
     cursor: progress;
     &:hover {
-      background-color: var(--ld-btn-bg-color);
-      border-color: var(--ld-btn-bg-color);
+      background-color: var(--chili-btn-bg-color);
+      border-color: var(--chili-btn-bg-color);
     }
   }
-  
+
   .ld-loading-icon {
     position: absolute;
     display: block;
     color: currentColor;
-    width: var(--ld-btn-font-size);
-    height: var(--ld-btn-font-size);
-    left: calc(var(--ld-btn-padding-inline)/2 - var(--ld-font-size)/2);
-    top: calc(var(--ld-btn-padding-block) + var(--ld-btn-line-height)/2 - var(--ld-btn-font-size)/2);
+    width: var(--chili-btn-font-size);
+    height: var(--chili-btn-font-size);
+    left: calc(
+      var(--chili-btn-padding-inline) / 2 - var(--chili-font-size) / 2
+    );
+    top: calc(
+      var(--chili-btn-padding-block) + var(--chili-btn-line-height) / 2 -
+        var(--chili-btn-font-size) / 2
+    );
     animation: rotate 2s linear infinite;
   }
 }
 
 .ld-btn-disabled {
-  background-color: var(--ld-btn-bg-color-disabled);
-  border-color: var(--ld-btn-border-color-disabled);
+  background-color: var(--chili-btn-bg-color-disabled);
+  border-color: var(--chili-btn-border-color-disabled);
   cursor: not-allowed;
   &:hover {
-    background-color: var(--ld-btn-bg-color-disabled);
-    border-color: var(--ld-btn-border-color-disabled);
+    background-color: var(--chili-btn-bg-color-disabled);
+    border-color: var(--chili-btn-border-color-disabled);
   }
 }
 

@@ -13,16 +13,16 @@
 
   &:disabled + .ld-checkbox-label {
     cursor: not-allowed;
-    color: var(--ld-checkbox-color-disabled);
+    color: var(--chili-checkbox-color-disabled);
   }
 }
 
 .ld-checkbox-icon {
-  width: var(--ld-checkbox-size);
-  height: var(--ld-checkbox-size);
-  margin-inline-end: var(--ld-checkbox-margin-inline-end);
+  width: var(--chili-checkbox-size);
+  height: var(--chili-checkbox-size);
+  margin-inline-end: var(--chili-checkbox-margin-inline-end);
 }
 
 .ld-checkbox-invalid {
-  color: var(--ld-color-danger);
+  color: var(--chili-color-danger);
 }

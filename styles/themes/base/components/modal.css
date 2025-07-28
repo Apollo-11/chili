@@ -4,59 +4,59 @@
   right: 0;
   left: 0;
   min-height: 100%;
-  z-index: var(--ld-modal-wrapper-z-index);
-  background-color: var(--ld-modal-wrapper-bg);
+  z-index: var(--chili-modal-wrapper-z-index);
+  background-color: var(--chili-modal-wrapper-bg);
   overflow: auto;
-  backdrop-filter: var(--ld-modal-wrapper-backdrop-filter);
+  backdrop-filter: var(--chili-modal-wrapper-backdrop-filter);
 }
 
 .ld-modal-window {
   position: absolute;
-  top: var(--ld-modal-top);
+  top: var(--chili-modal-top);
   left: 50%;
-  z-index: var(--ld-modal-z-index);
+  z-index: var(--chili-modal-z-index);
   transform: translate(-50%, 0);
-  box-shadow: var(--ld-modal-box-shadow);
-  border-radius: var(--ld-modal-border-radius);
-  width: var(--ld-modal-width);
-  max-width: var(--ld-modal-max-width);
+  box-shadow: var(--chili-modal-box-shadow);
+  border-radius: var(--chili-modal-border-radius);
+  width: var(--chili-modal-width);
+  max-width: var(--chili-modal-max-width);
 }
 
 .ld-modal-cross {
   position: absolute;
-  top: var(--ld-modal-cross-top);
-  right: var(--ld-modal-cross-right);
+  top: var(--chili-modal-cross-top);
+  right: var(--chili-modal-cross-right);
   display: block;
-  width: var(--ld-modal-cross-size);
-  height: var(--ld-modal-cross-size);
+  width: var(--chili-modal-cross-size);
+  height: var(--chili-modal-cross-size);
   transform: translateX(100%);
   cursor: pointer;
-  color: var(--ld-modal-cross-color);
+  color: var(--chili-modal-cross-color);
 }
 
 .ld-modal-body {
-  background: var(--ld-modal-body-bg);
-  padding: var(--ld-modal-body-padding);
+  background: var(--chili-modal-body-bg);
+  padding: var(--chili-modal-body-padding);
 
   &:first-of-type {
-    border-top-left-radius: var(--ld-modal-border-radius);
-    border-top-right-radius: var(--ld-modal-border-radius);
+    border-top-left-radius: var(--chili-modal-border-radius);
+    border-top-right-radius: var(--chili-modal-border-radius);
   }
 
   &:last-child {
-    border-bottom-left-radius: var(--ld-modal-border-radius);
-    border-bottom-right-radius: var(--ld-modal-border-radius);
+    border-bottom-left-radius: var(--chili-modal-border-radius);
+    border-bottom-right-radius: var(--chili-modal-border-radius);
   }
 }
 
 .ld-modal-header {
-  border-top-left-radius: var(--ld-modal-border-radius);
-  border-top-right-radius: var(--ld-modal-border-radius);
-  border-bottom: var(--ld-modal-border);
-  padding: var(--ld-modal-heading-padding);
-  font-size: var(--ld-modal-heading-font-size);
-  font-weight: var(--ld-modal-heading-font-weight);
-  background: var(--ld-modal-heading-bg);
+  border-top-left-radius: var(--chili-modal-border-radius);
+  border-top-right-radius: var(--chili-modal-border-radius);
+  border-bottom: var(--chili-modal-border);
+  padding: var(--chili-modal-heading-padding);
+  font-size: var(--chili-modal-heading-font-size);
+  font-weight: var(--chili-modal-heading-font-weight);
+  background: var(--chili-modal-heading-bg);
 
   & + .modal-body {
     border-top-left-radius: 0;
@@ -65,10 +65,10 @@
 }
 
 .ld-modal-footer {
-  border-top: var(--ld-modal-border);
-  padding: var(--ld-modal-footer-padding);
+  border-top: var(--chili-modal-border);
+  padding: var(--chili-modal-footer-padding);
   text-align: right;
-  background: var(--ld-modal-footer-bg);
-  border-bottom-left-radius: var(--ld-modal-border-radius);
-  border-bottom-right-radius: var(--ld-modal-border-radius);
+  background: var(--chili-modal-footer-bg);
+  border-bottom-left-radius: var(--chili-modal-border-radius);
+  border-bottom-right-radius: var(--chili-modal-border-radius);
 }
