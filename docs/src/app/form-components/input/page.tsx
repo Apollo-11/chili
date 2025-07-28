@@ -319,47 +319,47 @@ interface RenderEvent<P = {}, S = {}, E = {}> {
         <tbody>
           <tr>
             <Td>closeIcon</Td>
-            <Td>ld-input-clear-icon</Td>
+            <Td>chili-input-clear-icon</Td>
           </tr>
           <tr>
             <Td>icon</Td>
-            <Td>ld-input-icon</Td>
+            <Td>chili-input-icon</Td>
           </tr>
           <tr>
             <Td>iconLeft</Td>
-            <Td>ld-icon-left</Td>
+            <Td>chili-icon-left</Td>
           </tr>
           <tr>
             <Td>iconRight</Td>
-            <Td>ld-icon-right</Td>
+            <Td>chili-icon-right</Td>
           </tr>
           <tr>
             <Td>input</Td>
-            <Td>ld-input-element</Td>
+            <Td>chili-input-element</Td>
           </tr>
           <tr>
             <Td>inputWrapper</Td>
-            <Td>ld-input-element-wrapper</Td>
+            <Td>chili-input-element-wrapper</Td>
           </tr>
           <tr>
             <Td>inputWrapperDisabled</Td>
-            <Td>ld-disabled</Td>
+            <Td>chili-disabled</Td>
           </tr>
           <tr>
             <Td>inputWrapperFocused</Td>
-            <Td>ld-focused</Td>
+            <Td>chili-focused</Td>
           </tr>
           <tr>
             <Td>inputWrapperInvalid</Td>
-            <Td>ld-danger</Td>
+            <Td>chili-danger</Td>
           </tr>
           <tr>
             <Td>inputWrapperRequired</Td>
-            <Td>ld-required</Td>
+            <Td>chili-required</Td>
           </tr>
           <tr>
             <Td>wrapper</Td>
-            <Td>ld-input-wrapper</Td>
+            <Td>chili-input-wrapper</Td>
           </tr>
         </tbody>
       </Table>

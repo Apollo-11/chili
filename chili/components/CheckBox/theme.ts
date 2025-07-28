@@ -1,11 +1,11 @@
 /* eslint-disable key-spacing */
 export const defaultCheckBoxTheme = {
-  input:                    'ld-checkbox-input',
-  label:                    'ld-checkbox-label',
-  icon:                     'ld-checkbox-icon',
-  iconChecked:              'ld-checked',
-  iconUnchecked:            'ld-unchecked',
-  invalid:                  'ld-checkbox-invalid',
-  required:                 'ld-checkbox-required',
+  input:                    'chili-checkbox-input',
+  label:                    'chili-checkbox-label',
+  icon:                     'chili-checkbox-icon',
+  iconChecked:              'chili-checked',
+  iconUnchecked:            'chili-unchecked',
+  invalid:                  'chili-checkbox-invalid',
+  required:                 'chili-checkbox-required',
 };
 /* eslint-enable key-spacing */

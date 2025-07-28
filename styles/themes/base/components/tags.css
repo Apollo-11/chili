@@ -1,8 +1,8 @@
-.ld-tags-wrapper {
+.chili-tags-wrapper {
   display: flex;
 }
 
-.ld-tag {
+.chili-tag {
   display: flex;
   align-items: center;
   min-inline-size: var(--chili-tag-min-inline-size);
@@ -14,13 +14,13 @@
   border-radius: var(--chili-tag-border-radius);
   transition: var(--chili-tag-transition);
   &:hover {
-    .ld-tag-icon {
+    .chili-tag-icon {
       color: var(--chili-tag-icon-color-hover);
     }
   }
 }
 
-.ld-tag-icon {
+.chili-tag-icon {
   color: var(--chili-tag-icon-color);
   padding: var(--chili-tag-icon-padding);
   cursor: pointer;

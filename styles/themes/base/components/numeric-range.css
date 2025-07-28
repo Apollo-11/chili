@@ -1,13 +1,13 @@
-.ld-numeric-range-wrapper {
+.chili-numeric-range-wrapper {
   align-items: center;
   display: flex;
 
-  & > .ld-numeric-wrapper {
+  & > .chili-numeric-wrapper {
     flex-grow: 1;
   }
 }
 
-.ld-numeric-range-delimiter {
+.chili-numeric-range-delimiter {
   text-align: center;
   width: var(--chili-numeric-range-delimeter-width);
 }

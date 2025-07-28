@@ -1,10 +1,10 @@
 /* eslint-disable key-spacing */
 export const defaultSwitcherTheme = {
-  active:                   'ld-switcher-active',
-  disabled:                 'ld-switcher-disabled',
-  handle:                   'ld-switcher-handler',
-  label:                    'ld-switcher-label',
-  switcher:                 'ld-switcher',
-  wrapper:                  'ld-switcher-wrapper',
+  active:                   'chili-switcher-active',
+  disabled:                 'chili-switcher-disabled',
+  handle:                   'chili-switcher-handler',
+  label:                    'chili-switcher-label',
+  switcher:                 'chili-switcher',
+  wrapper:                  'chili-switcher-wrapper',
 };
 /* eslint-enable key-spacing */

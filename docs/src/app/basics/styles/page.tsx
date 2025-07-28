@@ -72,7 +72,7 @@ const Page = () => (
           {`
 <L.Button
   theme={{
-    wrapper: 'ld-btn bg-sky-500 border-sky-600',
+    wrapper: 'chili-btn bg-sky-500 border-sky-600',
   }}
 >
   Click me

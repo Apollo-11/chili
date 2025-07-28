@@ -139,27 +139,27 @@ const ModalPage = () => (
         <tbody>
           <tr>
             <TdCode>body</TdCode>
-            <TdCode>ld-modal-body</TdCode>
+            <TdCode>chili-modal-body</TdCode>
           </tr>
           <tr>
             <TdCode>cross</TdCode>
-            <TdCode>ld-modal-cross</TdCode>
+            <TdCode>chili-modal-cross</TdCode>
           </tr>
           <tr>
             <TdCode>footer</TdCode>
-            <TdCode>ld-modal-footer</TdCode>
+            <TdCode>chili-modal-footer</TdCode>
           </tr>
           <tr>
             <TdCode>header</TdCode>
-            <TdCode>ld-modal-header</TdCode>
+            <TdCode>chili-modal-header</TdCode>
           </tr>
           <tr>
             <TdCode>window</TdCode>
-            <TdCode>ld-modal-window</TdCode>
+            <TdCode>chili-modal-window</TdCode>
           </tr>
           <tr>
             <TdCode>wrapper</TdCode>
-            <TdCode>ld-modal-wrapper</TdCode>
+            <TdCode>chili-modal-wrapper</TdCode>
           </tr>
         </tbody>
       </Table>

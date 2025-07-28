@@ -1,7 +1,7 @@
 /* eslint-disable key-spacing */
 export const defaultProgressBarTheme = {
-  fill:                     'ld-progressbar-fill',
-  value:                    'ld-progressbar-value',
-  wrapper:                  'ld-progressbar-wrapper',
+  fill:                     'chili-progressbar-fill',
+  value:                    'chili-progressbar-value',
+  wrapper:                  'chili-progressbar-wrapper',
 };
 /* eslint-enable key-spacing */

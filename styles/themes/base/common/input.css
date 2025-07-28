@@ -1,4 +1,4 @@
-.ld-input-element {
+.chili-input-element {
   font-size: var(--chili-input-font-size);
   line-height: var(--chili-input-line-height);
   padding-block: var(--chili-input-padding-block);
@@ -12,11 +12,11 @@
   background-color: var(--chili-input-element-bg-color);
 }
 
-.ld-input-element::placeholder {
+.chili-input-element::placeholder {
   color: var(--chili-input-placeholder-color);
 }
 
-.ld-input-element-wrapper {
+.chili-input-element-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +30,7 @@
   }
 }
 
-.ld-input-icon {
+.chili-input-icon {
   color: var(--chili-input-close-icon-color);
   padding: var(--chili-input-close-icon-padding);
   block-size: 100%;

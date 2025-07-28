@@ -1,15 +1,15 @@
-.ld-dropdownselect-wrapper {
+.chili-dropdownselect-wrapper {
   position: relative;
 
-  .ld-input-element-wrapper {
+  .chili-input-element-wrapper {
     cursor: pointer;
   }
 }
 
-.ld-opened {
+.chili-opened {
   transform: rotate(180deg);
 }
 
-.ld-closed {
+.chili-closed {
   transform: rotate(0deg);
 }

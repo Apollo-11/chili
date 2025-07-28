@@ -1,4 +1,4 @@
-.ld-suggestion-item {
+.chili-suggestion-item {
   padding-inline: var(--chili-drop-down-suggestion-padding-inline);
   padding-block: var(--chili-drop-down-suggestion-padding-block);
   margin: 2px;
@@ -10,27 +10,27 @@
   }
 }
 
-.ld-suggestion-highlighted {
+.chili-suggestion-highlighted {
   background-color: var(--chili-drop-down-suggestion-bg-highlighted);
   &:hover {
     background-color: var(--chili-drop-down-suggestion-bg-hover);
   }
 }
 
-.ld-suggestion-selected {
+.chili-suggestion-selected {
   background-color: var(--chili-drop-down-suggestion-bg-selected);
   &:hover {
     background-color: var(--chili-drop-down-suggestion-bg-selected);
   }
 }
 
-.ld-suggestion-list {
+.chili-suggestion-list {
   max-block-size: var(--chili-drop-down-suggestion-container-max-block-size);
   overflow-x: hidden;
   overflow-y: auto;
 }
 
-.ld-suggestion-wrapper {
+.chili-suggestion-wrapper {
   background-color: var(--chili-drop-down-suggestion-bg);
   position: absolute;
   top: 100%;
@@ -43,12 +43,12 @@
   box-shadow: var(--chili-drop-down-suggestion-container-box-shadow);
 }
 
-.ld-pos-top {
+.chili-pos-top {
   top: auto;
   bottom: 100%;
 }
 
-.ld-nodata {
+.chili-nodata {
   display: flex;
   justify-content: center;
   align-items: center;

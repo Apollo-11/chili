@@ -1,13 +1,13 @@
 /* helpers for components with input fields */
 
-.ld-danger {
+.chili-danger {
   border-color: var(--chili-color-danger);
   &:hover {
     border-color: var(--chili-color-danger);
   }
 }
 
-.ld-disabled {
+.chili-disabled {
   cursor: not-allowed;
   background-color: var(--chili-input-bg-color-disabled);
 
@@ -15,15 +15,15 @@
     border-color: var(--chili-input-border-color);
   }
 
-  .ld-required {
+  .chili-required {
     border-color: var(--chili-input-border-color);
   }
 
-  .ld-input-element {
+  .chili-input-element {
     background-color: var(--chili-input-bg-color-disabled);
   }
 
-  .ld-input-icon {
+  .chili-input-icon {
     background-color: var(--chili-input-bg-color-disabled);
     color: var(--chili-input-border-color);
     cursor: not-allowed;
@@ -34,7 +34,7 @@
   }
 }
 
-.ld-focused {
+.chili-focused {
   border-color: var(--chili-input-border-color-hover);
 
   &:hover {

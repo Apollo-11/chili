@@ -1,13 +1,13 @@
-.ld-daterange-wrapper {
+.chili-daterange-wrapper {
   display: flex;
   justify-content: space-between;
 
-  .ld-datepicker-wrapper {
+  .chili-datepicker-wrapper {
     flex-grow: 1;
   }
 }
 
-.ld-daterange-delimiter {
+.chili-daterange-delimiter {
   width: var(--chili-date-range-delimeter-width);
   min-width: var(--chili-date-range-delimeter-min-width);
   display: flex;

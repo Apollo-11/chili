@@ -1,7 +1,7 @@
 /* eslint-disable key-spacing */
 export const defaultCollapseTheme = {
-  icon:         'ld-collapse-icon',
-  content:      'ld-collapse-content',
-  summary:      'ld-collapse-summary',
-  wrapper:      'ld-collapse-wrapper',
+  icon:         'chili-collapse-icon',
+  content:      'chili-collapse-content',
+  summary:      'chili-collapse-summary',
+  wrapper:      'chili-collapse-wrapper',
 };

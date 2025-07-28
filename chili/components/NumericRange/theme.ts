@@ -2,9 +2,9 @@ import { defaultNumericTextBoxTheme } from '../NumericTextBox/theme';
 
 /* eslint-disable key-spacing */
 export const defaultNumericRangeTheme = {
-  delimiter: 'ld-numeric-range-delimiter',
+  delimiter: 'chili-numeric-range-delimiter',
   from:      defaultNumericTextBoxTheme,
   to:        defaultNumericTextBoxTheme,
-  wrapper:  'ld-numeric-range-wrapper',
+  wrapper:  'chili-numeric-range-wrapper',
 };
 /* eslint-enable key-spacing */

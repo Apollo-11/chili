@@ -1,28 +1,28 @@
-.ld-checkbox-label {
+.chili-checkbox-label {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
   position: relative;
 }
 
-.ld-checkbox-input {
+.chili-checkbox-input {
   opacity: 0;
   height: 0;
   width: 0;
   position: absolute;
 
-  &:disabled + .ld-checkbox-label {
+  &:disabled + .chili-checkbox-label {
     cursor: not-allowed;
     color: var(--chili-checkbox-color-disabled);
   }
 }
 
-.ld-checkbox-icon {
+.chili-checkbox-icon {
   width: var(--chili-checkbox-size);
   height: var(--chili-checkbox-size);
   margin-inline-end: var(--chili-checkbox-margin-inline-end);
 }
 
-.ld-checkbox-invalid {
+.chili-checkbox-invalid {
   color: var(--chili-color-danger);
 }

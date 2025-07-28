@@ -1,4 +1,4 @@
-.ld-modal-wrapper {
+.chili-modal-wrapper {
   position: fixed;
   top: 0;
   right: 0;
@@ -10,7 +10,7 @@
   backdrop-filter: var(--chili-modal-wrapper-backdrop-filter);
 }
 
-.ld-modal-window {
+.chili-modal-window {
   position: absolute;
   top: var(--chili-modal-top);
   left: 50%;
@@ -22,7 +22,7 @@
   max-width: var(--chili-modal-max-width);
 }
 
-.ld-modal-cross {
+.chili-modal-cross {
   position: absolute;
   top: var(--chili-modal-cross-top);
   right: var(--chili-modal-cross-right);
@@ -34,7 +34,7 @@
   color: var(--chili-modal-cross-color);
 }
 
-.ld-modal-body {
+.chili-modal-body {
   background: var(--chili-modal-body-bg);
   padding: var(--chili-modal-body-padding);
 
@@ -49,7 +49,7 @@
   }
 }
 
-.ld-modal-header {
+.chili-modal-header {
   border-top-left-radius: var(--chili-modal-border-radius);
   border-top-right-radius: var(--chili-modal-border-radius);
   border-bottom: var(--chili-modal-border);
@@ -64,7 +64,7 @@
   }
 }
 
-.ld-modal-footer {
+.chili-modal-footer {
   border-top: var(--chili-modal-border);
   padding: var(--chili-modal-footer-padding);
   text-align: right;

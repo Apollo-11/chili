@@ -1,4 +1,4 @@
-.ld-btn {
+.chili-btn {
   display: inline-block;
   color: var(--chili-btn-text-color);
   background-color: var(--chili-btn-bg-color);
@@ -21,7 +21,7 @@
     color: var(--chili-btn-text-color-hover);
   }
 
-  .ld-loading {
+  .chili-loading {
     cursor: progress;
     &:hover {
       background-color: var(--chili-btn-bg-color);
@@ -29,7 +29,7 @@
     }
   }
 
-  .ld-loading-icon {
+  .chili-loading-icon {
     position: absolute;
     display: block;
     color: currentColor;
@@ -46,7 +46,7 @@
   }
 }
 
-.ld-btn-disabled {
+.chili-btn-disabled {
   background-color: var(--chili-btn-bg-color-disabled);
   border-color: var(--chili-btn-border-color-disabled);
   cursor: not-allowed;

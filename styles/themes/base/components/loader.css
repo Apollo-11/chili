@@ -1,9 +1,9 @@
-.ld-loader-wrapper {
+.chili-loader-wrapper {
   position: relative;
   min-height: var(--chili-loader-wrapper-min-height);
 }
 
-.ld-loader-container {
+.chili-loader-container {
   background-color: var(--chili-loader-bg-color);
   position: absolute;
   top: 0;
@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.ld-loader-element {
+.chili-loader-element {
   width: var(--chili-loader-size);
   height: var(--chili-loader-size);
   animation: var(--chili-loader-animation);
@@ -34,7 +34,7 @@
   }
 }
 
-.ld-loader-fullscreen {
+.chili-loader-fullscreen {
   background-color: var(--chili-loader-bg-color);
   position: fixed;
   top: 0;
@@ -47,6 +47,6 @@
   align-items: center;
 }
 
-.ld-loader-global {
+.chili-loader-global {
   overflow: hidden;
 }

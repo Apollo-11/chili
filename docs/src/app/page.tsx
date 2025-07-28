@@ -119,8 +119,8 @@ const Home = () => (
         <Live scope={{ L, log }} className="mb-6">
           {`<L.Input
   theme={{
-    wrapper: 'ld-wrapper w-60 mb-4',
-    inputWrapper: 'ld-input-element-wrapper border-sky-500 hover:border-sky-700',
+    wrapper: 'chili-wrapper w-60 mb-4',
+    inputWrapper: 'chili-input-element-wrapper border-sky-500 hover:border-sky-700',
   }}
 />
 `}

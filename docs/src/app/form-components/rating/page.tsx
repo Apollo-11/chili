@@ -167,23 +167,23 @@ const RatingPage = () => (
         <tbody>
           <tr>
             <TdCode>disabled</TdCode>
-            <TdCode>ld-rating-disabled</TdCode>
+            <TdCode>chili-rating-disabled</TdCode>
           </tr>
           <tr>
             <TdCode>invalid</TdCode>
-            <TdCode>ld-rating-invalid</TdCode>
+            <TdCode>chili-rating-invalid</TdCode>
           </tr>
           <tr>
             <TdCode>item</TdCode>
-            <TdCode>ld-rating-item</TdCode>
+            <TdCode>chili-rating-item</TdCode>
           </tr>
           <tr>
             <TdCode>itemFilled</TdCode>
-            <TdCode>ld-filled</TdCode>
+            <TdCode>chili-filled</TdCode>
           </tr>
           <tr>
             <TdCode>itemWrapper</TdCode>
-            <TdCode>ld-rating-wrapper</TdCode>
+            <TdCode>chili-rating-wrapper</TdCode>
           </tr>
         </tbody>
       </Table>

@@ -1,13 +1,13 @@
 /* eslint-disable key-spacing */
 export const defaultInputTheme = {
-  closeIcon:                'ld-input-icon',
-  input:                    'ld-input-element',
-  inputWrapper:             'ld-input-element-wrapper',
-  wrapper:                  'ld-input-wrapper',
+  closeIcon:                'chili-input-icon',
+  input:                    'chili-input-element',
+  inputWrapper:             'chili-input-element-wrapper',
+  wrapper:                  'chili-input-wrapper',
 
-  inputWrapperDisabled:     'ld-disabled',
-  inputWrapperFocused:      'ld-focused',
-  inputWrapperInvalid:      'ld-danger',
-  inputWrapperRequired:     'ld-required',
+  inputWrapperDisabled:     'chili-disabled',
+  inputWrapperFocused:      'chili-focused',
+  inputWrapperInvalid:      'chili-danger',
+  inputWrapperRequired:     'chili-required',
 };
 /* eslint-enable key-spacing */

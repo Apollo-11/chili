@@ -1,8 +1,8 @@
 /* eslint-disable key-spacing */
 export const defaultRadioTheme = {
-  input:                    'ld-radio-input',
-  item:                     'ld-radio-button',
-  label:                    'ld-radio-label',
-  wrapper:                  'ld-radio-wrapper',
+  input:                    'chili-radio-input',
+  item:                     'chili-radio-button',
+  label:                    'chili-radio-label',
+  wrapper:                  'chili-radio-wrapper',
 };
 /* eslint-enable key-spacing */

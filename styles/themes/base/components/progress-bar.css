@@ -1,10 +1,10 @@
-.ld-progressbar-wrapper {
+.chili-progressbar-wrapper {
   background: var(--chili-progressbar-bg);
   height: var(--chili-progressbar-height);
   position: relative;
 }
 
-.ld-progressbar-fill {
+.chili-progressbar-fill {
   background: var(--chili-progressbar-bg-fill);
   transition: width 0.25s linear;
   display: flex;
@@ -15,7 +15,7 @@
   left: 0;
 }
 
-.ld-progressbar-value {
+.chili-progressbar-value {
   font-size: var(--chili-progressbar-value-font-size);
   color: var(--chili-progressbar-value-text-color);
 }

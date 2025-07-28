@@ -1,10 +1,10 @@
-.ld-collapse-wrapper[open] {
-  .ld-collapse-icon {
+.chili-collapse-wrapper[open] {
+  .chili-collapse-icon {
     transform: rotate(180deg);
   }
 }
 
-.ld-collapse-summary {
+.chili-collapse-summary {
   border-radius: var(--chili-collapse-border-radius);
   border: var(--chili-collapse-border);
   padding-inline: var(--chili-collapse-summary-padding-inline);
@@ -17,19 +17,19 @@
   &:hover {
     border-color: var(--chili-collapse-border-color-hover);
 
-    .ld-collapse-icon {
+    .chili-collapse-icon {
       color: var(--chili-collapse-border-color-hover);
     }
   }
 
-  .ld-collapse-icon {
+  .chili-collapse-icon {
     transition: transform 0.2s linear;
     transform: rotate(0);
     color: var(--chili-collapse-border-color);
   }
 }
 
-.ld-collapse-content {
+.chili-collapse-content {
   padding-inline: var(--chili-collapse-content-padding-inline);
   padding-block: var(--chili-collapse-content-padding-block);
 }

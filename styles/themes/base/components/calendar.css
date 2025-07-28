@@ -1,8 +1,8 @@
-.ld-calendar-standalone-wrapper {
+.chili-calendar-standalone-wrapper {
   width: var(--chili-calendar-width);
 }
 
-.ld-calendar-wrapper {
+.chili-calendar-wrapper {
   width: var(--chili-calendar-width);
   background-color: var(--chili-calendar-bg);
   box-shadow: var(--chili-calendar-box-shadow);
@@ -12,20 +12,20 @@
   padding: var(--chili-calendar-padding);
 }
 
-.ld-calendar-top {
+.chili-calendar-top {
   bottom: 100%;
 }
 
-.ld-calendar-right {
+.chili-calendar-right {
   right: 0;
 }
 
-.ld-calendar-standalone {
+.chili-calendar-standalone {
   position: static;
   width: 100%;
 }
 
-.ld-calendar-date {
+.chili-calendar-date {
   width: var(--chili-calendar-date-cell-size);
   height: var(--chili-calendar-date-cell-size);
   display: flex;
@@ -40,26 +40,26 @@
   }
 }
 
-.ld-calendar-date-active {
+.chili-calendar-date-active {
   background-color: var(--chili-calendar-bg-active);
 }
 
-.ld-calendar-date-day-off {
+.chili-calendar-date-day-off {
   color: var(--chili-calendar-day-off-color);
 }
 
-.ld-calendar-date-different-month {
+.chili-calendar-date-different-month {
   color: var(--chili-calendar-different-date-color);
 }
 
-.ld-calendar-date-selected {
+.chili-calendar-date-selected {
   background-color: var(--chili-calendar-bg-selected);
   &:hover {
     background-color: var(--chili-calendar-bg-selected);
   }
 }
 
-.ld-calendar-date-disabled {
+.chili-calendar-date-disabled {
   color: var(--chili-calendar-disabled-color);
   cursor: not-allowed;
 
@@ -68,16 +68,16 @@
   }
 }
 
-.ld-calendar-date-today {
+.chili-calendar-date-today {
   font-weight: bold;
 }
 
-.ld-calendar-date-row {
+.chili-calendar-date-row {
   display: flex;
   justify-content: space-around;
 }
 
-.ld-calendar-footer {
+.chili-calendar-footer {
   text-align: center;
   padding: var(--chili-calendar-footer-padding);
   cursor: pointer;
@@ -87,14 +87,14 @@
   }
 }
 
-.ld-calendar-header {
+.chili-calendar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--chili-calendar-header-padding);
 }
 
-.ld-calendar-month-cell {
+.chili-calendar-month-cell {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,18 +108,18 @@
   }
 }
 
-.ld-calendar-month-cell-active {
+.chili-calendar-month-cell-active {
   background-color: var(--chili-calendar-bg-selected);
   &:hover {
     background-color: var(--chili-calendar-bg-selected);
   }
 }
 
-.ld-calendar-month-row {
+.chili-calendar-month-row {
   display: flex;
 }
 
-.ld-calendar-month-cell-disabled {
+.chili-calendar-month-cell-disabled {
   color: var(--chili-calendar-disabled-color);
   cursor: not-allowed;
 
@@ -128,7 +128,7 @@
   }
 }
 
-.ld-calendar-next-button {
+.chili-calendar-next-button {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -139,7 +139,7 @@
   }
 }
 
-.ld-calendar-prev-button {
+.chili-calendar-prev-button {
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -150,7 +150,7 @@
   }
 }
 
-.ld-calendar-button-disabled {
+.chili-calendar-button-disabled {
   color: var(--chili-calendar-disabled-color);
   cursor: not-allowed;
 
@@ -159,7 +159,7 @@
   }
 }
 
-.ld-calendar-title {
+.chili-calendar-title {
   color: var(--chili-calendar-header-color);
   font-size: var(--chili-calendar-header-font-size);
   cursor: pointer;
@@ -169,7 +169,7 @@
   }
 }
 
-.ld-calendar-title-disabled {
+.chili-calendar-title-disabled {
   color: var(--chili-calendar-disabled-color);
   cursor: not-allowed;
 
@@ -178,12 +178,12 @@
   }
 }
 
-.ld-calendar-week-days-row {
+.chili-calendar-week-days-row {
   display: flex;
   justify-content: space-around;
 }
 
-.ld-calendar-week-day {
+.chili-calendar-week-day {
   font-size: var(--chili-calendar-week-day-font-size);
   color: var(--chili-calendar-week-day-color);
   width: var(--chili-calendar-date-cell-size);
@@ -193,7 +193,7 @@
   align-items: center;
 }
 
-.ld-calendar-year-cell {
+.chili-calendar-year-cell {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,7 +208,7 @@
   }
 }
 
-.ld-calendar-year-cell-active {
+.chili-calendar-year-cell-active {
   background-color: var(--chili-calendar-bg-selected);
 
   &:hover {
@@ -216,15 +216,15 @@
   }
 }
 
-.ld-calendar-year-cell-different-decade {
+.chili-calendar-year-cell-different-decade {
   color: var(--chili-calendar-different-date-color);
 }
 
-.ld-calendar-year-row {
+.chili-calendar-year-row {
   display: flex;
 }
 
-.ld-calendar-year-cell-disabled {
+.chili-calendar-year-cell-disabled {
   color: var(--chili-calendar-disabled-color);
   cursor: not-allowed;
 

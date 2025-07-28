@@ -1,18 +1,18 @@
-.ld-rating-wrapper {
+.chili-rating-wrapper {
   display: flex;
 }
 
-.ld-rating-item {
+.chili-rating-item {
   padding: var(--chili-rating-icon-padding);
   width: var(--chili-rating-icon-width);
   cursor: pointer;
   color: var(--chili-rating-base-color);
 }
 
-.ld-filled {
+.chili-filled {
   color: var(--chili-rating-active-color);
 }
 
-.ld-rating-disabled {
+.chili-rating-disabled {
   cursor: not-allowed;
 }

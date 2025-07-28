@@ -1,13 +1,13 @@
 /* eslint-disable key-spacing */
 export const defaultButtonGroupTheme = {
   // todo replace classes when base theme is ready
-  button:                     'ld-button-group-item',
-  buttonActive:               'ld-button-active',
-  buttonFirst:                'ld-button-first',
-  buttonLast:                 'ld-button-last',
-  buttonsWrapper:             'ld-button-group-buttons-wrapper',
-  wrapper:                    'ld-button-group-wrapper',
-  wrapperDisabled:            'ld-button-disabled',
-  wrapperRequired:            'ld-required',
+  button:                     'chili-button-group-item',
+  buttonActive:               'chili-button-active',
+  buttonFirst:                'chili-button-first',
+  buttonLast:                 'chili-button-last',
+  buttonsWrapper:             'chili-button-group-buttons-wrapper',
+  wrapper:                    'chili-button-group-wrapper',
+  wrapperDisabled:            'chili-button-disabled',
+  wrapperRequired:            'chili-required',
 };
 /* eslint-enable key-spacing */

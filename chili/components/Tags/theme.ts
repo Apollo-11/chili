@@ -1,7 +1,7 @@
 /* eslint-disable key-spacing */
 export const defaultTagsTheme = {
-  closeIcon:                  'ld-tag-icon',
-  tag:                        'ld-tag',
-  wrapper:                    'ld-tags-wrapper',
+  closeIcon:                  'chili-tag-icon',
+  tag:                        'chili-tag',
+  wrapper:                    'chili-tags-wrapper',
 };
 /* eslint-enable key-spacing */

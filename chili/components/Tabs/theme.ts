@@ -1,14 +1,14 @@
 /* eslint-disable key-spacing */
 export const defaultTabsTheme = {
-  arrowLeft:                'ld-tabs-arrow ld-tabs-arrow-left',
-  arrowRight:               'ld-tabs-arrow ld-tabs-arrow-right',
-  container:                'ld-tabs-container',
-  content:                  'ld-tabs-content',
-  scroll:                   'ld-tab-scroll',
-  tab:                      'ld-tab',
-  tabActive:                'ld-tab-active',
-  tabDisabled:              'ld-tab-disabled',
-  tabsBar:                  'ld-tabs-bar',
-  wrapper:                  'ld-tabs-wrapper',
+  arrowLeft:                'chili-tabs-arrow chili-tabs-arrow-left',
+  arrowRight:               'chili-tabs-arrow chili-tabs-arrow-right',
+  container:                'chili-tabs-container',
+  content:                  'chili-tabs-content',
+  scroll:                   'chili-tab-scroll',
+  tab:                      'chili-tab',
+  tabActive:                'chili-tab-active',
+  tabDisabled:              'chili-tab-disabled',
+  tabsBar:                  'chili-tabs-bar',
+  wrapper:                  'chili-tabs-wrapper',
 };
 /* eslint-enable key-spacing */

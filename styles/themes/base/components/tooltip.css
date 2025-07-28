@@ -1,8 +1,8 @@
-.ld-tooltip-wrapper {
+.chili-tooltip-wrapper {
   display: inline-block;
 }
 
-.ld-tooltip {
+.chili-tooltip {
   position: absolute;
   z-index: var(--chili-tooltip-z-index);
   max-width: var(--chili-tooltip-max-width);
@@ -22,7 +22,7 @@
   }
 }
 
-.ld-tooltip.ld-top {
+.chili-tooltip.chili-top {
   margin-top: calc(-1 * var(--chili-tooltip-arrow-length));
   transform: translate(-50%, -100%);
 
@@ -36,7 +36,7 @@
   }
 }
 
-.ld-tooltip.ld-bottom {
+.chili-tooltip.chili-bottom {
   margin-top: var(--chili-tooltip-arrow-length);
   transform: translateX(-50%);
 
@@ -50,7 +50,7 @@
   }
 }
 
-.ld-tooltip.ld-left {
+.chili-tooltip.chili-left {
   margin-left: calc(-1 * var(--chili-tooltip-arrow-length));
   transform: translate(-100%, -50%);
 
@@ -64,7 +64,7 @@
   }
 }
 
-.ld-tooltip.ld-right {
+.chili-tooltip.chili-right {
   margin-left: var(--chili-tooltip-arrow-length);
   transform: translateY(-50%);
 

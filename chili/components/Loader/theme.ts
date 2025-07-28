@@ -1,9 +1,9 @@
 /* eslint-disable key-spacing */
 export const defaultLoaderTheme = {
-  container:                'ld-loader-container',
-  element:                  'ld-loader-element',
-  fullscreen:               'ld-loader-fullscreen',
-  wrapper:                  'ld-loader-wrapper',
-  bodyOverflow:             'ld-loader-global',
+  container:                'chili-loader-container',
+  element:                  'chili-loader-element',
+  fullscreen:               'chili-loader-fullscreen',
+  wrapper:                  'chili-loader-wrapper',
+  bodyOverflow:             'chili-loader-global',
 };
 /* eslint-enable key-spacing */

@@ -1,9 +1,9 @@
-.ld-numeric-arrows {
+.chili-numeric-arrows {
   display: flex;
   flex-direction: column;
 }
 
-.ld-numeric-arrow-down {
+.chili-numeric-arrow-down {
   width: var(--chili-numeric-arrow-width);
   padding-inline: var(--chili-numeric-arrow-padding-inline);
   cursor: pointer;
@@ -15,7 +15,7 @@
   }
 }
 
-.ld-numeric-arrow-up {
+.chili-numeric-arrow-up {
   width: var(--chili-numeric-arrow-width);
   padding-inline: var(--chili-numeric-arrow-padding-inline);
   cursor: pointer;

@@ -280,47 +280,47 @@ interface AutoCompleteMessages {
         <tbody>
           <tr>
             <TdCode>container</TdCode>
-            <TdCode>ld-suggestion-wrapper</TdCode>
+            <TdCode>chili-suggestion-wrapper</TdCode>
           </tr>
           <tr>
             <TdCode>containerVisible</TdCode>
-            <TdCode>ld-visible</TdCode>
+            <TdCode>chili-visible</TdCode>
           </tr>
           <tr>
             <TdCode>containerTop</TdCode>
-            <TdCode>ld-pos-top</TdCode>
+            <TdCode>chili-pos-top</TdCode>
           </tr>
           <tr>
             <TdCode>group</TdCode>
-            <TdCode>ld-suggestion-group</TdCode>
+            <TdCode>chili-suggestion-group</TdCode>
           </tr>
           <tr>
             <TdCode>groupLabel</TdCode>
-            <TdCode>ld-suggestion-group-label</TdCode>
+            <TdCode>chili-suggestion-group-label</TdCode>
           </tr>
           <tr>
             <TdCode>item</TdCode>
-            <TdCode>ld-suggestion-item</TdCode>
+            <TdCode>chili-suggestion-item</TdCode>
           </tr>
           <tr>
             <TdCode>itemHighlighted</TdCode>
-            <TdCode>ld-highlighted</TdCode>
+            <TdCode>chili-highlighted</TdCode>
           </tr>
           <tr>
             <TdCode>itemPlaceholder</TdCode>
-            <TdCode>ld-placeholder</TdCode>
+            <TdCode>chili-placeholder</TdCode>
           </tr>
           <tr>
             <TdCode>itemSelected</TdCode>
-            <TdCode>ld-selected</TdCode>
+            <TdCode>chili-selected</TdCode>
           </tr>
           <tr>
             <TdCode>list</TdCode>
-            <TdCode>ld-suggestion-list</TdCode>
+            <TdCode>chili-suggestion-list</TdCode>
           </tr>
           <tr>
             <TdCode>noSuggections</TdCode>
-            <TdCode>ld-nodata</TdCode>
+            <TdCode>chili-nodata</TdCode>
           </tr>
         </tbody>
       </Table>

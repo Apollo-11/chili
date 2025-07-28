@@ -1,10 +1,10 @@
 /* eslint-disable key-spacing */
 export const defaultTextAreaTheme = {
-  input:                  'ld-textarea',
-  wrapper:                'ld-textarea-wrapper',
-  inputFocused:           'ld-focused',
-  inputDisabled:          'ld-disabled',
-  inputInvalid:           'ld-danger',
-  inputRequired:          'ld-required',
+  input:                  'chili-textarea',
+  wrapper:                'chili-textarea-wrapper',
+  inputFocused:           'chili-focused',
+  inputDisabled:          'chili-disabled',
+  inputInvalid:           'chili-danger',
+  inputRequired:          'chili-required',
 };
 /* eslint-enable key-spacing */
