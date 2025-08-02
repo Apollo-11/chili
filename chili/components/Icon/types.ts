@@ -1,14 +1,14 @@
 import type { SVGProps } from 'react';
 
 export type IconProps = {
-  fill?: string | null;
-  icon: `${Icons}`;
-  shouldRender?: boolean;
-  size?: number | string | null;
-  stroke?: string | null;
-  strokeOpacity?: number | string | null;
-  strokeWidth?: number | string | null;
-  [x: string]: unknown;
+  fill?: string | null,
+  icon: `${Icons}`,
+  shouldRender?: boolean,
+  size?: number | string | null,
+  stroke?: string | null,
+  strokeOpacity?: number | string | null,
+  strokeWidth?: number | string | null,
+  [x: string]: unknown,
 } & Omit<SVGProps<SVGSVGElement>, 'fill' | 'stroke' | 'strokeOpacity' | 'strokeWidth'>;
 
 export enum Icons {

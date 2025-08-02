@@ -11,7 +11,9 @@ export const createResetHandler = ({
   props: DateTimeInputProps,
   dispatch: React.Dispatch<AllActions>,
 }) => () => {
-  const { defaultValue, format = 'dd.MM.yyyy', name, onChange } = props;
+  const {
+    defaultValue, format = 'dd.MM.yyyy', name, onChange,
+  } = props;
 
   const date = (() => {
     if (isDate(defaultValue)) return defaultValue;

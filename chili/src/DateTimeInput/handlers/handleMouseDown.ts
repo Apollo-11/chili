@@ -5,7 +5,6 @@ import type { HandlersData } from '../types';
 
 export const createCalendarIconMouseDownHandler = ({
   dispatch,
-  maskedInputRef,
   props,
   state,
 }: HandlersData) => (ev: React.MouseEvent<SVGElement>): void => {
