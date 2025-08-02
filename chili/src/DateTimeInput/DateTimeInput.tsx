@@ -9,6 +9,7 @@ import {
 } from '../../utils';
 import { CalendarBase } from '../CalendarBase';
 import { COMPONENT_TYPES } from './constants';
+import { setOpen } from './actions';
 import {
   createBlurHandler,
   createCalendarClickHandler,
@@ -80,6 +81,9 @@ export const DateTimeInput = React.forwardRef((props: DateTimeInputProps, ref: R
   // Ref from maskedInput is used for validation and focus/blur
   const maskedInputRef = React.useRef<HTMLInputElement | null>(null);
 
+  const wrapperRef = React.useRef<HTMLElement | null>(null);
+  React.useImperativeHandle(ref, () => wrapperRef.current as HTMLElement);
+
   // conditions for processing calendar events (disabled dates, inactive arrows etc)
   const conditions = getCalendarConditions({
     min, max, viewDate: state.viewDate, viewType: state.viewType, value: state.date,
@@ -113,6 +117,22 @@ export const DateTimeInput = React.forwardRef((props: DateTimeInputProps, ref: R
   const mask = createMask(format, type);
 
   const isOpen = isNil(isOpenProp) ? state.isOpen : isOpenProp;
+
+  React.useEffect(() => {
+    if (!isOpen) return undefined;
+
+    const handleDocumentMouseDown = (ev: MouseEvent): void => {
+      if (wrapperRef.current && !wrapperRef.current.contains(ev.target as Node)) {
+        dispatch(setOpen(false));
+      }
+    };
+
+    document.addEventListener('mousedown', handleDocumentMouseDown);
+
+    return () => {
+      document.removeEventListener('mousedown', handleDocumentMouseDown);
+    };
+  }, [isOpen, dispatch]);
 
   const handlersData = {
     props: newProps, state, dispatch, maskedInputRef, validate: validateCurrent, conditions,
@@ -148,7 +168,7 @@ export const DateTimeInput = React.forwardRef((props: DateTimeInputProps, ref: R
     <Wrapper
       className={wrapperClassNames}
       onKeyDown={(ev) => handleCalendarKeyDown(ev)}
-      ref={ref}
+      ref={wrapperRef}
     >
       <Div
         className={getInputWrapperClassNames(theme, newProps, state, isValid)}
