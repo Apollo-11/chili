@@ -148,7 +148,7 @@ export const DropDownSelect = React.forwardRef((props: DropDownSelectProps, ref:
       })
       : data;
 
-    if (filteredData === undefined) return [];
+    if (filteredData == null) return [];
 
     if (sortSuggestions) {
       return [...filteredData].sort(sortSuggestions);
