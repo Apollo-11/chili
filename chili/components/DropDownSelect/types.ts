@@ -61,7 +61,7 @@ export interface DropDownSelectProps<T extends Value = Value> extends Validation
   autoComplete?: string,
   boundingContainerRef?: React.RefObject<HTMLElement>,
   compareObjectsBy?: T extends object ? ((suggestionListItem: T) => unknown) | string : never,
-  data?: T[],
+  data?: T[] | null,
   defaultValue?: Value,
   filterRule?: FilterRules,
   filterValue?: string,
