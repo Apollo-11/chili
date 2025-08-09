@@ -47,16 +47,17 @@ export const createMouseOverHandler = (setCurrentSelected: SetCurrentSelected) =
 export const createResetHandler = (
   props: RatingProps,
   setValue: React.Dispatch<React.SetStateAction<RatingValue>>,
-) => (value?: unknown) => {
-  const newValue = value !== undefined ? value as RatingValue : (!isNil(props.defaultValue) ? props.defaultValue : null);
+) => () => {
+  const newValue = (() => {
+    if (!isNil(props.defaultValue)) return props.defaultValue;
+    return null;
+  })();
 
-  if (props.value === undefined) {
-    setValue(newValue);
-  }
+  setValue(newValue);
 
   props.onChange?.({
     component: {
-      index: isNil(newValue) ? -1 : (newValue - 1),
+      index: isNil(props.defaultValue) ? -1 : (props.defaultValue - 1),
       name: props.name,
       value: newValue,
     },

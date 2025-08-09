@@ -62,8 +62,7 @@ export interface Field {
   isValid: boolean,
   name: string,
   requiredMessage?: string,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  reset: (value?: any) => void,
+  reset: () => void,
   setIsValid: SetState<boolean>,
   setMessages: SetState<string[] | undefined>,
   shouldValidateUnmounted: boolean,
@@ -114,8 +113,7 @@ export interface AddFieldData {
   validators: NormalizedValidatorObject[],
   isRequired?: boolean,
   requiredMessage?: string,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  reset: (value?: any) => void,
+  reset: () => void,
   suggestion?: Suggestion,
 }
 
@@ -132,8 +130,7 @@ export interface UpdateFieldData {
 }
 
 export interface ValidationExtra {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  reset: (value?: any) => void,
+  reset: () => void,
 }
 
 export interface RemoveFieldOptions {

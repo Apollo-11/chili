@@ -114,7 +114,7 @@ interface Field {
   isValid: boolean,
   name: string,
   requiredMessage?: string,
-  reset: (value?: any) => void,
+  reset: () => void,
   setIsValid: SetState<boolean>,
   setMessages: SetState<string[] | undefined>,
   shouldValidateUnmounted: boolean,

@@ -36,18 +36,7 @@ export const Switcher = React.forwardRef((props: SwitcherProps, ref: React.Ref<H
   useValidation(props, {
     value,
   }, {
-    reset: (val?: unknown) => {
-      const newValue = (val as boolean | undefined) ?? false;
-      if (valueProp === undefined) {
-        setStateValue(newValue);
-      }
-      onChange?.({
-        component: {
-          name,
-          value: newValue,
-        },
-      } as any);
-    },
+    reset: () => {},
   });
 
   const switcherClassName = getClassNames(

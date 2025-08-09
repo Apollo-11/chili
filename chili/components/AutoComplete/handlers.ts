@@ -334,14 +334,11 @@ export const createResetHandler = ({
   props: AutoCompleteProps,
   setStateValue: SetState<string>,
   value: string,
-}) => (newValue?: unknown) => {
-  const finalValue = newValue !== undefined ? newValue as string : value;
-  if (props.value === undefined) {
-    setStateValue(finalValue);
-  }
+}) => () => {
+  setStateValue(value);
   props.onChange?.({
     component: {
-      value: finalValue,
+      value,
       method: ChangeMethod.reset,
       name: props.name,
       suggestion: null,

@@ -107,12 +107,10 @@ export const createKeyDownHandler = (
 export const createResetHandler = (
   props: PasswordProps,
   setValue: SetState<string>,
-) => (value?: unknown) => {
-  const newValue = value !== undefined ? value as string : (props.defaultValue || '');
+) => () => {
+  const newValue = props.defaultValue || '';
 
-  if (props.value === undefined) {
-    setValue(newValue);
-  }
+  setValue(newValue);
 
   props.onChange?.({
     component: {
