@@ -171,10 +171,11 @@ export const createSetValueHandler = ({
 }) => (value: unknown) => {
   const newValue = value as Date | null;
   dispatch(setDate(newValue));
-  props.onChange?.({
+
+  props.onChange({
     component: {
       value: newValue,
       name: props.name,
     },
-  } as any);
+  });
 };

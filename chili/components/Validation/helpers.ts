@@ -152,7 +152,7 @@ export const addField = ({
         isRequired,
         requiredMessage,
         reset,
-        setValue: setValue || (() => {}),
+        setValue,
         suggestion,
       }],
     }];
@@ -179,7 +179,7 @@ export const addField = ({
         isRequired,
         requiredMessage,
         reset,
-        setValue: setValue || (() => {}),
+        setValue,
         suggestion,
       }];
 
@@ -232,7 +232,7 @@ export const removeField = (formName: string, fieldName: string, options: Remove
       const newFields = [...currentForm.fields.map((field) => {
         if (field.name !== fieldName) return field;
         // stub for unmounted component
-        return { ...field, setIsValid: () => {}, setValue: () => {} };
+        return { ...field, setIsValid: () => {} };
       })];
 
       return { name: formName, fields: newFields };

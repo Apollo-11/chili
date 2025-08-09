@@ -21,7 +21,7 @@ export const createSetValueHandler = (
   props: RadioGroupProps,
   setValue: SetState<string | number | null | undefined>,
 ) => (value: unknown) => {
-  const newValue = value as string | number | null | undefined;
+  const newValue = value as string | number | null;
   setValue(newValue);
 
   props.onChange?.({
@@ -29,5 +29,5 @@ export const createSetValueHandler = (
       name: props.name,
       value: newValue,
     },
-  } as any);
+  });
 };

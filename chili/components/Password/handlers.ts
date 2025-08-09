@@ -132,5 +132,5 @@ export const createSetValueHandler = (
       name: props.name,
       value: newValue,
     },
-  } as any);
+  });
 };

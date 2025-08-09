@@ -3,7 +3,12 @@ import * as helpers from './helpers';
 import type {
   ExternalValidator, Field, FormFieldHelpers, FormFieldsHelpers,
 } from './types';
-import { removeField, validate, getField, updateField } from '../components/Validation';
+import {
+  removeField,
+  validate,
+  getField,
+  updateField,
+} from '../components/Validation';
 import { getFieldValidState, removeForm } from '../components/Validation/helpers';
 import type { FormGetField } from '../components/Validation/types';
 

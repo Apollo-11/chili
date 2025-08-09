@@ -73,7 +73,9 @@ export const NumericTextBox = React.forwardRef((props: NumericTextBoxProps, ref:
     reset: createResetHandler({
       props, setUncontrolledValue, format, thousandsSeparator, value: normalizeValue(normalizeValueParams),
     }),
-    setValue: createSetValueHandler({ props, setUncontrolledValue, format, thousandsSeparator }),
+    setValue: createSetValueHandler({
+      props, setUncontrolledValue, format, thousandsSeparator,
+    }),
   });
 
   const wrapperClassNames = getClassNames(

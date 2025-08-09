@@ -115,7 +115,7 @@ export interface AddFieldData {
   isRequired?: boolean,
   requiredMessage?: string,
   reset: () => void,
-  setValue?: (value: unknown) => void,
+  setValue: (value: unknown) => void,
   suggestion?: Suggestion,
 }
 
@@ -133,7 +133,7 @@ export interface UpdateFieldData {
 
 export interface ValidationExtra {
   reset: () => void,
-  setValue?: (value: unknown) => void,
+  setValue: (value: unknown) => void,
 }
 
 export interface RemoveFieldOptions {

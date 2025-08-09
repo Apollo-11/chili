@@ -369,5 +369,5 @@ export const createSetValueHandler = ({
       name: props.name,
       suggestion,
     },
-  } as any);
+  });
 };

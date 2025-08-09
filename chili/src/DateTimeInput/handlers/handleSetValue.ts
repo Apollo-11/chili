@@ -14,7 +14,12 @@ export const createSetValueHandler = ({
   dispatch: React.Dispatch<AllActions>,
 }) => (value: unknown) => {
   const newValueInput = value as string;
-  const { format = 'dd.MM.yyyy', name, onChange, type = COMPONENT_TYPES.DATE_ONLY } = props;
+  const {
+    format = 'dd.MM.yyyy',
+    name,
+    onChange,
+    type = COMPONENT_TYPES.DATE_ONLY,
+  } = props;
 
   const mask = createMask(format, type);
   const maskedValue = maskValue(newValueInput, mask);
@@ -32,6 +37,6 @@ export const createSetValueHandler = ({
         date: newDate,
         value: newValueInput,
       },
-    } as any);
+    });
   }
 };

@@ -356,7 +356,7 @@ export const createResetHandler = ({
         name: props.name,
         value,
       },
-    } as any;
+    };
 
     props.onChange(customEvent);
   }

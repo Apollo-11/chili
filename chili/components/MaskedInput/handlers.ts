@@ -130,7 +130,7 @@ export const createResetHandler = ({
         value,
         inputValue: maskValue(value, props.mask, props.placeholderChar),
       },
-    } as any;
+    };
     props.onChange(customEvent);
   }
 };

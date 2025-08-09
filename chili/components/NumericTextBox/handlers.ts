@@ -295,7 +295,7 @@ export const createResetHandler = ({
       name: props.name,
       value,
     },
-  } as any);
+  });
 };
 
 export const createSetValueHandler = ({

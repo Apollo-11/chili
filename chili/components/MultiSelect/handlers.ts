@@ -260,7 +260,7 @@ export const createResetHandler = ({
         deselectedValues: undefined,
         selectedValue: undefined,
       },
-    } as any;
+    };
     props.onChange(customEvent);
   }
 };
