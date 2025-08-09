@@ -41,7 +41,7 @@ export interface RadioGroupProps extends ValidationProps {
   [x: string]: unknown,
 }
 
-export interface RadioButtonProps extends React.HTMLAttributes<HTMLInputElement> {
+export interface RadioButtonProps extends Omit<React.HTMLAttributes<HTMLInputElement>, 'onChange'> {
   /** Radio button id */
   id?: string,
   /** Disabled state */
