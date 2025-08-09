@@ -271,13 +271,14 @@ export const createSetValueHandler = ({
 }: {
   props: MultiSelectProps,
   setValue: SetState<Value[]>,
-}) => (value: Value[]) => {
-  setValue(value);
+}) => (value: unknown) => {
+  const newValue = value as Value[];
+  setValue(newValue);
   if (isFunction(props.onChange)) {
     const customEvent = {
       component: {
         name: props.name,
-        value,
+        value: newValue,
         deselectedValues: undefined,
         selectedValue: undefined,
       },

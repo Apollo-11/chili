@@ -20,13 +20,14 @@ export const createResetHandler = (
 export const createSetValueHandler = (
   props: RadioGroupProps,
   setValue: SetState<string | number | null | undefined>,
-) => (value: string | number | null | undefined) => {
-  setValue(value);
+) => (value: unknown) => {
+  const newValue = value as string | number | null | undefined;
+  setValue(newValue);
 
   props.onChange?.({
     component: {
       name: props.name,
-      value,
+      value: newValue,
     },
   } as any);
 };

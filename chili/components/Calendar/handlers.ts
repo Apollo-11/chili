@@ -168,11 +168,12 @@ export const createSetValueHandler = ({
 }: {
   props: StandaloneCalendarProps,
   dispatch: React.Dispatch<StandaloneCalendarActionTypes>,
-}) => (value: Date | null) => {
-  dispatch(setDate(value));
+}) => (value: unknown) => {
+  const newValue = value as Date | null;
+  dispatch(setDate(newValue));
   props.onChange?.({
     component: {
-      value,
+      value: newValue,
       name: props.name,
     },
   } as any);

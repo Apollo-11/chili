@@ -352,18 +352,19 @@ export const createSetValueHandler = ({
 }: {
   props: AutoCompleteProps,
   setStateValue: SetState<string>,
-}) => (value: string) => {
+}) => (value: unknown) => {
+  const newValue = value as string;
   const suggestion = getSuggestionFromValue({
     data: props.data || [],
-    value,
+    value: newValue,
     textField: props.textField,
   });
 
-  setStateValue(value);
+  setStateValue(newValue);
 
   props.onChange?.({
     component: {
-      value,
+      value: newValue,
       method: ChangeMethod.reset,
       name: props.name,
       suggestion,

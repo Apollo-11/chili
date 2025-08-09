@@ -47,7 +47,7 @@ export const ButtonGroup = React.forwardRef((props: ButtonGroupProps, ref?: Reac
     reset: createResetHandler({
       props, setUncontrolledValue, value: defaultValue,
     }),
-    setValue: createSetValueHandler({ props, setUncontrolledValue }) as (value: unknown) => void,
+    setValue: createSetValueHandler({ props, setUncontrolledValue }),
   });
 
   const handleChange = createChangeHandler(props, {

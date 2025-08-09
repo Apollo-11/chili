@@ -12,13 +12,14 @@ export const createSetValueHandler = ({
 }: {
   props: DateTimeInputProps,
   dispatch: React.Dispatch<AllActions>,
-}) => (value: string) => {
+}) => (value: unknown) => {
+  const newValueInput = value as string;
   const { format = 'dd.MM.yyyy', name, onChange, type = COMPONENT_TYPES.DATE_ONLY } = props;
 
   const mask = createMask(format, type);
-  const maskedValue = maskValue(value, mask);
+  const maskedValue = maskValue(newValueInput, mask);
   const newDate = stringToDate(maskedValue, format);
-  const newValue = newDate ? formatDateTime(newDate, format) : value;
+  const newValue = newDate ? formatDateTime(newDate, format) : newValueInput;
 
   dispatch(setValue(newValue));
   if (newDate && newDate.getDate()) dispatch(setDate(newDate));
@@ -29,7 +30,7 @@ export const createSetValueHandler = ({
       component: {
         name,
         date: newDate,
-        value,
+        value: newValueInput,
       },
     } as any);
   }

@@ -107,7 +107,7 @@ export const DateTimeInput = React.forwardRef((props: DateTimeInputProps, ref: R
     reset: createResetHandler({
       props, dispatch,
     }),
-    setValue: createSetValueHandler({ props, dispatch }) as (value: unknown) => void,
+    setValue: createSetValueHandler({ props, dispatch }),
   });
 
   useDateTimeInputEffects({

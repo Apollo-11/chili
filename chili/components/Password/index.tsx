@@ -77,7 +77,7 @@ export const Password = React.forwardRef((props: PasswordProps, ref: React.Ref<H
     value,
   }, {
     reset: createResetHandler(props, setValue),
-    setValue: createSetValueHandler(props, setValue) as (value: unknown) => void,
+    setValue: createSetValueHandler(props, setValue),
   });
 
   const theme = useTheme(themeProp, COMPONENTS_NAMESPACES.password);

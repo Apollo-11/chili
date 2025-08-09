@@ -308,14 +308,15 @@ export const createSetValueHandler = ({
   setUncontrolledValue: SetState<number | null>,
   format: string,
   thousandsSeparator: string,
-}) => (value: number | null) => {
-  setUncontrolledValue(value);
+}) => (value: unknown) => {
+  const newValue = value as number | null;
+  setUncontrolledValue(newValue);
 
   props.onChange?.({
     component: {
-      formattedValue: formatValue({ value, format, thousandsSeparator }),
+      formattedValue: formatValue({ value: newValue, format, thousandsSeparator }),
       name: props.name,
-      value,
+      value: newValue,
     },
   });
 };

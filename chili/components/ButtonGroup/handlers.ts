@@ -70,13 +70,14 @@ export const createSetValueHandler = ({
 }: {
   props: ButtonGroupProps,
   setUncontrolledValue: SetState<Value | Value[] | undefined>,
-}) => (value?: Value | Value[]) => {
-  setUncontrolledValue(value);
+}) => (value: unknown) => {
+  const newValue = value as Value | Value[] | undefined;
+  setUncontrolledValue(newValue);
   if (isFunction(props.onChange)) {
     const customEvent = {
       component: {
         name: props.name,
-        value,
+        value: newValue,
       },
     };
     props.onChange(customEvent);

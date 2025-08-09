@@ -63,8 +63,7 @@ export interface Field {
   name: string,
   requiredMessage?: string,
   reset: () => void,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  setValue: (value: any) => void,
+  setValue: (value: unknown) => void,
   setIsValid: SetState<boolean>,
   setMessages: SetState<string[] | undefined>,
   shouldValidateUnmounted: boolean,

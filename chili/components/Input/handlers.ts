@@ -122,13 +122,14 @@ export const createResetHandler = (
 export const createSetValueHandler = (
   props: InputProps,
   setValue: SetState<string>,
-) => (value: string) => {
-  setValue(value);
+) => (value: unknown) => {
+  const newValue = value as string;
+  setValue(newValue);
 
   props.onChange?.({
     component: {
       name: props.name,
-      value,
+      value: newValue,
     },
   } as any);
 };

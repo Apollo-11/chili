@@ -35,7 +35,7 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.
     value,
   }, {
     reset: createResetHandler(props, setValueState, defaultValue),
-    setValue: createSetValueHandler(props, setValueState) as (value: unknown) => void,
+    setValue: createSetValueHandler(props, setValueState),
   });
 
   const combinedClassNames = getClassNames(

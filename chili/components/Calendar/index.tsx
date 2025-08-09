@@ -58,7 +58,7 @@ export const Calendar = React.forwardRef((props: StandaloneCalendarProps, ref?: 
     reset: createResetHandler({
       props, dispatch, value: null,
     }),
-    setValue: createSetValueHandler({ props, dispatch }) as (value: unknown) => void,
+    setValue: createSetValueHandler({ props, dispatch }),
   });
 
   // these flags are used to switch off header buttons in min-max case

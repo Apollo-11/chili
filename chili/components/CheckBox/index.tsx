@@ -42,7 +42,7 @@ export const CheckBox = React.forwardRef((props: CheckBoxProps, ref?: React.Ref<
     value,
   }, {
     reset: createResetHandler(props, setUncontrolledValue),
-    setValue: createSetValueHandler(props, setUncontrolledValue) as (value: unknown) => void,
+    setValue: createSetValueHandler(props, setUncontrolledValue),
   });
 
   const Wrapper = useElement(

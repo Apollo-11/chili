@@ -141,14 +141,15 @@ export const createSetValueHandler = ({
 }: {
   props: MaskedInputProps,
   setValue: SetState<string>,
-}) => (value: string) => {
-  setValue(value);
+}) => (value: unknown) => {
+  const newValue = value as string;
+  setValue(newValue);
   if (isFunction(props.onChange)) {
     const customEvent = {
       component: {
         name: props.name,
-        value,
-        inputValue: maskValue(value, props.mask, props.placeholderChar),
+        value: newValue,
+        inputValue: maskValue(newValue, props.mask, props.placeholderChar),
       },
     };
     props.onChange(customEvent);

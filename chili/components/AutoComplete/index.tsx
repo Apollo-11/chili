@@ -142,7 +142,7 @@ export const AutoComplete = React.forwardRef((props: AutoCompleteProps, ref: Rea
     reset: createResetHandler({
       props, setStateValue, value: defaultValue ?? '',
     }),
-    setValue: createSetValueHandler({ props, setStateValue }) as (value: unknown) => void,
+    setValue: createSetValueHandler({ props, setStateValue }),
   });
 
   const value = isValueControlled ? propValue : stateValue;

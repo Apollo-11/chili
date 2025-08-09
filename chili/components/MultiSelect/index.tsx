@@ -111,7 +111,7 @@ export const MultiSelect = React.forwardRef((props: MultiSelectProps, ref: React
     reset: createResetHandler({
       props, setValue, value: defaultValue || [],
     }),
-    setValue: createSetValueHandler({ props, setValue }) as (value: unknown) => void,
+    setValue: createSetValueHandler({ props, setValue }),
   });
 
   const [isFocused, setFocused] = React.useState<boolean>(false);

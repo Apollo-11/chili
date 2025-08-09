@@ -103,7 +103,7 @@ export const DropDownSelect = React.forwardRef((props: DropDownSelectProps, ref:
     reset: createResetHandler({
       props, mergeState, value: defaultValue,
     }),
-    setValue: createSetValueHandler({ props, mergeState }) as (value: unknown) => void,
+    setValue: createSetValueHandler({ props, mergeState }),
   });
 
   const inputRef = React.useRef<HTMLInputElement | null>(null);

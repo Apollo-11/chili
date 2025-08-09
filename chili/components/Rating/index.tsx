@@ -44,7 +44,7 @@ export const Rating = React.forwardRef((props: RatingProps, ref?: React.Ref<HTML
     value,
   }, {
     reset: createResetHandler(props, setUncontrolledValue),
-    setValue: createSetValueHandler(props, setUncontrolledValue) as (value: unknown) => void,
+    setValue: createSetValueHandler(props, setUncontrolledValue),
   });
 
   React.useEffect(() => {

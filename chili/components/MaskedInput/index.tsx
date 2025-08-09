@@ -67,7 +67,7 @@ export const MaskedInput = React.forwardRef((props: MaskedInputProps, ref: React
     reset: createResetHandler({
       props, setValue, value: toStringOrEmpty(defaultValue || ''),
     }),
-    setValue: createSetValueHandler({ props, setValue }) as (value: unknown) => void,
+    setValue: createSetValueHandler({ props, setValue }),
   });
 
   const state = { value: valueState, isFocused, isValid };

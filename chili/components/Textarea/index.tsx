@@ -53,7 +53,7 @@ export const Textarea = React.forwardRef((props: TextareaProps, ref: React.Ref<H
     reset: createResetHandler({
       props, setValue: setValueState, value: defaultValue || '',
     }),
-    setValue: createSetValueHandler(props, setValueState) as (value: unknown) => void,
+    setValue: createSetValueHandler(props, setValueState),
   });
 
   const handleChange = createChangeHandler(props, setValueState);

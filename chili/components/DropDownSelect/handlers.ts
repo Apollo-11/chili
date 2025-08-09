@@ -368,14 +368,15 @@ export const createSetValueHandler = ({
 }: {
   props: DropDownSelectProps,
   mergeState: (state: Partial<DropDownSelectState>) => void,
-}) => (value: Value) => {
-  mergeState({ value });
+}) => (value: unknown) => {
+  const newValue = value as Value;
+  mergeState({ value: newValue });
 
   if (isFunction(props.onChange)) {
     const customEvent = {
       component: {
         name: props.name,
-        value,
+        value: newValue,
       },
     };
 
