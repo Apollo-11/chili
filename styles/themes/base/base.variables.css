@@ -14,7 +14,7 @@
 
   --chili-font-color: #09090b; /* tailwind neutral 950 */
   --chili-font-color-hihglight: #7f1d1d; /* tailwind neutral 950 */
-  --chili-font-color-disabled: var(--chili-base-color-disabled);
+  --chili-font-color-disabled: #404040; /* tailwind neutral 700 */
 
   /* borders and clickable elements */
   --chili-base-color: #a3a3a3; /* tailwind neutral 400 */
@@ -138,6 +138,7 @@
   --chili-input-line-height: var(--chili-line-height);
   --chili-input-font-weight: var(--chili-font-weight);
   --chili-input-text-color: var(--chili-font-color);
+  --chili-input-text-color-disabled: var(--chili-font-color-disabled);
   --chili-input-border-color: var(--chili-base-color);
   --chili-input-border-color-hover: var(--chili-base-color-hover);
   --chili-input-border-radius: var(--chili-border-radius);

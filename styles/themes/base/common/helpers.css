@@ -22,7 +22,7 @@
 
   .chili-input-element {
     background-color: var(--chili-input-bg-color-disabled);
-    color: var(--chili-font-color-disabled);
+    color: var(--chili-input-text-color-disabled);
   }
 
   .chili-input-icon {
