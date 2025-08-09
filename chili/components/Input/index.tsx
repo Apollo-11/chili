@@ -15,6 +15,7 @@ import {
   createFocusHandler,
   createKeyDownHandler,
   createResetHandler,
+  createSetValueHandler,
 } from './handlers';
 import { getValue } from './helpers';
 
@@ -61,6 +62,7 @@ export const Input = React.forwardRef((props: InputProps, ref: React.Ref<HTMLHtm
     value,
   }, {
     reset: createResetHandler(props, setValue),
+    setValue: createSetValueHandler(props, setValue),
   });
 
   const theme = useTheme(themeProp, COMPONENTS_NAMESPACES.input);

@@ -13,6 +13,7 @@ import {
   createFocusHandler,
   createKeyDownHandler,
   createResetHandler,
+  createSetValueHandler,
 } from './handlers';
 import { getValue, rulesToValidators } from './helpers';
 import { PasswordVisibilityIcon } from './PasswordVisibilityIcon';
@@ -76,6 +77,7 @@ export const Password = React.forwardRef((props: PasswordProps, ref: React.Ref<H
     value,
   }, {
     reset: createResetHandler(props, setValue),
+    setValue: createSetValueHandler(props, setValue),
   });
 
   const theme = useTheme(themeProp, COMPONENTS_NAMESPACES.password);

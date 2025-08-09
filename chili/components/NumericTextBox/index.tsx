@@ -15,6 +15,7 @@ import {
   createKeyDownHandler,
   createPasteHandler,
   createResetHandler,
+  createSetValueHandler,
 } from './handlers';
 import {
   formatInputValue, formatValue, getRestProps, getValue, normalizeValue,
@@ -71,6 +72,9 @@ export const NumericTextBox = React.forwardRef((props: NumericTextBoxProps, ref:
   }, {
     reset: createResetHandler({
       props, setUncontrolledValue, format, thousandsSeparator, value: normalizeValue(normalizeValueParams),
+    }),
+    setValue: createSetValueHandler({
+      props, setUncontrolledValue, format, thousandsSeparator,
     }),
   });
 

@@ -16,3 +16,18 @@ export const createResetHandler = (
     },
   });
 };
+
+export const createSetValueHandler = (
+  props: RadioGroupProps,
+  setValue: SetState<string | number | null | undefined>,
+) => (value: unknown) => {
+  const newValue = value as string | number | null;
+  setValue(newValue);
+
+  props.onChange?.({
+    component: {
+      name: props.name,
+      value: newValue,
+    },
+  });
+};

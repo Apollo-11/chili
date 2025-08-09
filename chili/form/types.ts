@@ -29,6 +29,7 @@ export interface FormFieldHelpers {
   get: () => FormGetField | undefined,
   remove: () => void,
   reset: () => boolean,
+  setValue: (value: unknown) => boolean,
   validate: (warpedValidator?: ExternalValidator | ExternalValidator[]) => Field | undefined,
 }
 

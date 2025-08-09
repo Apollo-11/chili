@@ -9,7 +9,7 @@ import { COMPONENTS_NAMESPACES } from '../../constants';
 import type {
   ChangeEvent, RadioGroupProps, WrapperProps,
 } from './types';
-import { createResetHandler } from './handlers';
+import { createResetHandler, createSetValueHandler } from './handlers';
 import { useValidation } from '../Validation';
 
 export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.Ref<HTMLElement>): React.ReactElement => {
@@ -35,6 +35,7 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.
     value,
   }, {
     reset: createResetHandler(props, setValueState, defaultValue),
+    setValue: createSetValueHandler(props, setValueState),
   });
 
   const combinedClassNames = getClassNames(
@@ -74,7 +75,7 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.
             theme: { ...theme, ...child.props.theme },
           // todo find a better way to fix TS issue with the name property
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          } as any);
+          });
         }
         return child;
       })}

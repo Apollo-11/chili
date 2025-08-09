@@ -7,7 +7,7 @@ import type { MaskedInputProps } from './types';
 import { COMPONENTS_NAMESPACES } from '../../constants';
 import { useValidation } from '../Validation';
 import {
-  createBlurHandler, createChangeHandler, createFocusHandler, createKeyDownHandler, createResetHandler,
+  createBlurHandler, createChangeHandler, createFocusHandler, createKeyDownHandler, createResetHandler, createSetValueHandler,
 } from './handlers';
 import { useCustomElements } from './hooks';
 import { getValue, getValueToValidate } from './helpers';
@@ -67,6 +67,7 @@ export const MaskedInput = React.forwardRef((props: MaskedInputProps, ref: React
     reset: createResetHandler({
       props, setValue, value: toStringOrEmpty(defaultValue || ''),
     }),
+    setValue: createSetValueHandler({ props, setValue }),
   });
 
   const state = { value: valueState, isFocused, isValid };

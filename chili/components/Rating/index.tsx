@@ -12,6 +12,7 @@ import {
   createMouseOutHandler,
   createMouseOverHandler,
   createResetHandler,
+  createSetValueHandler,
 } from './handlers';
 import { Span } from '../Span';
 import { Icon } from '../Icon';
@@ -43,6 +44,7 @@ export const Rating = React.forwardRef((props: RatingProps, ref?: React.Ref<HTML
     value,
   }, {
     reset: createResetHandler(props, setUncontrolledValue),
+    setValue: createSetValueHandler(props, setUncontrolledValue),
   });
 
   React.useEffect(() => {

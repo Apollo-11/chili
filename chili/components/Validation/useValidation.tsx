@@ -51,6 +51,7 @@ export const useValidation = <P extends ValidationProps, S extends ValidationSta
         isRequired,
         requiredMessage,
         reset: extra.reset,
+        setValue: extra.setValue,
         suggestion: state.suggestion,
       });
 

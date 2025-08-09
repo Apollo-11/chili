@@ -8,7 +8,7 @@ import { useValidation } from '../Validation';
 import { COMPONENTS_NAMESPACES } from '../../constants';
 import type { TextareaProps } from './types';
 import {
-  createBlurHandler, createChangeHandler, createFocusHandler, createKeyDownHandler, createResetHandler,
+  createBlurHandler, createChangeHandler, createFocusHandler, createKeyDownHandler, createResetHandler, createSetValueHandler,
 } from './handlers';
 import { useCustomElements } from './hooks';
 import { getValue } from './helpers';
@@ -53,6 +53,7 @@ export const Textarea = React.forwardRef((props: TextareaProps, ref: React.Ref<H
     reset: createResetHandler({
       props, setValue: setValueState, value: defaultValue || '',
     }),
+    setValue: createSetValueHandler(props, setValueState),
   });
 
   const handleChange = createChangeHandler(props, setValueState);

@@ -19,6 +19,7 @@ import {
   createMouseDownHandler,
   createResetHandler,
   createSelectHandler,
+  createSetValueHandler,
 } from './handlers';
 import { TagsContainer } from './TagsContainer';
 import { Div } from '../Div';
@@ -110,6 +111,7 @@ export const MultiSelect = React.forwardRef((props: MultiSelectProps, ref: React
     reset: createResetHandler({
       props, setValue, value: defaultValue || [],
     }),
+    setValue: createSetValueHandler({ props, setValue }),
   });
 
   const [isFocused, setFocused] = React.useState<boolean>(false);

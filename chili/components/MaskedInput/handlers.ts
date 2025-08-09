@@ -134,3 +134,24 @@ export const createResetHandler = ({
     props.onChange(customEvent);
   }
 };
+
+export const createSetValueHandler = ({
+  props,
+  setValue,
+}: {
+  props: MaskedInputProps,
+  setValue: SetState<string>,
+}) => (value: unknown) => {
+  const newValue = value as string;
+  setValue(newValue);
+  if (isFunction(props.onChange)) {
+    const customEvent = {
+      component: {
+        name: props.name,
+        value: newValue,
+        inputValue: maskValue(newValue, props.mask, props.placeholderChar),
+      },
+    };
+    props.onChange(customEvent);
+  }
+};

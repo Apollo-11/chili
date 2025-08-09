@@ -10,7 +10,7 @@ import { CALENDAR_CLICK_ACTION, DEFAULT_DATE_FORMAT, VIEW_TYPES } from '../../sr
 import { TodayButton } from '../../src/CalendarBase/TodayButton';
 import { useCustomElements } from './hooks';
 import { getCalendarConditions } from '../../src/CalendarBase/helpers';
-import { createClickHandler, createResetHandler } from './handlers';
+import { createClickHandler, createResetHandler, createSetValueHandler } from './handlers';
 import { stateReducer } from './reducer';
 import { useValidation } from '../Validation';
 
@@ -58,6 +58,7 @@ export const Calendar = React.forwardRef((props: StandaloneCalendarProps, ref?: 
     reset: createResetHandler({
       props, dispatch, value: null,
     }),
+    setValue: createSetValueHandler({ props, dispatch }),
   });
 
   // these flags are used to switch off header buttons in min-max case

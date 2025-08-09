@@ -118,3 +118,18 @@ export const createResetHandler = (
     },
   });
 };
+
+export const createSetValueHandler = (
+  props: InputProps,
+  setValue: SetState<string>,
+) => (value: unknown) => {
+  const newValue = value as string;
+  setValue(newValue);
+
+  props.onChange?.({
+    component: {
+      name: props.name,
+      value: newValue,
+    },
+  });
+};

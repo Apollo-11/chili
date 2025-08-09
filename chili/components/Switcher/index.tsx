@@ -36,7 +36,9 @@ export const Switcher = React.forwardRef((props: SwitcherProps, ref: React.Ref<H
   useValidation(props, {
     value,
   }, {
+    // todo: implement
     reset: () => {},
+    setValue: () => {},
   });
 
   const switcherClassName = getClassNames(

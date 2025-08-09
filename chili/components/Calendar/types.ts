@@ -16,7 +16,7 @@ import type { ValidationProps } from '../Validation/types';
 
 export interface ResetChangeEvent {
   component: {
-    value: null,
+    value: null | Date,
     name?: string,
   },
 }

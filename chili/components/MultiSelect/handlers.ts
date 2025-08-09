@@ -264,3 +264,25 @@ export const createResetHandler = ({
     props.onChange(customEvent);
   }
 };
+
+export const createSetValueHandler = ({
+  props,
+  setValue,
+}: {
+  props: MultiSelectProps,
+  setValue: SetState<Value[]>,
+}) => (value: unknown) => {
+  const newValue = value as Value[];
+  setValue(newValue);
+  if (isFunction(props.onChange)) {
+    const customEvent = {
+      component: {
+        name: props.name,
+        value: newValue,
+        deselectedValues: undefined,
+        selectedValue: undefined,
+      },
+    };
+    props.onChange(customEvent);
+  }
+};

@@ -361,3 +361,25 @@ export const createResetHandler = ({
     props.onChange(customEvent);
   }
 };
+
+export const createSetValueHandler = ({
+  props,
+  mergeState,
+}: {
+  props: DropDownSelectProps,
+  mergeState: (state: Partial<DropDownSelectState>) => void,
+}) => (value: unknown) => {
+  const newValue = value as Value;
+  mergeState({ value: newValue });
+
+  if (isFunction(props.onChange)) {
+    const customEvent = {
+      component: {
+        name: props.name,
+        value: newValue,
+      },
+    };
+
+    props.onChange(customEvent);
+  }
+};
