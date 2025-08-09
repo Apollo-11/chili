@@ -7,7 +7,11 @@ import {
 import { Div } from '../Div';
 import { COMPONENTS_NAMESPACES } from '../../constants';
 import type {
-  ChangeEvent, RadioGroupProps, WrapperProps,
+  ChangeEvent,
+  RadioButtonProps,
+  PropsFromParent,
+  RadioGroupProps,
+  WrapperProps,
 } from './types';
 import { createResetHandler, createSetValueHandler } from './handlers';
 import { useValidation } from '../Validation';
@@ -63,18 +67,18 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.
       ref={ref}
     >
       {React.Children.toArray(children).map((child) => {
-        if (child
+        if (
+          child
           && React.isValidElement(child)
           && (child.type === RadioButton || (child.type as { name?: string }).name === 'RadioButton')
         ) {
-          return React.cloneElement(child, {
+          const radioButtonChild = child as React.ReactElement<RadioButtonProps & PropsFromParent>;
+          return React.cloneElement(radioButtonChild, {
             name,
             onChange: handleChange,
-            isDisabled: isBoolean(isDisabled) ? isDisabled : child.props.isDisabled,
-            isChecked: child.props.value === value,
-            theme: { ...theme, ...child.props.theme },
-          // todo find a better way to fix TS issue with the name property
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            isDisabled: isBoolean(isDisabled) ? isDisabled : radioButtonChild.props.isDisabled,
+            isChecked: radioButtonChild.props.value === value,
+            theme: { ...theme, ...radioButtonChild.props.theme },
           });
         }
         return child;
