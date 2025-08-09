@@ -10,6 +10,7 @@
 .chili-disabled {
   cursor: not-allowed;
   background-color: var(--chili-input-bg-color-disabled);
+  color: var(--chili-font-color-disabled);
 
   &:hover {
     border-color: var(--chili-input-border-color);
@@ -21,6 +22,7 @@
 
   .chili-input-element {
     background-color: var(--chili-input-bg-color-disabled);
+    color: var(--chili-font-color-disabled);
   }
 
   .chili-input-icon {

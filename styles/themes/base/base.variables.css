@@ -14,6 +14,7 @@
 
   --chili-font-color: #09090b; /* tailwind neutral 950 */
   --chili-font-color-hihglight: #7f1d1d; /* tailwind neutral 950 */
+  --chili-font-color-disabled: var(--chili-base-color-disabled);
 
   /* borders and clickable elements */
   --chili-base-color: #a3a3a3; /* tailwind neutral 400 */
