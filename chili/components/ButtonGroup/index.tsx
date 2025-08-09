@@ -5,7 +5,7 @@ import {
   getClassNames, useTheme, useValue, useElement, useProps, getIsEmptyAndRequired,
 } from '../../utils';
 import { COMPONENTS_NAMESPACES } from '../../constants';
-import { createChangeHandler, createResetHandler } from './handlers';
+import { createChangeHandler, createResetHandler, createSetValueHandler } from './handlers';
 import { compareItems } from './helpers';
 import type {
   ButtonGroupProps, Value,
@@ -47,6 +47,7 @@ export const ButtonGroup = React.forwardRef((props: ButtonGroupProps, ref?: Reac
     reset: createResetHandler({
       props, setUncontrolledValue, value: defaultValue,
     }),
+    setValue: createSetValueHandler({ props, setUncontrolledValue }) as (value: unknown) => void,
   });
 
   const handleChange = createChangeHandler(props, {

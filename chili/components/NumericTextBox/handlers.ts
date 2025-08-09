@@ -295,5 +295,27 @@ export const createResetHandler = ({
       name: props.name,
       value,
     },
+  } as any);
+};
+
+export const createSetValueHandler = ({
+  props,
+  setUncontrolledValue,
+  format,
+  thousandsSeparator,
+}: {
+  props: NumericTextBoxProps,
+  setUncontrolledValue: SetState<number | null>,
+  format: string,
+  thousandsSeparator: string,
+}) => (value: number | null) => {
+  setUncontrolledValue(value);
+
+  props.onChange?.({
+    component: {
+      formattedValue: formatValue({ value, format, thousandsSeparator }),
+      name: props.name,
+      value,
+    },
   });
 };

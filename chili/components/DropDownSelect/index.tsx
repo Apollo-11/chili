@@ -19,6 +19,7 @@ import {
   createIconClickHandler,
   createKeyDownHandler,
   createResetHandler,
+  createSetValueHandler,
 } from './handlers';
 import { filterData, getComponentClassNames, getInputValue } from './helpers';
 import { useCorrectSuggestionsInControlledMode, useCustomElements, useSyncedHighlightedValue } from './hooks';
@@ -102,6 +103,7 @@ export const DropDownSelect = React.forwardRef((props: DropDownSelectProps, ref:
     reset: createResetHandler({
       props, mergeState, value: defaultValue,
     }),
+    setValue: createSetValueHandler({ props, mergeState }) as (value: unknown) => void,
   });
 
   const inputRef = React.useRef<HTMLInputElement | null>(null);

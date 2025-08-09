@@ -345,3 +345,28 @@ export const createResetHandler = ({
     },
   });
 };
+
+export const createSetValueHandler = ({
+  props,
+  setStateValue,
+}: {
+  props: AutoCompleteProps,
+  setStateValue: SetState<string>,
+}) => (value: string) => {
+  const suggestion = getSuggestionFromValue({
+    data: props.data || [],
+    value,
+    textField: props.textField,
+  });
+
+  setStateValue(value);
+
+  props.onChange?.({
+    component: {
+      value,
+      method: ChangeMethod.reset,
+      name: props.name,
+      suggestion,
+    },
+  } as any);
+};

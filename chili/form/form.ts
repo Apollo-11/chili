@@ -51,11 +51,11 @@ const getFormFieldHelpers = (formName: string, fieldName: string): FormFieldHelp
     }
     return true;
   },
-  set: (value) => {
+  setValue: (value) => {
     const field = getField(formName, fieldName);
     if (!field) return false;
     try {
-      field.reset();
+      field.setValue(value);
       updateField({
         formName,
         fieldName,

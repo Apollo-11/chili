@@ -64,7 +64,7 @@ const FormPage = () => (
   get: () => FormGetField | undefined,
   remove: () => void,
   reset: () => boolean,
-  set: (value: unknown) => boolean,
+  setValue: (value: unknown) => boolean,
   validate:
     (warpedValidator?: ExternalValidator | ExternalValidator[])
       => Field | undefined,
@@ -90,7 +90,7 @@ interface FormFieldsHelpers {
                 <b>reset</b> resets components to their empty/default state
               </P>
               <P className="mt-2">
-                <b>set</b> sets component value
+                <b>setValue</b> sets component value
               </P>
               <P className="mt-2">
                 <b>validate</b> triggers validation, no need to submit the form
@@ -115,6 +115,7 @@ interface Field {
   name: string,
   requiredMessage?: string,
   reset: () => void,
+  setValue: (value: any) => void,
   setIsValid: SetState<boolean>,
   setMessages: SetState<string[] | undefined>,
   shouldValidateUnmounted: boolean,
@@ -203,7 +204,7 @@ interface ExternalValidator {
       </L.Button>
 
       <L.Button
-        onClick={() => console.log(L.form('test-form-1', 'test-form-input-1').set('some text'))}
+        onClick={() => console.log(L.form('test-form-1', 'test-form-input-1').setValue('some text'))}
         _ml-4
       >
         set input

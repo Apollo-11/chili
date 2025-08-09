@@ -27,6 +27,7 @@ import {
   suggestionClickHandlerCreator,
   clearButtonClickHandlerCreator,
   createResetHandler,
+  createSetValueHandler,
 } from './handlers';
 
 import type {
@@ -141,6 +142,7 @@ export const AutoComplete = React.forwardRef((props: AutoCompleteProps, ref: Rea
     reset: createResetHandler({
       props, setStateValue, value: defaultValue ?? '',
     }),
+    setValue: createSetValueHandler({ props, setStateValue }) as (value: unknown) => void,
   });
 
   const value = isValueControlled ? propValue : stateValue;

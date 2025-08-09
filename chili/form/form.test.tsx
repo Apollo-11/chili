@@ -112,7 +112,7 @@ describe('reset uncontrolled form', () => {
   });
 });
 
-describe('set uncontrolled form', () => {
+describe('setValue uncontrolled form', () => {
   const formName = 'form-name-set';
   const fieldName = 'textarea';
   const component = (
@@ -125,7 +125,7 @@ describe('set uncontrolled form', () => {
   test('set new value', () => {
     render(component);
     act(() => {
-      const result = form(formName, fieldName).set('new-value');
+      const result = form(formName, fieldName).setValue('new-value');
       expect(result).toBeTruthy();
     });
     expect(screen.getByRole('textbox')).toHaveValue('new-value');

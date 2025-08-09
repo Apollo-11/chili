@@ -119,3 +119,17 @@ export const createResetHandler = (
     },
   });
 };
+
+export const createSetValueHandler = (
+  props: PasswordProps,
+  setValue: SetState<string>,
+) => (value: string) => {
+  setValue(value);
+
+  props.onChange?.({
+    component: {
+      name: props.name,
+      value,
+    },
+  } as any);
+};

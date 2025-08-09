@@ -45,3 +45,17 @@ export const createResetHandler = (
     },
   });
 };
+
+export const createSetValueHandler = (
+  props: CheckBoxProps,
+  setValue: SetState<boolean>,
+) => (value: boolean) => {
+  setValue(value);
+
+  props.onChange?.({
+    component: {
+      name: props.name,
+      value,
+    },
+  } as any);
+};

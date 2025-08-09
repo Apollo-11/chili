@@ -63,3 +63,18 @@ export const createResetHandler = (
     },
   });
 };
+
+export const createSetValueHandler = (
+  props: RatingProps,
+  setValue: React.Dispatch<React.SetStateAction<RatingValue>>,
+) => (value: RatingValue) => {
+  setValue(value);
+
+  props.onChange?.({
+    component: {
+      index: isNil(value) ? -1 : value - 1,
+      name: props.name,
+      value,
+    },
+  } as any);
+};

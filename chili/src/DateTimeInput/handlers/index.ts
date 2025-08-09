@@ -9,3 +9,4 @@ export {
 } from './handleMouseDown';
 export { createCalendarClickHandler } from './handleCalendarClick';
 export { createResetHandler } from './handleReset';
+export { createSetValueHandler } from './handleSetValue';

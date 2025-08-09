@@ -19,6 +19,7 @@ import {
   createFocusHandler,
   createKeyDownHandler,
   createResetHandler,
+  createSetValueHandler,
   handleErrors,
 } from './handlers';
 import {
@@ -106,6 +107,7 @@ export const DateTimeInput = React.forwardRef((props: DateTimeInputProps, ref: R
     reset: createResetHandler({
       props, dispatch,
     }),
+    setValue: createSetValueHandler({ props, dispatch }) as (value: unknown) => void,
   });
 
   useDateTimeInputEffects({

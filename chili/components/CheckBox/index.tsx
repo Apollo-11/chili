@@ -4,7 +4,7 @@ import {
   useTheme, useElement, generateId, useValue, useProps,
 } from '../../utils';
 import { COMPONENTS_NAMESPACES } from '../../constants';
-import { createChangeHandler, createResetHandler } from './handlers';
+import { createChangeHandler, createResetHandler, createSetValueHandler } from './handlers';
 import type { CheckBoxProps } from './types';
 import { ChiliContext } from '../ChiliProvider';
 import {
@@ -42,6 +42,7 @@ export const CheckBox = React.forwardRef((props: CheckBoxProps, ref?: React.Ref<
     value,
   }, {
     reset: createResetHandler(props, setUncontrolledValue),
+    setValue: createSetValueHandler(props, setUncontrolledValue) as (value: unknown) => void,
   });
 
   const Wrapper = useElement(
