@@ -286,14 +286,15 @@ export const createResetHandler = ({
   format: string,
   thousandsSeparator: string,
   value: number | null,
-}) => () => {
-  setUncontrolledValue(value);
+}) => (newValue?: unknown) => {
+  const finalValue = newValue !== undefined ? newValue as number | null : value;
+  setUncontrolledValue(finalValue);
 
   props.onChange?.({
     component: {
-      formattedValue: formatValue({ value, format, thousandsSeparator }),
+      formattedValue: formatValue({ value: finalValue, format, thousandsSeparator }),
       name: props.name,
-      value,
+      value: finalValue,
     },
   });
 };

@@ -3,7 +3,7 @@ import * as helpers from './helpers';
 import type {
   ExternalValidator, Field, FormFieldHelpers, FormFieldsHelpers,
 } from './types';
-import { removeField, validate, getField } from '../components/Validation';
+import { removeField, validate, getField, updateField } from '../components/Validation';
 import { getFieldValidState, removeForm } from '../components/Validation/helpers';
 import type { FormGetField } from '../components/Validation/types';
 
@@ -44,6 +44,28 @@ const getFormFieldHelpers = (formName: string, fieldName: string): FormFieldHelp
     const field = getField(formName, fieldName);
     try {
       field?.reset();
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error);
+      return false;
+    }
+    return true;
+  },
+  set: (value) => {
+    const field = getField(formName, fieldName);
+    if (!field) return false;
+    try {
+      field.reset(value);
+      updateField({
+        formName,
+        fieldName,
+        value,
+        isRequired: field.isRequired,
+        requiredMessage: field.requiredMessage,
+        shouldValidateUnmounted: field.shouldValidateUnmounted,
+        suggestion: field.suggestion,
+        validators: field.validators,
+      });
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);

@@ -30,13 +30,14 @@ export const createChangeHandler = (
 export const createResetHandler = (
   props: CheckBoxProps,
   setValue: SetState<boolean>,
-) => () => {
-  const newValue = (() => {
-    if (!isNil(props.defaultValue)) return props.defaultValue;
-    return false;
-  })();
+) => (value?: unknown) => {
+  const newValue = value !== undefined
+    ? value as boolean
+    : ((!isNil(props.defaultValue)) ? props.defaultValue : false);
 
-  setValue(newValue);
+  if (props.value === undefined) {
+    setValue(newValue);
+  }
 
   props.onChange?.({
     component: {

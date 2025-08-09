@@ -49,15 +49,14 @@ export const createResetHandler = ({
   props: ButtonGroupProps,
   setUncontrolledValue: SetState<Value | Value[] | undefined>,
   value?: Value | Value[],
-}) => () => {
-  setUncontrolledValue({
-    value,
-  });
+}) => (newValue?: unknown) => {
+  const finalValue = newValue !== undefined ? newValue as Value | Value[] : value;
+  setUncontrolledValue(finalValue as any);
   if (isFunction(props.onChange)) {
     const customEvent = {
       component: {
         name: props.name,
-        value,
+        value: finalValue,
       },
     };
     props.onChange(customEvent);

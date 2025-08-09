@@ -93,12 +93,15 @@ export const createResetHandler = ({
   props: TextareaProps,
   setValue: SetState<string>,
   value: string,
-}) => () => {
-  setValue(value);
+}) => (newValue?: unknown) => {
+  const finalValue = newValue !== undefined ? newValue as string : value;
+  if (props.value === undefined) {
+    setValue(finalValue);
+  }
   if (isFunction(props.onChange)) {
     const customEvent = {
       component: {
-        value,
+        value: finalValue,
         name: props.name,
       },
     };

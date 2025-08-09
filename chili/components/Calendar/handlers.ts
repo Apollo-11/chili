@@ -151,13 +151,14 @@ export const createResetHandler = ({
 }: {
   props: StandaloneCalendarProps,
   dispatch: React.Dispatch<StandaloneCalendarActionTypes>,
-  value: null,
-}) => () => {
-  dispatch(setDate(null));
+  value: Date | null,
+}) => (newValue?: unknown) => {
+  const finalValue = newValue !== undefined ? newValue as Date | null : value;
+  dispatch(setDate(finalValue));
   props.onChange({
     component: {
-      value,
+      value: finalValue,
       name: props.name,
     },
-  });
+  } as any);
 };

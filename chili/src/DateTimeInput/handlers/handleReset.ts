@@ -10,20 +10,22 @@ export const createResetHandler = ({
 }: {
   props: DateTimeInputProps,
   dispatch: React.Dispatch<AllActions>,
-}) => () => {
+}) => (newVal?: unknown) => {
   const {
     defaultValue, format = 'dd.MM.yyyy', name, onChange,
   } = props;
 
+  const sourceValue = newVal !== undefined ? newVal as string | Date | null : defaultValue;
+
   const date = (() => {
-    if (isDate(defaultValue)) return defaultValue;
-    if (typeof defaultValue === 'string') return stringToDate(defaultValue, format);
+    if (isDate(sourceValue)) return sourceValue;
+    if (typeof sourceValue === 'string') return stringToDate(sourceValue, format);
     return null;
   })();
 
   const value = (() => {
-    if (isDate(defaultValue)) return formatDateTime(defaultValue, format);
-    if (typeof defaultValue === 'string') return defaultValue;
+    if (isDate(sourceValue)) return formatDateTime(sourceValue, format);
+    if (typeof sourceValue === 'string') return sourceValue;
     return '';
   })();
   dispatch(setValue(value));

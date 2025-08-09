@@ -112,6 +112,26 @@ describe('reset uncontrolled form', () => {
   });
 });
 
+describe('set uncontrolled form', () => {
+  const formName = 'form-name-set';
+  const fieldName = 'textarea';
+  const component = (
+    <Textarea
+      form={formName}
+      name={fieldName}
+    />
+  );
+
+  test('set new value', () => {
+    render(component);
+    act(() => {
+      const result = form(formName, fieldName).set('new-value');
+      expect(result).toBeTruthy();
+    });
+    expect(screen.getByRole('textbox')).toHaveValue('new-value');
+  });
+});
+
 describe('validate controlled form', () => {
   const formName = 'form-name-validate';
   const fieldValue = 'field-value';
