@@ -160,6 +160,12 @@ const Home = () => (
       </P>
 
       <P>
+        <A href="/validation-examples/persistence">
+          Persistence examples
+        </A>
+      </P>
+
+      <P>
         <A href="/validation-examples/predefined-validators">
           More validation examples
         </A>

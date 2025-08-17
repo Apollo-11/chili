@@ -13,6 +13,7 @@ export const ValidationSection = ({
   invalidMessageRender,
   requiredMessage,
   shouldValidateUnmounted,
+  persistIn,
   validator,
 }: {
   all?: boolean,
@@ -24,6 +25,7 @@ export const ValidationSection = ({
   invalidMessageRender?: boolean,
   requiredMessage?: boolean,
   shouldValidateUnmounted?: boolean,
+  persistIn?: boolean,
   validator?: boolean,
 }) => (
   <Section>
@@ -73,6 +75,11 @@ export const ValidationSection = ({
           <TdCode>shouldValidateUnmounted</TdCode>
           <TdCode>boolean</TdCode>
           <Td>The field can still affect form submission even if it is not rendered</Td>
+        </L.Tr>
+        <L.Tr shouldRender={Boolean(all || persistIn)}>
+          <TdCode>persistIn</TdCode>
+          <TdCode>'innerStorage' | 'sessionStorage' | 'localStorage'</TdCode>
+          <Td>Persist field value when unmounted</Td>
         </L.Tr>
 
         <L.Tr shouldRender={Boolean(all || validator)}>

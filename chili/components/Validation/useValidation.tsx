@@ -4,7 +4,7 @@ import * as React from 'react';
 import { isString, isNil } from 'lodash';
 import { useElement } from '../../utils';
 import {
-  addField, getValidators, removeField, updateField, validate,
+  addField, getValidators, removeField, updateField, validate, getPersistedValue, setPersistedValue,
 } from './helpers';
 import { InvalidMessage as DefaultInvalidMessage } from './InvalidMessage';
 import type {
@@ -21,15 +21,23 @@ export const useValidation = <P extends ValidationProps, S extends ValidationSta
     isRequired = false,
     isValid: isValidProp,
     shouldValidateUnmounted,
+    persistIn,
     validator,
     invalidMessage,
     requiredMessage,
     invalidMessageRender,
   } = props;
 
-  const value = props.value === undefined && state
+  const uncontrolled = props.value === undefined;
+  const persistedValue = form && name && persistIn ? getPersistedValue(form, name, persistIn) : undefined;
+
+  let value = uncontrolled && state
     ? state.value
     : props.value;
+
+  if (uncontrolled && persistedValue !== undefined) {
+    value = persistedValue;
+  }
 
   const [isValid, setIsValid] = React.useState<boolean>(true);
 
@@ -47,6 +55,7 @@ export const useValidation = <P extends ValidationProps, S extends ValidationSta
         setIsValid,
         setMessages,
         shouldValidateUnmounted,
+        persistIn,
         validators,
         isRequired,
         requiredMessage,
@@ -80,11 +89,25 @@ export const useValidation = <P extends ValidationProps, S extends ValidationSta
         isRequired,
         validators,
         shouldValidateUnmounted,
+        persistIn,
         requiredMessage,
         suggestion: state.suggestion,
       });
     }
-  }, [form, isRequired, name, value, isValidProp, validator, invalidMessage, shouldValidateUnmounted, requiredMessage, state.suggestion]);
+  }, [form, isRequired, name, value, isValidProp, validator, invalidMessage, shouldValidateUnmounted, persistIn, requiredMessage, state.suggestion]);
+
+  React.useEffect(() => {
+    if (form && name && persistIn) {
+      setPersistedValue(form, name, persistIn, value);
+    }
+  }, [form, name, persistIn, value]);
+
+  React.useEffect(() => {
+    if (uncontrolled && persistedValue !== undefined) {
+      extra.setValue(persistedValue);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // user gets this function to validate the current field
   // it can be called in a handler, e.g. in onBlur
