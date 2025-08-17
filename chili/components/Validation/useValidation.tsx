@@ -4,7 +4,7 @@ import * as React from 'react';
 import { isString, isNil } from 'lodash';
 import { useElement } from '../../utils';
 import {
-  addField, getValidators, removeField, updateField, validate, getPersistedValue,
+  addField, getValidators, removeField, updateField, validate, getPersistedValue, setPersistedValue,
 } from './helpers';
 import { InvalidMessage as DefaultInvalidMessage } from './InvalidMessage';
 import type {
@@ -95,6 +95,12 @@ export const useValidation = <P extends ValidationProps, S extends ValidationSta
       });
     }
   }, [form, isRequired, name, value, isValidProp, validator, invalidMessage, shouldValidateUnmounted, persistIn, requiredMessage, state.suggestion]);
+
+  React.useEffect(() => {
+    if (form && name && persistIn) {
+      setPersistedValue(form, name, persistIn, value);
+    }
+  }, [form, name, persistIn, value]);
 
   React.useEffect(() => {
     if (uncontrolled && persistedValue !== undefined) {
