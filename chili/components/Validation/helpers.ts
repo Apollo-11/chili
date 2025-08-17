@@ -9,8 +9,36 @@ import type {
   PredefinedValidator, RemoveFieldOptions, UpdateFieldData,
   Validator,
   ValidatorObject,
+  PersistIn,
 } from './types';
 import { checkIsFilled } from '../../form/helpers';
+
+const getStorageKey = (formName: string, fieldName: string): string => `chili-${formName}-${fieldName}`;
+
+const saveToStorage = (storage: 'sessionStorage' | 'localStorage', key: string, value: unknown): void => {
+  try {
+    window[storage].setItem(key, JSON.stringify(value));
+  } catch {
+    /* noop */
+  }
+};
+
+const readFromStorage = (storage: 'sessionStorage' | 'localStorage', key: string): unknown => {
+  try {
+    const item = window[storage].getItem(key);
+    return item != null ? JSON.parse(item) : undefined;
+  } catch {
+    return undefined;
+  }
+};
+
+const removeFromStorage = (storage: 'sessionStorage' | 'localStorage', key: string): void => {
+  try {
+    window[storage].removeItem(key);
+  } catch {
+    /* noop */
+  }
+};
 
 export const getForms = (formName?: string | string[]): Form[] => {
   // @ts-expect-error no validation field in window
@@ -48,6 +76,28 @@ export const getField = (formName?: string, fieldName?: string): Field | undefin
   if (!currentField) return undefined;
 
   return currentField;
+};
+
+export const getPersistedValue = (formName: string, fieldName: string, persistIn: PersistIn): unknown => {
+  if (persistIn === 'innerStorage') {
+    return getField(formName, fieldName)?.value;
+  }
+  if (persistIn === 'sessionStorage' || persistIn === 'localStorage') {
+    return readFromStorage(persistIn, getStorageKey(formName, fieldName));
+  }
+  return undefined;
+};
+
+export const setPersistedValue = (formName: string, fieldName: string, persistIn: PersistIn | undefined, value: unknown): void => {
+  if (persistIn === 'sessionStorage' || persistIn === 'localStorage') {
+    saveToStorage(persistIn, getStorageKey(formName, fieldName), value);
+  }
+};
+
+export const removePersistedValue = (formName: string, fieldName: string, persistIn: PersistIn | undefined): void => {
+  if (persistIn === 'sessionStorage' || persistIn === 'localStorage') {
+    removeFromStorage(persistIn, getStorageKey(formName, fieldName));
+  }
 };
 
 export const validate = (formName: string | undefined, fieldName?: string, externalValue?: unknown): boolean => {
@@ -127,6 +177,7 @@ export const addField = ({
   setIsValid,
   setMessages,
   shouldValidateUnmounted = false,
+  persistIn,
   validators,
   isRequired = false,
   requiredMessage,
@@ -148,6 +199,7 @@ export const addField = ({
         setIsValid,
         setMessages,
         shouldValidateUnmounted,
+        persistIn,
         validators,
         isRequired,
         requiredMessage,
@@ -158,6 +210,8 @@ export const addField = ({
     }];
 
     setForms(newForms);
+
+    setPersistedValue(formName, fieldName, persistIn, value);
 
     return;
   }
@@ -175,6 +229,7 @@ export const addField = ({
         setMessages,
         value,
         shouldValidateUnmounted,
+        persistIn,
         validators,
         isRequired,
         requiredMessage,
@@ -188,17 +243,24 @@ export const addField = ({
 
     setForms(newForms);
 
+    setPersistedValue(formName, fieldName, persistIn, value);
+
     return;
   }
 
-  if (currentField.shouldValidateUnmounted) {
+  if (currentField.shouldValidateUnmounted || currentField.persistIn) {
     const newForms = [...forms.map((form: Form): Form => {
       if (form.name !== formName) return form;
 
       const newFields = [...currentForm.fields.map((field) => {
         if (field.name !== fieldName) return field;
 
-        return { ...field, setIsValid, setValue: setValue || field.setValue };
+        return {
+          ...field,
+          setIsValid,
+          setValue: setValue || field.setValue,
+          persistIn: persistIn || field.persistIn,
+        };
       })];
 
       return { name: formName, fields: newFields };
@@ -206,6 +268,8 @@ export const addField = ({
 
     setForms(newForms);
   }
+
+  setPersistedValue(formName, fieldName, persistIn || currentField.persistIn, value);
 };
 
 export const removeField = (formName: string, fieldName: string, options: RemoveFieldOptions = {}): void => {
@@ -225,14 +289,27 @@ export const removeField = (formName: string, fieldName: string, options: Remove
     return;
   }
 
-  if (currentField.shouldValidateUnmounted && shouldRemoveUnmounted !== true) {
+  if ((currentField.shouldValidateUnmounted || currentField.persistIn) && shouldRemoveUnmounted !== true) {
+    if (currentField.persistIn === 'sessionStorage' || currentField.persistIn === 'localStorage') {
+      setPersistedValue(formName, fieldName, currentField.persistIn, currentField.value);
+    }
     const newForms = [...forms.map((form: Form): Form => {
       if (form.name !== formName) return form;
 
       const newFields = [...currentForm.fields.map((field) => {
         if (field.name !== fieldName) return field;
-        // stub for unmounted component
-        return { ...field, setIsValid: () => {} };
+        if (currentField.shouldValidateUnmounted) {
+          // stub for unmounted component
+          return { ...field, setIsValid: () => {} };
+        }
+        return {
+          ...field,
+          setIsValid: () => {},
+          isRequired: false,
+          validators: [],
+          isValid: true,
+          invalidMessages: undefined,
+        };
       })];
 
       return { name: formName, fields: newFields };
@@ -252,6 +329,10 @@ export const removeField = (formName: string, fieldName: string, options: Remove
   })];
 
   setForms(newForms.filter((form) => form.fields.length !== 0));
+
+  if (currentField.persistIn === 'sessionStorage' || currentField.persistIn === 'localStorage') {
+    removePersistedValue(formName, fieldName, currentField.persistIn);
+  }
 };
 
 export const removeForm = (formName: string): void => {
@@ -274,6 +355,7 @@ export const updateField = ({
   isRequired = false,
   requiredMessage,
   shouldValidateUnmounted = false,
+  persistIn,
   suggestion,
   validators,
 }: UpdateFieldData): void => {
@@ -317,6 +399,7 @@ export const updateField = ({
         isRequired,
         requiredMessage,
         shouldValidateUnmounted,
+        persistIn,
         suggestion,
         validators,
       };
@@ -334,6 +417,8 @@ export const updateField = ({
   }
 
   setForms(newForms);
+
+  setPersistedValue(formName, fieldName, persistIn || currentField.persistIn, value);
 };
 
 export const getInvalidMessage = (formName?: string, fieldName?: string): string[] | undefined => {
