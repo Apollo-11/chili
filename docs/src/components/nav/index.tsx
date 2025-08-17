@@ -53,6 +53,7 @@ export const MainNav = () => (
     <ul>
       {/* <NavLi to='/examples/is-required'>isRequired</NavLi> */}
       <NavLi to="/validation-examples/predefined-validators">predefined validators</NavLi>
+      <NavLi to="/validation-examples/persistence">persistence</NavLi>
     </ul>
 
     <div className="py-4 font-bold">

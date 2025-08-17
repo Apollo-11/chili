@@ -5,6 +5,8 @@ import type { GlobalDefaultTheme } from '../../utils/useTheme';
 import type { COMPONENTS_NAMESPACES } from '../../constants';
 import type { Suggestion } from '../AutoComplete/types';
 
+export type PersistIn = 'innerStorage' | 'sessionStorage' | 'localStorage';
+
 export interface ValidationProps {
   form?: string,
   name?: string,
@@ -15,6 +17,7 @@ export interface ValidationProps {
   invalidMessage?: string,
   requiredMessage?: string,
   shouldValidateUnmounted?: boolean,
+  persistIn?: PersistIn,
   invalidMessageRender?: CustomRender<ValidationProps, ValidationState, InvalidMessageProps>,
 }
 
@@ -67,6 +70,7 @@ export interface Field {
   setIsValid: SetState<boolean>,
   setMessages: SetState<string[] | undefined>,
   shouldValidateUnmounted: boolean,
+  persistIn?: PersistIn,
   suggestion?: Suggestion,
   validators: NormalizedValidatorObject[],
   value: any,
@@ -111,6 +115,7 @@ export interface AddFieldData {
   setIsValid: SetState<boolean>,
   setMessages: SetState<string[] | undefined>,
   shouldValidateUnmounted?: boolean,
+  persistIn?: PersistIn,
   validators: NormalizedValidatorObject[],
   isRequired?: boolean,
   requiredMessage?: string,
@@ -127,6 +132,7 @@ export interface UpdateFieldData {
   isRequired?: boolean,
   requiredMessage?: string,
   shouldValidateUnmounted?: boolean,
+  persistIn?: PersistIn,
   suggestion?: Suggestion,
   validators: NormalizedValidatorObject[],
 }

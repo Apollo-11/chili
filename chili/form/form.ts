@@ -68,6 +68,7 @@ const getFormFieldHelpers = (formName: string, fieldName: string): FormFieldHelp
         isRequired: field.isRequired,
         requiredMessage: field.requiredMessage,
         shouldValidateUnmounted: field.shouldValidateUnmounted,
+        persistIn: field.persistIn,
         suggestion: field.suggestion,
         validators: field.validators,
       });
