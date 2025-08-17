@@ -29,15 +29,10 @@ export const useValidation = <P extends ValidationProps, S extends ValidationSta
   } = props;
 
   const uncontrolled = props.value === undefined;
-  const persistedValue = form && name && persistIn ? getPersistedValue(form, name, persistIn) : undefined;
 
-  let value = uncontrolled && state
+  const value = uncontrolled && state
     ? state.value
     : props.value;
-
-  if (uncontrolled && persistedValue !== undefined) {
-    value = persistedValue;
-  }
 
   const [isValid, setIsValid] = React.useState<boolean>(true);
 
@@ -97,12 +92,16 @@ export const useValidation = <P extends ValidationProps, S extends ValidationSta
   }, [form, isRequired, name, value, isValidProp, validator, invalidMessage, shouldValidateUnmounted, persistIn, requiredMessage, state.suggestion]);
 
   React.useEffect(() => {
+    console.log('HI THERE')
+    
     if (form && name && persistIn) {
       setPersistedValue(form, name, persistIn, value);
     }
   }, [form, name, persistIn, value]);
 
   React.useEffect(() => {
+    const persistedValue = form && name && persistIn ? getPersistedValue(form, name, persistIn) : undefined;
+
     if (uncontrolled && persistedValue !== undefined) {
       extra.setValue(persistedValue);
     }

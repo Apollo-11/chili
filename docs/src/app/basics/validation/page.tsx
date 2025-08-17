@@ -37,6 +37,7 @@ const Page = () => (
     requiredMessage='Do not leave me empty'
     validator='email'
     invalidMessage={<i>Please enter a valid email</i>}
+    persistIn="sessionStorage"
     _w-48
     _mb-3
   />
