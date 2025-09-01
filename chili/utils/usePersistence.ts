@@ -34,7 +34,13 @@ export const usePersistence = <V>({
       console.error('Persistence prop requires form and name props');
       return;
     }
-    if (valueProp !== undefined) return;
+    if (
+      valueProp !== undefined
+    ) {
+      // eslint-disable-next-line no-console
+      console.error('Persistence prop is for uncontrolled state only');
+      return;
+    };
     try {
       const storage = getStorage(persistence);
       const key = getFormKey(form);
