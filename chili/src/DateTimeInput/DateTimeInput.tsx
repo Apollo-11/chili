@@ -60,6 +60,9 @@ export const DateTimeInput = React.forwardRef((props: DateTimeInputProps, ref: R
     theme: themeProp,
     type = COMPONENT_TYPES.DATE_ONLY,
     validator,
+    // defaultValue is captured but not passed through to the underlying <Input>
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    defaultValue: _defaultValue,
     value: valueProp,
     weeksRowRender,
     wrapperRender,
