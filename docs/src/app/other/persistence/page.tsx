@@ -17,6 +17,7 @@ const PersistencePage = () => (
         name='input'
         persistence={L.ValidationTypes.Persistence.localStorage}
         _mb-4
+        _w-48
       />
       <L.AutoComplete
         form='persist'
@@ -24,6 +25,7 @@ const PersistencePage = () => (
         data={['Argentina', 'Spain']}
         persistence={L.ValidationTypes.Persistence.localStorage}
         _mb-4
+        _w-48
       />
       <L.DropDownSelect
         form='persist'
@@ -31,17 +33,20 @@ const PersistencePage = () => (
         data={['One', 'Two']}
         persistence={L.ValidationTypes.Persistence.localStorage}
         _mb-4
+        _w-48
       />
       <L.CheckBox
         form='persist'
         name='check'
         persistence={L.ValidationTypes.Persistence.localStorage}
+        _w-48
+        _mb-4
       >
         Agree
       </L.CheckBox>
       <L.Button
         form='persist'
-        _ml-4
+        _mb-4
         onClick={({ form }) => console.log(form)}
       >
         Log form
