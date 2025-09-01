@@ -169,7 +169,21 @@ export const createSetValueHandler = ({
   props: StandaloneCalendarProps,
   dispatch: React.Dispatch<StandaloneCalendarActionTypes>,
 }) => (value: unknown) => {
-  const newValue = value as Date | null;
+
+  const newValue = (() => {
+    if (typeof value === 'string') {
+      const parsed = new Date(value);
+      const dateValue = Number.isNaN(parsed.getTime()) ? null : parsed;
+      return dateValue;
+    }
+
+    return value as Date | null
+  })();
+
+  if (!(newValue instanceof Date) && value !== null) {
+    console.error('setValue unsupported date format');
+  }
+
   dispatch(setDate(newValue));
 
   props.onChange({
