@@ -1,5 +1,6 @@
 'use client';
 
+/* eslint-disable react/prop-types */
 import * as React from 'react';
 import { DateTimeInput } from '../../src/DateTimeInput';
 import { COMPONENT_TYPES } from '../../src/DateTimeInput/constants';

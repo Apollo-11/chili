@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { isString, isNil } from 'lodash';
-import { useElement } from '../../utils';
+import { useElement, usePersistence } from '../../utils';
 import {
   addField, getValidators, removeField, updateField, validate,
 } from './helpers';
@@ -25,11 +25,21 @@ export const useValidation = <P extends ValidationProps, S extends ValidationSta
     invalidMessage,
     requiredMessage,
     invalidMessageRender,
+    persistence,
   } = props;
 
   const value = props.value === undefined && state
     ? state.value
     : props.value;
+
+  usePersistence({
+    form,
+    name,
+    persistence,
+    valueProp: props.value,
+    value,
+    setValue: extra.setValue,
+  });
 
   const [isValid, setIsValid] = React.useState<boolean>(true);
 

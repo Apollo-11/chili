@@ -5,9 +5,15 @@ import type { GlobalDefaultTheme } from '../../utils/useTheme';
 import type { COMPONENTS_NAMESPACES } from '../../constants';
 import type { Suggestion } from '../AutoComplete/types';
 
+export enum Persistence {
+  sessionStorage = 'sessionStorage',
+  localStorage = 'localStorage',
+}
+
 export interface ValidationProps {
   form?: string,
   name?: string,
+  persistence?: Persistence,
   isRequired?: boolean,
   isValid?: boolean,
   value?: any,

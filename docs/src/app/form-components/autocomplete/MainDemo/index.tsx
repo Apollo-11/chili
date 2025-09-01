@@ -7,6 +7,7 @@ import { MessagesDemo } from './MessagesDemo';
 import { ControlledDemo } from './ControlledDemo';
 import { ObjectsDataDemo } from './ObjectsDataDemo';
 import { SubmitEventDemo } from './SubmitEventDemo';
+import { PersistenceDemo } from './PersistenceDemo';
 
 export const MainDemo = () => {
   const [selected, setSelected] = React.useState<string | number>(0);
@@ -31,6 +32,9 @@ export const MainDemo = () => {
       </L.Tab>
       <L.Tab title="Submit event" tabKey={4}>
         <SubmitEventDemo />
+      </L.Tab>
+      <L.Tab title="Persistence" tabKey={5}>
+        <PersistenceDemo />
       </L.Tab>
     </L.Tabs>
   );
