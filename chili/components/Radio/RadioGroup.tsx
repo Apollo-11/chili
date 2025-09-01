@@ -51,7 +51,7 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.
     if (isFunction(onChange)) onChange(ev);
 
     return setValueState(ev.component.value);
-  }, [onChange]);
+  }, [onChange, setValueState]);
 
   const Wrapper = useElement<RadioGroupProps, { value?: string | number | null }, WrapperProps>(
     'Wrapper',

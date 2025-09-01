@@ -12,6 +12,7 @@ import {
   useInterval,
   useProps,
   useValue,
+  usePersistence,
 } from './utils';
 
 import { A } from './components/A';
@@ -130,6 +131,7 @@ const utils = {
   useInterval,
   useProps,
   useValue,
+  usePersistence,
 };
 
 export {

@@ -11,6 +11,7 @@ export const ValidationSection = ({
   isValid,
   invalidMessage,
   invalidMessageRender,
+  persistence,
   requiredMessage,
   shouldValidateUnmounted,
   validator,
@@ -18,6 +19,7 @@ export const ValidationSection = ({
   all?: boolean,
   form?: boolean,
   name?: boolean,
+  persistence?: boolean,
   isRequired?: boolean,
   isValid?: boolean,
   invalidMessage?: boolean,
@@ -36,10 +38,17 @@ export const ValidationSection = ({
           <TdCode>string</TdCode>
           <Td>Form name</Td>
         </L.Tr>
-        <L.Tr shouldRender={Boolean(all || name)}>
-          <TdCode><b>name</b></TdCode>
-          <TdCode>string</TdCode>
-          <Td>Component name</Td>
+        <L.Tr shouldRender={Boolean(all || invalidMessage)}>
+          <TdCode>invalidMessage</TdCode>
+          <TdCode>ReactNode</TdCode>
+          <Td>Text to show when the value does not match requirements</Td>
+        </L.Tr>
+        <L.Tr shouldRender={Boolean(all || invalidMessageRender)}>
+          <TdCode>invalidMessageRender</TdCode>
+          <TdCode>
+            {'RenderEvent => ReactNode'}
+          </TdCode>
+          <Td>Invalid message customizator</Td>
         </L.Tr>
         <L.Tr shouldRender={Boolean(all || isRequired)}>
           <TdCode>isRequired</TdCode>
@@ -52,17 +61,15 @@ export const ValidationSection = ({
           <TdCode>boolean</TdCode>
           <Td>Controlled valid state</Td>
         </L.Tr>
-        <L.Tr shouldRender={Boolean(all || invalidMessage)}>
-          <TdCode>invalidMessage</TdCode>
-          <TdCode>ReactNode</TdCode>
-          <Td>Text to show when the value does not match requirements</Td>
+        <L.Tr shouldRender={Boolean(all || name)}>
+          <TdCode><b>name</b></TdCode>
+          <TdCode>string</TdCode>
+          <Td>Component name</Td>
         </L.Tr>
-        <L.Tr shouldRender={Boolean(all || invalidMessageRender)}>
-          <TdCode>invalidMessageRender</TdCode>
-          <TdCode>
-            {'RenderEvent => ReactNode'}
-          </TdCode>
-          <Td>Invalid message customizator</Td>
+        <L.Tr shouldRender={Boolean(all || persistence || form)}>
+          <TdCode>persistence</TdCode>
+          <TdCode>{"'sessionStorage' | 'localStorage'"}</TdCode>
+          <Td>Persist the value in web storage</Td>
         </L.Tr>
         <L.Tr shouldRender={Boolean(all || requiredMessage)}>
           <TdCode>requiredMessage</TdCode>

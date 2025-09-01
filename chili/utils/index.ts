@@ -51,3 +51,5 @@ export { checkIsTheSameObject } from './checkIsTheSameObject';
 export { getIsEmptyAndRequired } from './getIsEmptyAndRequired';
 
 export { useElementRef } from './useElementRef';
+
+export { usePersistence } from './usePersistence';

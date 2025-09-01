@@ -78,6 +78,7 @@ export const MainNav = () => (
       <NavLi to="/other/html">HTML</NavLi>
       <NavLi to="/other/chili-provider">Chili provider</NavLi>
       <NavLi to="/other/utils">utils</NavLi>
+      <NavLi to="/other/persistence">persistence</NavLi>
     </ul>
 
     <div className="py-4 font-bold">
