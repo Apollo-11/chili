@@ -59,16 +59,16 @@ export const MaskedInput = React.forwardRef((props: MaskedInputProps, ref: React
 
   const {
     isValid, validateCurrent, InvalidMessage,
-  } = useValidation({
-    ...props, value: valueToValidate,
-  }, {
-    value: valueState,
-  }, {
-    reset: createResetHandler({
-      props, setValue, value: toStringOrEmpty(defaultValue || ''),
-    }),
-    setValue: createSetValueHandler({ props, setValue }),
-  });
+  } = useValidation(
+    props,
+    { value: valueToValidate },
+    {
+      reset: createResetHandler({
+        props, setValue, value: toStringOrEmpty(defaultValue || ''),
+      }),
+      setValue: createSetValueHandler({ props, setValue }),
+    },
+  );
 
   const state = { value: valueState, isFocused, isValid };
 
