@@ -21,10 +21,21 @@ export const createSetValueHandler = ({
     type = COMPONENT_TYPES.DATE_ONLY,
   } = props;
 
-  const mask = createMask(format, type);
-  const maskedValue = maskValue(newValueInput, mask);
-  const newDate = stringToDate(maskedValue, format);
-  const newValue = newDate ? formatDateTime(newDate, format) : newValueInput;
+  let newDate: Date | null = null;
+  let preparedValue = newValueInput;
+
+  if (typeof newValueInput === 'string' && /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/.test(newValueInput)) {
+    const dateFromISO = new Date(newValueInput);
+    if (!Number.isNaN(dateFromISO.getTime())) newDate = dateFromISO;
+  }
+
+  if (!newDate) {
+    const mask = createMask(format, type);
+    preparedValue = maskValue(newValueInput, mask);
+    newDate = stringToDate(preparedValue, format);
+  }
+
+  const newValue = newDate ? formatDateTime(newDate, format) : preparedValue;
 
   dispatch(setValue(newValue));
   if (newDate && newDate.getDate()) dispatch(setDate(newDate));
