@@ -169,7 +169,6 @@ export const createSetValueHandler = ({
   props: StandaloneCalendarProps,
   dispatch: React.Dispatch<StandaloneCalendarActionTypes>,
 }) => (value: unknown) => {
-
   const newValue = (() => {
     if (typeof value === 'string') {
       const parsed = new Date(value);
@@ -177,7 +176,7 @@ export const createSetValueHandler = ({
       return dateValue;
     }
 
-    return value as Date | null
+    return value as Date | null;
   })();
 
   if (!(newValue instanceof Date) && value !== null) {
