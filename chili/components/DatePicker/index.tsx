@@ -24,11 +24,11 @@ export const DatePicker = React.forwardRef((rawProps: DatePickerProps, ref: Reac
     <DateTimeInput
       {...restProps}
       defaultValue={defaultValue}
-      value={value}
       onChange={handleChange}
       format={props.format || 'dd.MM.yyyy'}
       type={COMPONENT_TYPES.DATE_ONLY}
       ref={ref}
+      {...(valueProp !== undefined ? { value } : {})}
     />
   );
 }) as React.FC<DatePickerProps>;

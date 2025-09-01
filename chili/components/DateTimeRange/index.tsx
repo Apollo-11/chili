@@ -26,9 +26,9 @@ export const DateTimeRange = React.forwardRef((rawProps: DateTimeRangeProps, ref
       type={COMPONENT_TYPES.DATE_TIME}
       format={props.format || 'dd.MM.yyyy hh:mm'}
       defaultValue={defaultValue}
-      value={value}
       onChange={handleChange}
       ref={ref}
+      {...(valueProp !== undefined ? { value } : {})}
     />
   );
 }) as React.FC<DateTimeRangeProps>;
