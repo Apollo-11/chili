@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Persistence } from '../components/Validation/types';
 
-interface UsePersistenceParams<V> {
+export interface UsePersistenceParams<V> {
   form?: string,
   name?: string,
   valueProp?: V,
@@ -40,7 +40,7 @@ export const usePersistence = <V>({
       // eslint-disable-next-line no-console
       console.error('Persistence prop is for uncontrolled state only');
       return;
-    };
+    }
     try {
       const storage = getStorage(persistence);
       const key = getFormKey(form);
@@ -68,7 +68,13 @@ export const usePersistence = <V>({
       const stored = storage.getItem(key);
       const data = stored ? JSON.parse(stored) : {};
       data[name] = value;
-      storage.setItem(key, JSON.stringify(data));
+
+      const isFormEmpty = Object.values(data).every((v) => v === '' || v === null);
+      if (isFormEmpty) {
+        storage.removeItem(key);
+      } else {
+        storage.setItem(key, JSON.stringify(data));
+      }
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
