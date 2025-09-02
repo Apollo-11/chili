@@ -115,9 +115,8 @@ import * as TooltipTypes from './components/Tooltip/types';
 import * as ValidationTypes from './components/Validation/types';
 import * as commonTypes from './commonTypes';
 
-import { form } from './form';
-
-import { Persistence } from './components/Validation/types'; 
+import { form, getPersistedForm } from './form';
+import { Persistence } from './components/Validation/types';
 
 const utils = {
   bytesSizeToUnitsSize,
@@ -232,6 +231,7 @@ export {
   Chili, ChiliContext,
   validate,
   form,
+  getPersistedForm,
   utils,
   Validation,
   Persistence,

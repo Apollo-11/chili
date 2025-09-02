@@ -10,6 +10,8 @@ export const FILE_SIZE_UNITS = {
   TB: 'TB' as const,
 };
 
+export const FORM_STORAGE_PREFIX = 'chili-form-';
+
 export const COMPONENTS_NAMESPACES = {
   accordion: 'accordion',
   autoComplete: 'autoComplete',

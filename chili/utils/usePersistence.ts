@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { Persistence } from '../components/Validation/types';
+import { FORM_STORAGE_PREFIX } from '../constants';
 
 export interface UsePersistenceParams<V> {
   form?: string,
@@ -17,7 +18,7 @@ const getStorage = (persistence: Persistence) => (
   persistence === Persistence.localStorage ? window.localStorage : window.sessionStorage
 );
 
-const getFormKey = (form: string) => `chili-form-${form}`;
+const getFormKey = (form: string) => `${FORM_STORAGE_PREFIX}${form}`;
 
 export const usePersistence = <V>({
   form,
