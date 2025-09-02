@@ -117,6 +117,8 @@ import * as commonTypes from './commonTypes';
 
 import { form } from './form';
 
+import { Persistence } from './components/Validation/types'; 
+
 const utils = {
   bytesSizeToUnitsSize,
   formatDateTime,
@@ -232,4 +234,5 @@ export {
   form,
   utils,
   Validation,
+  Persistence,
 };
