@@ -74,7 +74,7 @@ export const NumericTextBox = React.forwardRef((props: NumericTextBoxProps, ref:
       props, setUncontrolledValue, format, thousandsSeparator, value: normalizeValue(normalizeValueParams),
     }),
     setValue: createSetValueHandler({
-      props, setUncontrolledValue, format, thousandsSeparator,
+      props, setUncontrolledValue, setInputValue, format, thousandsSeparator,
     }),
   });
 

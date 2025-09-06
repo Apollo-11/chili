@@ -301,16 +301,22 @@ export const createResetHandler = ({
 export const createSetValueHandler = ({
   props,
   setUncontrolledValue,
+  setInputValue,
   format,
   thousandsSeparator,
 }: {
   props: NumericTextBoxProps,
   setUncontrolledValue: SetState<number | null>,
+  setInputValue: SetState<string>,
   format: string,
   thousandsSeparator: string,
 }) => (value: unknown) => {
   const newValue = value as number | null;
+  const formattedValue = formatValue({ value: newValue, format, thousandsSeparator });
+  const newInputValue = formatInputValue(formattedValue, format);  
+  
   setUncontrolledValue(newValue);
+  setInputValue(newInputValue);
 
   props.onChange?.({
     component: {
