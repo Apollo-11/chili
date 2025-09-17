@@ -61,8 +61,8 @@ const SetPersistedFormPage = () => (
             </Td>
             <Td>
               Storage driver that was originally used to persist the form (for example{' '}
-              <Code>L.ValidationTypes.Persistence.localStorage</Code> or{' '}
-              <Code>L.ValidationTypes.Persistence.sessionStorage</Code>).
+              <Code>L.Persistence.localStorage</Code> or{' '}
+              <Code>L.Persistence.sessionStorage</Code>).
             </Td>
           </tr>
           <tr>
@@ -98,7 +98,7 @@ const SetPersistedFormPage = () => (
       <Live scope={{ L }}>
         {`() => {
   const formName = 'set-persisted-form-helper';
-  const persistence = L.ValidationTypes.Persistence.localStorage;
+  const persistence = L.Persistence.localStorage;
 
   const updateEmail = () => {
     try {
@@ -150,7 +150,7 @@ const SetPersistedFormPage = () => (
 
       <P className="mt-4">
         Swap the <Code>persistence</Code> value to{' '}
-        <Code>L.ValidationTypes.Persistence.sessionStorage</Code> if the form was stored in
+        <Code>L.Persistence.sessionStorage</Code> if the form was stored in
         session storage instead.
       </P>
     </Section>

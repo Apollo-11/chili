@@ -44,9 +44,9 @@ export const MainNav = () => (
     </div>
     <ul>
       <NavLi to="/form-helpers/form">form</NavLi>
+      <NavLi to="/form-helpers/validate">validate</NavLi>
       <NavLi to="/form-helpers/get-persisted-form">getPersistedForm</NavLi>
       <NavLi to="/form-helpers/set-persisted-form">setPersistedForm</NavLi>
-      <NavLi to="/form-helpers/validate">validate</NavLi>
     </ul>
 
     <div className="py-4 font-bold">

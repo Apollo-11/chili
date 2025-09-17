@@ -61,8 +61,8 @@ const GetPersistedFormPage = () => (
             </Td>
             <Td>
               Storage driver that was originally used to persist the form (for example{' '}
-              <Code>L.ValidationTypes.Persistence.localStorage</Code> or{' '}
-              <Code>L.ValidationTypes.Persistence.sessionStorage</Code>).
+              <Code>L.Persistence.localStorage</Code> or{' '}
+              <Code>L.Persistence.sessionStorage</Code>).
             </Td>
           </tr>
           <tr>
@@ -138,7 +138,7 @@ const GetPersistedFormPage = () => (
 
       <P className="mt-4">
         Switch the <Code>persistence</Code> value to{' '}
-        <Code>L.ValidationTypes.Persistence.sessionStorage</Code> if the form was stored in{' '}
+        <Code>L.Persistence.sessionStorage</Code> if the form was stored in{' '}
         session storage instead.
       </P>
     </Section>
