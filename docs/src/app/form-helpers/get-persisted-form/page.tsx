@@ -90,7 +90,7 @@ const GetPersistedFormPage = () => (
       <Live scope={{ L }}>
         {`() => {
   const formName = 'persisted-form-helper';
-  const persistence = L.ValidationTypes.Persistence.localStorage;
+  const persistence = L.Persistence.localStorage;
 
   const showEntireForm = () => {
     const data = L.getPersistedForm({ form: formName, persistence });
