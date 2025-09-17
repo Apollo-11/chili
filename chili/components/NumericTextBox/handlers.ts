@@ -313,8 +313,8 @@ export const createSetValueHandler = ({
 }) => (value: unknown) => {
   const newValue = value as number | null;
   const formattedValue = formatValue({ value: newValue, format, thousandsSeparator });
-  const newInputValue = formatInputValue(formattedValue, format);  
-  
+  const newInputValue = formatInputValue(formattedValue, format);
+
   setUncontrolledValue(newValue);
   setInputValue(newInputValue);
 
