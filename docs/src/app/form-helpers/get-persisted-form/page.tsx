@@ -99,7 +99,7 @@ const GetPersistedFormPage = () => (
 
   const showEmail = () => {
     const email = L.getPersistedForm({ form: formName, persistence, field: 'email' });
-    alert(email ?? 'Field "email" has not been stored yet');
+    alert(email != null ? email : 'Field "email" has not been stored yet');
   };
 
   return (
