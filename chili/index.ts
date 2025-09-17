@@ -115,7 +115,7 @@ import * as TooltipTypes from './components/Tooltip/types';
 import * as ValidationTypes from './components/Validation/types';
 import * as commonTypes from './commonTypes';
 
-import { form, getPersistedForm } from './form';
+import { form, getPersistedForm, setPersistedForm } from './form';
 import { Persistence } from './components/Validation/types';
 
 const utils = {
@@ -232,6 +232,7 @@ export {
   validate,
   form,
   getPersistedForm,
+  setPersistedForm,
   utils,
   Validation,
   Persistence,
