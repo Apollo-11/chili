@@ -15,7 +15,7 @@ describe('setPersistedForm', () => {
     const key = `${FORM_STORAGE_PREFIX}${formName}`;
     window.localStorage.setItem(key, JSON.stringify({ [fieldName]: 'old', another: 1 }));
 
-    setPersistedForm({ form: formName, persistence: Persistence.localStorage, field: fieldName }, 'new');
+    setPersistedForm({ form: formName, persistence: Persistence.localStorage, field: fieldName, value: 'new' });
 
     expect(JSON.parse(window.localStorage.getItem(key) as string)).toEqual({ [fieldName]: 'new', another: 1 });
   });
@@ -25,7 +25,8 @@ describe('setPersistedForm', () => {
       form: formName,
       persistence: Persistence.sessionStorage,
       field: fieldName,
-    }, 'value')).toThrowError(`No data found for key: ${FORM_STORAGE_PREFIX}${formName}`);
+      value: 'value',
+    })).toThrowError(`No data found for key: ${FORM_STORAGE_PREFIX}${formName}`);
   });
 
   test('throws when persisted data is not valid JSON', () => {
@@ -36,6 +37,7 @@ describe('setPersistedForm', () => {
       form: formName,
       persistence: Persistence.sessionStorage,
       field: fieldName,
-    }, 'value')).toThrowError(`Error parsing JSON for key: ${key}`);
+      value: 'value',
+    })).toThrowError(`Error parsing JSON for key: ${key}`);
   });
 });

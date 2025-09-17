@@ -27,7 +27,7 @@ const SetPersistedFormPage = () => (
     <Section>
       <H2>Import</H2>
       <P>
-        <Code>{"import { setPersistedForm, ValidationTypes } from '@chili'"}</Code>
+        <Code>{"import { setPersistedForm } from '@chili'"}</Code>
       </P>
       <P>
         Or, when using the namespace pattern shown across the docs, call{' '}
@@ -38,7 +38,8 @@ const SetPersistedFormPage = () => (
   form: string,
   persistence: Persistence,
   field: string,
-}, value: unknown): void`}
+  value: unknown,
+}): void`}
       </CodeBlock>
     </Section>
 
@@ -102,7 +103,7 @@ const SetPersistedFormPage = () => (
 
   const updateEmail = () => {
     try {
-      L.setPersistedForm({ form: formName, persistence, field: 'email' }, 'persisted@example.com');
+      L.setPersistedForm({ form: formName, persistence, field: 'email', value: 'persisted@example.com' });
       alert('Persisted email updated to "persisted@example.com"');
     } catch (error) {
       alert('Persisted form not found yet. Type something in the form first.');

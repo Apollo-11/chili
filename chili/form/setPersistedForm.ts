@@ -5,13 +5,14 @@ interface SetPersistedFormParams {
   form: string,
   persistence: Persistence,
   field: string,
+  value: unknown,
 }
 
 const getStorage = (persistence: Persistence) => (
   persistence === Persistence.localStorage ? window.localStorage : window.sessionStorage
 );
 
-export const setPersistedForm = ({ form, persistence, field }: SetPersistedFormParams, value: unknown): void => {
+export const setPersistedForm = ({ form, persistence, field, value }: SetPersistedFormParams): void => {
   const storage = getStorage(persistence);
   const key = `${FORM_STORAGE_PREFIX}${form}`;
   const storedValue = storage.getItem(key);

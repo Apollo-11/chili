@@ -27,7 +27,7 @@ const GetPersistedFormPage = () => (
     <Section>
       <H2>Import</H2>
       <P>
-        <Code>{"import { getPersistedForm, ValidationTypes } from '@chili'"}</Code>
+        <Code>{"import { getPersistedForm } from '@chili'"}</Code>
       </P>
       <P>
         or, when using the namespace pattern shown across the docs,
