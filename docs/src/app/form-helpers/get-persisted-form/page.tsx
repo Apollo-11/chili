@@ -34,7 +34,7 @@ const GetPersistedFormPage = () => (
         call <Code>L.getPersistedForm</Code>.
       </P>
       <CodeBlock>
-        {`getPersistedForm({
+{`getPersistedForm({
   form: string,
   persistence: Persistence,
   field?: string,
@@ -122,7 +122,7 @@ const GetPersistedFormPage = () => (
         Subscribe to updates
       </L.Switcher>
 
-      <div className='_flex _gap-4 _flex-wrap'>
+      <div className='flex gap-4 flex-wrap'>
         <L.Button onClick={showEntireForm}>
           Show persisted form
         </L.Button>
