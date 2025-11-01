@@ -133,6 +133,7 @@ export const addField = ({
   reset,
   setValue,
   suggestion,
+  extra,
 }: AddFieldData): void => {
   const forms: Form[] = getForms();
 
@@ -154,6 +155,7 @@ export const addField = ({
         reset,
         setValue,
         suggestion,
+        extra,
       }],
     }];
 
@@ -181,6 +183,7 @@ export const addField = ({
         reset,
         setValue,
         suggestion,
+        extra,
       }];
 
       return { name: formName, fields: newFields };
@@ -198,7 +201,12 @@ export const addField = ({
       const newFields = [...currentForm.fields.map((field) => {
         if (field.name !== fieldName) return field;
 
-        return { ...field, setIsValid, setValue: setValue || field.setValue };
+        return {
+          ...field,
+          setIsValid,
+          setValue: setValue || field.setValue,
+          extra: extra ?? field.extra,
+        };
       })];
 
       return { name: formName, fields: newFields };
@@ -276,6 +284,7 @@ export const updateField = ({
   shouldValidateUnmounted = false,
   suggestion,
   validators,
+  extra,
 }: UpdateFieldData): void => {
   const forms: Form[] = getForms();
 
@@ -319,6 +328,7 @@ export const updateField = ({
         shouldValidateUnmounted,
         suggestion,
         validators,
+        extra: extra ?? field.extra,
       };
     });
 
@@ -428,7 +438,7 @@ export const getFieldValidState = (formName: string, fieldName: string): FormGet
     return !validators.some((validator) => !validator.validator(value));
   })();
 
-  return {
+  const base: FormGetField = {
     name,
     value,
     isFilled,
@@ -436,4 +446,11 @@ export const getFieldValidState = (formName: string, fieldName: string): FormGet
     isValid,
     suggestion,
   };
+
+  // Attach component-specific extras (e.g., MaskedInput: inputValue)
+  if (rawField.extra && typeof rawField.extra === 'object') {
+    Object.assign(base, rawField.extra);
+  };
+  
+  return base;
 };

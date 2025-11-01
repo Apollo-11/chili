@@ -11,6 +11,7 @@ import {
 } from './handlers';
 import { useCustomElements } from './hooks';
 import { getValue, getValueToValidate } from './helpers';
+import { maskValue } from '../../src/MaskedInputBase/helpers';
 
 export const MaskedInput = React.forwardRef((props: MaskedInputProps, ref: React.Ref<HTMLElement>) => {
   const {
@@ -57,6 +58,11 @@ export const MaskedInput = React.forwardRef((props: MaskedInputProps, ref: React
     value, maskedInputRef, placeholderChar,
   });
 
+  const fieldExtra = React.useMemo(() => ({
+    inputValue: maskValue(value, mask, placeholderChar),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }), [value, mask, placeholderChar]);
+
   const {
     isValid, validateCurrent, InvalidMessage,
   } = useValidation(
@@ -67,6 +73,7 @@ export const MaskedInput = React.forwardRef((props: MaskedInputProps, ref: React
         props, setValue, value: toStringOrEmpty(defaultValue || ''),
       }),
       setValue: createSetValueHandler({ props, setValue }),
+      fieldExtra,
     },
   );
 

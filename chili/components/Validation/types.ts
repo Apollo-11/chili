@@ -60,6 +60,8 @@ export interface FormGetField {
   name: string,
   suggestion?: Suggestion,
   value: any,
+  // Extra data for specific components (e.g., MaskedInput)
+  inputValue?: string,
 }
 
 export interface Field {
@@ -76,6 +78,8 @@ export interface Field {
   suggestion?: Suggestion,
   validators: NormalizedValidatorObject[],
   value: any,
+  // Optional extra data container for component-specific state
+  extra?: Record<string, unknown>,
 }
 
 export interface Form {
@@ -123,6 +127,7 @@ export interface AddFieldData {
   reset: () => void,
   setValue: (value: unknown) => void,
   suggestion?: Suggestion,
+  extra?: Record<string, unknown>,
 }
 
 export interface UpdateFieldData {
@@ -135,11 +140,14 @@ export interface UpdateFieldData {
   shouldValidateUnmounted?: boolean,
   suggestion?: Suggestion,
   validators: NormalizedValidatorObject[],
+  extra?: Record<string, unknown>,
 }
 
 export interface ValidationExtra {
   reset: () => void,
   setValue: (value: unknown) => void,
+  // Optional extra field payload to store into form field state
+  fieldExtra?: Record<string, unknown>,
 }
 
 export interface RemoveFieldOptions {
