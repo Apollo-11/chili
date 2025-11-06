@@ -13,7 +13,11 @@ export const createSetValueHandler = ({
   props: DateTimeInputProps,
   dispatch: React.Dispatch<AllActions>,
 }) => (value: unknown) => {
-  const newValueInput = value as string;
+  const newValueInput = (() => {
+    if (value == null) return '';
+    return value.toString();
+  })();
+
   const {
     format = 'dd.MM.yyyy',
     name,
