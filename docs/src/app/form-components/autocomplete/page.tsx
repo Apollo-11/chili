@@ -34,6 +34,11 @@ const AutoCompletePage = () => (
         </Td>
       </tr>
       <tr>
+        <TdCode>capitalizeFirstLetter</TdCode>
+        <TdCode>boolean</TdCode>
+        <Td>Capitalizes the first symbol in the input. Default is <b>false</b></Td>
+      </tr>
+      <tr>
         <TdCode>
           <b>data</b>
         </TdCode>
@@ -87,6 +92,11 @@ const AutoCompletePage = () => (
         <TdCode>isRequired</TdCode>
         <TdCode>boolean</TdCode>
         <Td>Validate the component as a required field</Td>
+      </tr>
+      <tr>
+        <TdCode>letterCase</TdCode>
+        <TdCode>{"'lower' | 'upper'"}</TdCode>
+        <Td>Makes all letters upper or lowercase</Td>
       </tr>
       <tr>
         <TdCode>maxLength</TdCode>

@@ -8,6 +8,7 @@ import { ControlledDemo } from './ControlledDemo';
 import { ObjectsDataDemo } from './ObjectsDataDemo';
 import { SubmitEventDemo } from './SubmitEventDemo';
 import { PersistenceDemo } from './PersistenceDemo';
+import { CasingDemo } from './CasingDemo';
 
 export const MainDemo = () => {
   const [selected, setSelected] = React.useState<string | number>(0);
@@ -35,6 +36,9 @@ export const MainDemo = () => {
       </L.Tab>
       <L.Tab title="Persistence" tabKey={5}>
         <PersistenceDemo />
+      </L.Tab>
+      <L.Tab title="Casing" tabKey={6}>
+        <CasingDemo />
       </L.Tab>
     </L.Tabs>
   );

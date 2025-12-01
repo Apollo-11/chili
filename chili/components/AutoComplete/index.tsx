@@ -50,7 +50,9 @@ export const AutoComplete = React.forwardRef((props: AutoCompleteProps, ref: Rea
     form,
     groupBy,
     hasClearButton,
+    capitalizeFirstLetter,
     inputRender,
+    letterCase,
     invalidMessage,
     invalidMessageRender,
     isDisabled,
@@ -172,7 +174,16 @@ export const AutoComplete = React.forwardRef((props: AutoCompleteProps, ref: Rea
   })();
 
   const inputChangeHandler = inputChangeHandlerCreator({
-    data, textField, name, onChange, isValueControlled, setSelectedSuggestion, setStateValue, maxLength,
+    data,
+    textField,
+    name,
+    onChange,
+    isValueControlled,
+    setSelectedSuggestion,
+    setStateValue,
+    maxLength,
+    capitalizeFirstLetter,
+    letterCase,
   });
   const suggestionClickHandler = suggestionClickHandlerCreator({
     data, textField, name, onChange, isValueControlled, setHighlightedSuggestion, setSelectedSuggestion, setStateValue, setIsFocused,

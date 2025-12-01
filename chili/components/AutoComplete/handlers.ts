@@ -20,6 +20,7 @@ import { getText } from '../../src/SuggestionList/helpers';
 import type { CustomEventHandler, SetState } from '../../commonTypes';
 import type { SuggestionTarget } from '../../src/SuggestionList/types';
 import { stringToMaxLength } from '../../utils';
+import { capitalizeFirstChar, transformToCase } from '../Input/helpers';
 
 export const clearButtonClickHandlerCreator = ({
   isDisabled,
@@ -117,6 +118,8 @@ export const inputChangeHandlerCreator = ({
   setSelectedSuggestion,
   textField,
   maxLength,
+  capitalizeFirstLetter,
+  letterCase,
 }: {
   data: Suggestion[],
   isValueControlled: boolean,
@@ -126,14 +129,28 @@ export const inputChangeHandlerCreator = ({
   setSelectedSuggestion: SetState<Suggestion>,
   textField?: string,
   maxLength?: number,
+  capitalizeFirstLetter?: boolean,
+  letterCase?: 'lower' | 'upper',
 }): React.ChangeEventHandler<HTMLInputElement> => (event) => {
   const { value } = event.currentTarget;
 
   const maxLengthAdjustedValue = stringToMaxLength(value, maxLength);
 
+  const newValue = (() => {
+    let val = letterCase
+      ? transformToCase(maxLengthAdjustedValue, letterCase)
+      : maxLengthAdjustedValue;
+
+    if ((letterCase == null || letterCase === 'lower') && capitalizeFirstLetter) {
+      val = capitalizeFirstChar(val);
+    }
+
+    return val;
+  })();
+
   const suggestion = getSuggestionFromValue({
     data,
-    value: maxLengthAdjustedValue,
+    value: newValue,
     textField,
   });
 
@@ -145,12 +162,12 @@ export const inputChangeHandlerCreator = ({
       method: ChangeMethod.type,
       name,
       suggestion,
-      value: maxLengthAdjustedValue,
+      value: newValue,
     },
   };
 
   if (isFunction(onChange)) onChange(customEvent);
-  if (!isValueControlled) setStateValue(maxLengthAdjustedValue);
+  if (!isValueControlled) setStateValue(newValue);
 };
 
 export const inputBlurHandlerCreator = ({

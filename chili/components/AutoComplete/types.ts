@@ -108,6 +108,8 @@ export interface AutoCompleteMessages {
 export interface AutoCompleteProps<T extends Suggestion = Suggestion> extends ValidationProps {
   /** Browser autofill, off is the default value. Works as HTML autoComplete attribute */
   autoComplete?: string,
+  /** If true, capitalizes the first symbol in the input */
+  capitalizeFirstLetter?: boolean,
   /** ... */
   compareObjectsBy?: T extends object ? ((suggestionListItem: T) => unknown) | string : never,
   /** Data for the dropdown list */
@@ -130,6 +132,8 @@ export interface AutoCompleteProps<T extends Suggestion = Suggestion> extends Va
   itemRender?: SuggestionListProps['itemRender'],
   /** Input field customizator */
   inputRender?: CustomRender<AutoCompleteProps, AutoCompleteState, React.InputHTMLAttributes<HTMLInputElement>>,
+  /** Makes all letters upper or lowercase */
+  letterCase?: 'lower' | 'upper',
   /** Required or not */
   isRequired?: boolean,
   /** Dropdown list customizator */
