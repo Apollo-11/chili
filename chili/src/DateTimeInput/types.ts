@@ -75,6 +75,8 @@ export interface WrapperProps {
 }
 
 export interface DateTimeInputProps extends ValidationProps {
+  /** Browser autofill, off is the default value. Works as HTML autoComplete attribute */
+  autoComplete?: string,
   /** Ref to a container to position the element against */
   boundingContainerRef?: React.RefObject<HTMLElement>,
   /** Component classes */

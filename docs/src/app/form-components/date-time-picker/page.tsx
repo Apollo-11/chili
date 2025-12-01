@@ -17,6 +17,13 @@ const DateTimePickerPage = () => (
 
     <PropsTableSection>
       <tr>
+        <Td>autoComplete</Td>
+        <Td>string</Td>
+        <Td>
+          Browser autofill, off is the default value. Works as HTML autoComplete attribute
+        </Td>
+      </tr>
+      <tr>
         <Td>defaultValue</Td>
         <Td>string | Date | null</Td>
         <Td>Default value</Td>

@@ -33,6 +33,7 @@ import { IconTypes } from '../..';
 
 export const DateTimeInput = React.forwardRef((props: DateTimeInputProps, ref: React.Ref<HTMLElement>) => {
   const {
+    autoComplete = 'off',
     boundingContainerRef,
     calendarHeaderRender,
     calendarWrapperRender,
@@ -183,6 +184,7 @@ export const DateTimeInput = React.forwardRef((props: DateTimeInputProps, ref: R
           aria-invalid={!isValid}
           aria-required={isRequired}
           className={theme.input}
+          autoComplete={autoComplete}
           isDisabled={isDisabled}
           mask={mask}
           name={name}
