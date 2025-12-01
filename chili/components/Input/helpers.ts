@@ -50,6 +50,11 @@ export const transformToCase = (letter: string, letterCase: InputProps['letterCa
   throw new Error('L.Input: letterCase prop must be \'lower\' or \'upper\'!');
 };
 
+export const capitalizeFirstChar = (value: string): string => {
+  if (!value) return value;
+  return value.charAt(0).toUpperCase() + value.slice(1);
+};
+
 export const getValue = (valueProp: string | null | undefined, valueState: string): string => {
   if (valueProp === undefined) return valueState;
 

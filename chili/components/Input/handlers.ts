@@ -1,7 +1,12 @@
 import type * as React from 'react';
 import type { CustomEventHandler, SetState } from '../../commonTypes';
 import type { InputProps } from './types';
-import { isSymbolAllowed, isSymbolForbidden, transformToCase } from './helpers';
+import {
+  isSymbolAllowed,
+  isSymbolForbidden,
+  transformToCase,
+  capitalizeFirstChar,
+} from './helpers';
 import { stringToMaxLength } from '../../utils';
 
 export const createChangeHandler = (
@@ -10,7 +15,11 @@ export const createChangeHandler = (
 ): CustomEventHandler<React.ChangeEvent<HTMLInputElement>> => (event) => {
   const { value } = event.target;
   const {
-    allowedSymbols, forbiddenSymbols, letterCase, maxLength,
+    allowedSymbols,
+    forbiddenSymbols,
+    letterCase,
+    maxLength,
+    capitalizeFirstLetter,
   } = props;
 
   if (isSymbolForbidden(value, forbiddenSymbols)) return;
@@ -19,7 +28,17 @@ export const createChangeHandler = (
 
   const maxLengthAdjustedValue = stringToMaxLength(value, maxLength);
 
-  const newValue = letterCase ? transformToCase(maxLengthAdjustedValue, letterCase) : maxLengthAdjustedValue;
+  const newValue = (() => {
+    let val = letterCase
+      ? transformToCase(maxLengthAdjustedValue, letterCase)
+      : maxLengthAdjustedValue;
+
+    if ((letterCase == null || letterCase == 'lower') && capitalizeFirstLetter) {
+      val = capitalizeFirstChar(val);
+    }
+
+    return val;
+  })();
 
   if (props.value === undefined) {
     setValue(newValue);

@@ -32,6 +32,13 @@ type PredefinedAllowedSymbols = 'numbers'
         </Td>
       </tr>
       <tr>
+        <Td>capitalizeFirstLetter</Td>
+        <Td>boolean</Td>
+        <Td>
+          Capitalizes the first symbol in the input. Default is <Code>false</Code>
+        </Td>
+      </tr>
+      <tr>
         <Td>defaultValue</Td>
         <Td>string | null</Td>
         <Td>Default value</Td>

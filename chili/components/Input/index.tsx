@@ -33,6 +33,7 @@ export const Input = React.forwardRef((props: InputProps, ref: React.Ref<HTMLHtm
     theme: themeProp,
     value: valueProp,
     allowedSymbols,
+    capitalizeFirstLetter,
     forbiddenSymbols,
     invalidMessage,
     letterCase,

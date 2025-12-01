@@ -60,6 +60,8 @@ export interface FocusEvent extends React.FocusEvent<HTMLInputElement> {
 export interface InputProps extends ValidationProps {
   /** Put 'numbers' to allow numbers only or a RegExp to use your own pattern */
   allowedSymbols?: PredefinedAllowedSymbols | RegExp,
+  /** If true, capitalizes the first symbol in the input */
+  capitalizeFirstLetter?: boolean,
   /** Default value */
   defaultValue?: string | null,
   /** Put 'numbers' to forbid numbers only or a RegExp to use your own pattern */
