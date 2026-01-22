@@ -133,6 +133,7 @@
     var(--chili-base-color);
   --chili-drop-down-suggestion-container-margin-top: 3px;
   --chili-drop-down-no-data-color: var(--chili-base-color);
+  --chili-drop-down-scrollbar-width: thin;
 
   --chili-input-font-size: var(--chili-font-size);
   --chili-input-line-height: var(--chili-line-height);

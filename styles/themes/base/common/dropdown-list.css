@@ -28,6 +28,7 @@
   max-block-size: var(--chili-drop-down-suggestion-container-max-block-size);
   overflow-x: hidden;
   overflow-y: auto;
+  scrollbar-width: var(--chili-drop-down-scrollbar-width);
 }
 
 .chili-suggestion-wrapper {
