@@ -1,11 +1,12 @@
 .chili-textarea {
   width: 100%;
-  resize: none;
+  resize: var(--chili-textarea-resize);
   height: var(--chili-textarea-height);
   padding: var(--chili-textarea-padding);
   border: var(--chili-textarea-border);
   border-radius: var(--chili-textarea-border-radius);
   outline: none;
+  background-color: var(--chili-textarea-bg-color);
 
   &:hover {
     border-color: var(--chili-textarea-border-color-hover);
