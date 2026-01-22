@@ -7,6 +7,7 @@
   border-radius: var(--chili-textarea-border-radius);
   outline: none;
   background-color: var(--chili-textarea-bg-color);
+  scrollbar-width: var(--chili-textarea-scrollbar-width);
 
   &:hover {
     border-color: var(--chili-textarea-border-color-hover);
