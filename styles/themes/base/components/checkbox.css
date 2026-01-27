@@ -1,6 +1,6 @@
 .chili-checkbox-label {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   cursor: pointer;
   position: relative;
 }
@@ -21,6 +21,8 @@
   width: var(--chili-checkbox-size);
   height: var(--chili-checkbox-size);
   margin-inline-end: var(--chili-checkbox-margin-inline-end);
+  margin-block-start: var(--chili-checkbox-margin-inline-end);
+  flex-shrink: 0;
 }
 
 .chili-checkbox-invalid {

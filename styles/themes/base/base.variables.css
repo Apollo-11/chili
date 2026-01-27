@@ -97,6 +97,7 @@
 
   --chili-checkbox-size: 1rem;
   --chili-checkbox-margin-inline-end: 0.5rem;
+  --chili-checkbox-margin-block-start: 3px;
   --chili-checkbox-color-disabled: var(--chili-base-color-disabled);
 
   --chili-collapse-border-radius: var(--chili-border-radius);
