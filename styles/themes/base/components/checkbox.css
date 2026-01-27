@@ -21,7 +21,7 @@
   width: var(--chili-checkbox-size);
   height: var(--chili-checkbox-size);
   margin-inline-end: var(--chili-checkbox-margin-inline-end);
-  margin-block-start: var(--chili-checkbox-margin-inline-end);
+  margin-block-start: var(--chili-checkbox-margin-block-start);
   flex-shrink: 0;
 }
 
