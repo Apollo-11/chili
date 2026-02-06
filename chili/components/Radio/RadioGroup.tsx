@@ -61,28 +61,39 @@ export const RadioGroup = React.forwardRef((props: RadioGroupProps, ref?: React.
     { value },
   );
 
+  const isRadioButtonElement = (
+    child: React.ReactNode,
+  ): child is React.ReactElement<RadioButtonProps & PropsFromParent> => (
+    React.isValidElement(child)
+    && (child.type === RadioButton || (child.type as { name?: string }).name === 'RadioButton')
+  );
+
+  const enhancedChildren = React.useCallback((nodes: React.ReactNode): React.ReactNode => (
+    React.Children.map(nodes, (child) => {
+      if (isRadioButtonElement(child)) {
+        return React.cloneElement(child, {
+          name,
+          onChange: handleChange,
+          isDisabled: isBoolean(isDisabled) ? isDisabled : child.props.isDisabled,
+          isChecked: child.props.value === value,
+          theme: { ...theme, ...child.props.theme },
+        });
+      }
+
+      if (!React.isValidElement(child) || child.props?.children == null) {
+        return child;
+      }
+
+      return React.cloneElement(child, undefined, enhancedChildren(child.props.children));
+    })
+  ), [handleChange, isDisabled, name, theme, value]);
+
   return (
     <Wrapper
       className={combinedClassNames}
       ref={ref}
     >
-      {React.Children.toArray(children).map((child) => {
-        if (
-          child
-          && React.isValidElement(child)
-          && (child.type === RadioButton || (child.type as { name?: string }).name === 'RadioButton')
-        ) {
-          const radioButtonChild = child as React.ReactElement<RadioButtonProps & PropsFromParent>;
-          return React.cloneElement(radioButtonChild, {
-            name,
-            onChange: handleChange,
-            isDisabled: isBoolean(isDisabled) ? isDisabled : radioButtonChild.props.isDisabled,
-            isChecked: radioButtonChild.props.value === value,
-            theme: { ...theme, ...radioButtonChild.props.theme },
-          });
-        }
-        return child;
-      })}
+      {enhancedChildren(children)}
       {!isValid && <InvalidMessage />}
     </Wrapper>
   );

@@ -11,6 +11,7 @@ import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
 import { ValidationSection } from '@/sections';
 import { Controlled } from './_demo/Controlled';
 import { Form } from './_demo/Form';
+import { Grouped } from './_demo/Grouped';
 import { Required } from './_demo/Required';
 import { Reset } from './_demo/Reset';
 import { Uncontrolled } from './_demo/Uncontrolled';
@@ -150,6 +151,9 @@ const RadioPage = () => (
         </L.Tab>
         <L.Tab title="Required" tabKey={4}>
           <Required />
+        </L.Tab>
+        <L.Tab title="Grouped" tabKey={5}>
+          <Grouped />
         </L.Tab>
       </L.Tabs>
     </Section>
