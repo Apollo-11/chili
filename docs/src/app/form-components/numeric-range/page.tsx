@@ -61,7 +61,8 @@ const NumericRangePage = () => (
           <CodeBlock>
             {`(event: NumericRangeBlurEvent) => void
 
-interface NumericRangeBlurEvent extends React.FocusEvent<HTMLInputElement> {
+interface NumericRangeBlurEvent
+  extends React.FocusEvent<HTMLInputElement> {
   component: {
     formattedValue: [string, string],
     isValid?: boolean,
@@ -98,7 +99,8 @@ interface NumericRangeChangeEvent {
           <CodeBlock>
             {`(event: NumericRangeEnterPressEvent) => void
 
-interface NumericRangeEnterPressEvent extends React.KeyboardEvent<HTMLInputElement> {
+interface NumericRangeEnterPressEvent
+  extends React.KeyboardEvent<HTMLInputElement> {
   component: {
     name?: string,
     value: [number | null, number | null],
@@ -115,7 +117,8 @@ interface NumericRangeEnterPressEvent extends React.KeyboardEvent<HTMLInputEleme
           <CodeBlock>
             {`(event: NumericRangeFocusEvent) => void
 
-interface NumericRangeFocusEvent extends React.FocusEvent<HTMLInputElement> {
+interface NumericRangeFocusEvent
+  extends React.FocusEvent<HTMLInputElement> {
   component: {
     formattedValue: [string, string],
     name?: string,
