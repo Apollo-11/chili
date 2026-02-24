@@ -15,13 +15,14 @@ import {
   createNumericFocusHandler,
 } from './handlers';
 import {
-  getPlaceholder, getRequired, getDisabled, getControlledValue, getInputNames,
+  getPlaceholder, getRequired, getDisabled, getControlledValue, getInputNames, getDefaultValue,
 } from './helpers';
 import type { NumericRangeProps, NumericRangeState } from './types';
 
 export const NumericRange = React.forwardRef((props: NumericRangeProps, ref?: React.Ref<HTMLElement>): React.ReactElement => {
   const {
     className,
+    defaultValue: defaultValueProp,
     form,
     format,
     inputsRender,
@@ -45,7 +46,10 @@ export const NumericRange = React.forwardRef((props: NumericRangeProps, ref?: Re
     ...restProps
   } = useProps(props);
   // returns value from props or from state, setUncontrolledState works only in uncontrolled mode
-  const [value, setUncontrolledValue] = useValue<NumericRangeState['value']>(getControlledValue(valueProp), [null, null]);
+  const [value, setUncontrolledValue] = useValue<NumericRangeState['value']>(
+    getControlledValue(valueProp),
+    getDefaultValue(defaultValueProp) ?? [null, null],
+  );
 
   const theme = useTheme(themeProp, COMPONENTS_NAMESPACES.numericRange);
 

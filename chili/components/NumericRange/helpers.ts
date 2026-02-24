@@ -33,3 +33,11 @@ export const getControlledValue = (value: NumericRangeProps['value']): [number |
 
   return value;
 };
+
+export const getDefaultValue = (value: NumericRangeProps['defaultValue']): [number | null, number | null] | undefined => {
+  if (value === undefined) return undefined;
+
+  if (value === null) return [null, null];
+
+  return value;
+};

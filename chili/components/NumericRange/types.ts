@@ -49,6 +49,8 @@ export interface NumericRangeFocusEvent extends React.FocusEvent<HTMLInputElemen
 export interface NumericRangeProps {
   /** CSS class names */
   className?: string,
+  /** Default values */
+  defaultValue?: [number | null, number | null] | null,
   /** Format, see formatting.md */
   format?: string,
   /** Form name, is required for validation */
@@ -67,10 +69,10 @@ export interface NumericRangeProps {
   min?: number,
   /** Numeric name */
   name?: string,
-  /** Change handler */
-  onChange?: (event: NumericRangeChangeEvent) => void,
   /** Blur handler */
   onBlur?: (event: NumericRangeBlurEvent) => void,
+  /** Change handler */
+  onChange?: (event: NumericRangeChangeEvent) => void,
   /** Enter press handler */
   onEnterPress?: (event: NumericRangeEnterPressEvent) => void,
   /** Focus handler */

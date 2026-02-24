@@ -12,6 +12,11 @@ const NumericRangePage = () => (
     <H1>NumericRange</H1>
     <PropsTableSection>
       <tr>
+        <Td>defaultValue</Td>
+        <Td>[number | null, number | null] | null</Td>
+        <Td>Default value for the uncontrolled mode</Td>
+      </tr>
+      <tr>
         <Td>format</Td>
         <Td>string</Td>
         <Td>
