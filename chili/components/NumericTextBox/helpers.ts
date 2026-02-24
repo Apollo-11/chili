@@ -206,6 +206,7 @@ export const getRestProps = (props: NumericTextBoxProps): WrapperProps => {
     onBlur,
     onChange,
     onClick,
+    onEnterPress,
     onFocus,
     prefixRender,
     step,
