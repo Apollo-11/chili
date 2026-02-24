@@ -31,10 +31,10 @@ export const useCustomElements = (props: NumericTextBoxProps, state: NumericText
     state,
   );
 
-  const ArrowButtons = useElement(
-    'ArrowButtons',
+  const Stepper = useElement(
+    'Stepper',
     Div,
-    props.arrowButtonsRender || numericRenders.arrowButtonsRender,
+    props.stepperRender || numericRenders.stepperRender,
     props,
     state,
   );
@@ -42,7 +42,7 @@ export const useCustomElements = (props: NumericTextBoxProps, state: NumericText
   return {
     Wrapper,
     Input,
-    ArrowButtons,
+    Stepper,
   };
 };
 

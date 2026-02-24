@@ -55,6 +55,8 @@ export interface NumericRangeProps {
   format?: string,
   /** Form name, is required for validation */
   form?: string,
+  /** Whether or not to show stepper buttons */
+  hasStepper?: boolean,
   /** Input fields customizators, [render, render] */
   inputsRender?: [NumericTextBoxProps['inputRender'] | null, NumericTextBoxProps['inputRender'] | null],
   /** Disabled state */

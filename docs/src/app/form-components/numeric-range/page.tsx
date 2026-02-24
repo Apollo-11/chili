@@ -36,6 +36,11 @@ const NumericRangePage = () => (
         </Td>
       </tr>
       <tr>
+        <Td>hasStepper</Td>
+        <Td>boolean</Td>
+        <Td>Whether or not to show stepper buttons</Td>
+      </tr>
+      <tr>
         <Td>isDisabled</Td>
         <Td>boolean | [boolean, boolean]</Td>
         <Td>Disable the component</Td>
@@ -166,6 +171,7 @@ interface NumericRangeFocusEvent extends React.FocusEvent<HTMLInputElement> {
     <Live scope={{ L }}>
       {`<>
 <L.NumericRange
+  hasStepper
   onBlur={({ component }) => console.log('blur', component.value)}
   onChange={({ component }) => console.log('change', component.value)}
   onEnterPress={({ component }) => console.log('enter', component.value)}
@@ -208,6 +214,7 @@ interface NumericRangeFocusEvent extends React.FocusEvent<HTMLInputElement> {
     <Live scope={{ L }}>
       {`
 <L.NumericRange
+  hasStepper
   onChange={({ component }) => console.log('change', component.value)}
   _w-96
 />

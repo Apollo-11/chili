@@ -25,6 +25,7 @@ export const NumericRange = React.forwardRef((props: NumericRangeProps, ref?: Re
     defaultValue: defaultValueProp,
     form,
     format,
+    hasStepper: hasStepperProp,
     inputsRender,
     isDisabled,
     isRequired: isRequiredProp,
@@ -120,6 +121,7 @@ export const NumericRange = React.forwardRef((props: NumericRangeProps, ref?: Re
     >
       <NumericTextBox
         inputRender={Array.isArray(inputsRender) ? inputsRender[0] : undefined}
+        hasStepper={hasStepperProp}
         isDisabled={disabled[0]}
         isRequired={required[0]}
         max={isNil(value[1]) ? max : value[1]}
@@ -137,6 +139,7 @@ export const NumericRange = React.forwardRef((props: NumericRangeProps, ref?: Re
       <Div className={theme.delimiter}>&mdash;</Div>
       <NumericTextBox
         inputRender={Array.isArray(inputsRender) ? inputsRender[1] : undefined}
+        hasStepper={hasStepperProp}
         isDisabled={disabled[1]}
         isRequired={required[1]}
         max={max}

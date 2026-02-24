@@ -214,7 +214,7 @@ export const createPasteHandler = (
   setUncontrolledValue(newValue);
 };
 
-export const createArrowButtonClick = (
+export const createStepperClick = (
   value: number | null,
   onChange: CustomEventHandler<ChangeEvent> | undefined,
   onClick: React.MouseEventHandler | undefined,
@@ -228,7 +228,7 @@ export const createArrowButtonClick = (
   min?: number,
   max?: number,
   name?: string,
-): NumericHandlers['handleArrowButtonClick'] => (type) => (event) => {
+): NumericHandlers['handleStepperClick'] => (type) => (event) => {
   if (isDisabled) return;
 
   const sign = (() => {

@@ -91,12 +91,12 @@ export interface FocusEvent extends React.FocusEvent<HTMLInputElement> {
 }
 
 export interface NumericTextBoxProps extends ValidationProps {
-  /** Arrow buttons customizator */
-  arrowButtonsRender?: CustomRender<NumericTextBoxProps, NumericTextBoxState, ArrowButtonsProps>,
   /** Default value */
   defaultValue?: number | null,
   /** Format, see: formatting.md, "#" by default */
   format?: string,
+  /** Whether or not to show stepper buttons */
+  hasStepper?: boolean,
   /** Input customizator */
   inputRender?: CustomRender<NumericTextBoxProps, NumericTextBoxState, InputProps> | null,
   /** Disabled state */
@@ -123,6 +123,8 @@ export interface NumericTextBoxProps extends ValidationProps {
   shouldTrimTrailingZeros?: boolean,
   /** Step */
   step?: number,
+  /** Stepper customizator */
+  stepperRender?: CustomRender<NumericTextBoxProps, NumericTextBoxState, StepperProps>,
   /** Theme */
   theme?: PartialGlobalDefaultTheme[typeof COMPONENTS_NAMESPACES.numericTextBox],
   /** A space by default: 1 000 000.00 */
@@ -149,14 +151,14 @@ export interface NumericHandlers {
   handleChange: CustomEventHandler<React.ChangeEvent<HTMLInputElement>>,
   handleKeyDown: CustomEventHandler<React.KeyboardEvent<HTMLInputElement>>,
   handlePaste: CustomEventHandler<React.ClipboardEvent<HTMLInputElement>>,
-  handleArrowButtonClick: (type: 'increase' | 'decrease') => CustomEventHandler<React.MouseEvent<SVGElement>>,
+  handleStepperClick: (type: 'increase' | 'decrease') => CustomEventHandler<React.MouseEvent<SVGElement>>,
 }
 
 export interface WrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   ref?: React.Ref<HTMLElement>,
 }
 
-export type ArrowButtonsProps = React.HTMLAttributes<HTMLDivElement>;
+export type StepperProps = React.HTMLAttributes<HTMLDivElement>;
 
 export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   disabled?: boolean,
@@ -169,7 +171,7 @@ export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
 export interface CustomElements {
   Wrapper: React.FC<DivProps>,
   Input: React.FC<InputProps>,
-  ArrowButtons: React.FC<ArrowButtonsProps>,
+  Stepper: React.FC<StepperProps>,
 }
 
 export type NormalizeParameters = {

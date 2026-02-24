@@ -8,7 +8,6 @@ import {
 import { Div } from '../Div';
 import { useValidation } from '../Validation';
 import {
-  createArrowButtonClick,
   createBlurHandler,
   createChangeHandler,
   createFocusHandler,
@@ -16,6 +15,7 @@ import {
   createPasteHandler,
   createResetHandler,
   createSetValueHandler,
+  createStepperClick,
 } from './handlers';
 import {
   formatInputValue, formatValue, getRestProps, getValue, normalizeValue,
@@ -32,6 +32,7 @@ export const NumericTextBox = React.forwardRef((props: NumericTextBoxProps, ref:
     defaultValue = null,
     form,
     format = '#',
+    hasStepper = false,
     isDisabled,
     isRequired,
     max = DEFAULT_VALUES.maxValue,
@@ -98,12 +99,12 @@ export const NumericTextBox = React.forwardRef((props: NumericTextBoxProps, ref:
   const handleChange = createChangeHandler(value, onChange, setUncontrolledValue, setInputValue, format, thousandsSeparator, name);
   const handleKeyDown = createKeyDownHandler(value, onChange, onEnterPress, setUncontrolledValue, setInputValue, step, thousandsSeparator, format, name);
   const handlePaste = createPasteHandler(onChange, setUncontrolledValue, format, thousandsSeparator, name);
-  const handleArrowButtonClick = createArrowButtonClick(value, onChange, onClick, isDisabled, setUncontrolledValue, setInputValue, validateCurrent, step, thousandsSeparator, format, min, max, name);
+  const handleStepperClick = createStepperClick(value, onChange, onClick, isDisabled, setUncontrolledValue, setInputValue, validateCurrent, step, thousandsSeparator, format, min, max, name);
 
   const {
     Wrapper,
     Input,
-    ArrowButtons,
+    Stepper,
   } = useCustomElements(props, { value, isFocused });
 
   useSyncedValue(valueProp, isFocused, format, thousandsSeparator, setInputValue);
@@ -146,18 +147,20 @@ export const NumericTextBox = React.forwardRef((props: NumericTextBoxProps, ref:
           ref={inputRef}
           value={getComponentValue}
         />
-        <ArrowButtons className={theme.arrowButtons} onClick={(event) => event.stopPropagation()}>
-          <Icon
-            icon={IconTypes.Icons.ChevronUp}
-            className={theme.arrowUp}
-            onClick={handleArrowButtonClick('increase')}
-          />
-          <Icon
-            icon={IconTypes.Icons.ChevronDown}
-            className={theme.arrowDown}
-            onClick={handleArrowButtonClick('decrease')}
-          />
-        </ArrowButtons>
+        {hasStepper && (
+          <Stepper className={theme.arrowButtons} onClick={(event) => event.stopPropagation()}>
+            <Icon
+              icon={IconTypes.Icons.ChevronUp}
+              className={theme.arrowUp}
+              onClick={handleStepperClick('increase')}
+            />
+            <Icon
+              icon={IconTypes.Icons.ChevronDown}
+              className={theme.arrowDown}
+              onClick={handleStepperClick('decrease')}
+            />
+          </Stepper>
+        )}
       </Div>
       {
         !isFocused && !isDisabled && (

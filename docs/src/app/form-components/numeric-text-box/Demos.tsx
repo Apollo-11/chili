@@ -8,6 +8,7 @@ export const Demos = () => (
       {`
 <L.NumericTextBox
   format='#.# humans'
+  hasStepper
   onChange={({ component }) => console.log(component.value)}
   _w-48
 />

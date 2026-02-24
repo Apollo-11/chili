@@ -21,6 +21,7 @@ export const Demos = () => {
 <L.NumericRange
   defaultValue={[1, 10]}
   format='#.# robots'
+  hasStepper
   onBlur={({ component }) => console.log('blur', component.value)}
   onChange={({ component }) => console.log('change', component.value)}
   onEnterPress={({ component }) => console.log('enter', component.value)}
@@ -40,6 +41,7 @@ export const Demos = () => {
     <L.NumericRange
       value={value}
       format='#.# robots'
+      hasStepper
       onBlur={({ component }) => console.log('blur', component.value)}
       onChange={({ component }) => {
         console.log('change', component.value);

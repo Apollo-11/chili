@@ -8,9 +8,17 @@ import {
 } from './index';
 
 describe('NumericTextBox SNAPSHOTS', () => {
+  it('should not render stepper by default', () => {
+    render((
+      <NumericTextBox />
+    ));
+
+    expect(document.querySelector('.chili-numeric-arrows')).toBeNull();
+  });
+
   it('should render', () => {
     const wrapper = render((
-      <NumericTextBox />
+      <NumericTextBox hasStepper />
     ));
 
     expect(wrapper.container).toMatchSnapshot();
@@ -19,7 +27,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
   describe('controllable mode', () => {
     it('should render format', () => {
       const wrapper = render((
-        <NumericTextBox format="#,## %" value={0.235813} />
+        <NumericTextBox hasStepper format="#,## %" value={0.235813} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('0,24 %');
@@ -27,7 +35,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
       expect(wrapper.container).toMatchSnapshot();
 
       wrapper.rerender((
-        <NumericTextBox format="#,#### ₽" value={0.235813} />
+        <NumericTextBox hasStepper format="#,#### ₽" value={0.235813} />
       ));
 
       // todo fix precision
@@ -39,7 +47,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
     it('should render min', () => {
       // todo: починить снапшоты, они просто зависают
       const wrapper = render((
-        <NumericTextBox min={-2} />
+        <NumericTextBox hasStepper min={-2} />
       ));
 
       screen.getByRole('textbox').focus();
@@ -57,7 +65,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
       expect(wrapper.container).toMatchSnapshot();
 
       wrapper.rerender((
-        <NumericTextBox format="#,#" min={-6.2} />
+        <NumericTextBox hasStepper format="#,#" min={-6.2} />
       ));
 
       screen.getByRole('textbox').focus();
@@ -78,7 +86,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
     it('should render max', () => {
       // todo: починить снапшоты, они просто зависают
       const wrapper = render((
-        <NumericTextBox format="#,#" max={7.3} />
+        <NumericTextBox hasStepper format="#,#" max={7.3} />
       ));
 
       screen.getByRole('textbox').focus();
@@ -96,7 +104,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
       expect(wrapper.container).toMatchSnapshot();
 
       wrapper.rerender((
-        <NumericTextBox format="#,#" max={10.4} />
+        <NumericTextBox hasStepper format="#,#" max={10.4} />
       ));
 
       screen.getByRole('textbox').focus();
@@ -115,7 +123,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
     it('should render step', () => {
       // todo: починить снапшоты, они просто зависают
       const wrapper = render((
-        <NumericTextBox min={0} step={2} />
+        <NumericTextBox hasStepper min={0} step={2} />
       ));
 
       screen.getByRole('textbox').focus();
@@ -131,7 +139,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
       expect(wrapper.container).toMatchSnapshot();
 
       wrapper.rerender((
-        <NumericTextBox min={0} step={0.1} format="#,#" />
+        <NumericTextBox hasStepper min={0} step={0.1} format="#,#" />
       ));
 
       screen.getByRole('textbox').focus();
@@ -149,7 +157,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
 
     it('should render value', () => {
       const wrapper = render((
-        <NumericTextBox format="#,## %" value={0.235813} />
+        <NumericTextBox hasStepper format="#,## %" value={0.235813} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('0,24 %');
@@ -157,7 +165,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
       expect(wrapper.container).toMatchSnapshot();
 
       wrapper.rerender((
-        <NumericTextBox format="#,## %" value={0.687421} />
+        <NumericTextBox hasStepper format="#,## %" value={0.687421} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('0,69 %');
@@ -171,7 +179,7 @@ describe('NumericTextBox SNAPSHOTS', () => {
       const placeholder = 'placeholder';
 
       const wrapper = render((
-        <NumericTextBox placeholder={placeholder} />
+        <NumericTextBox hasStepper placeholder={placeholder} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveAttribute('placeholder', placeholder);
@@ -186,7 +194,7 @@ describe('NumericTextBox HANDLERS', () => {
     const handleBlur = jest.fn();
 
     render((
-      <NumericTextBox onBlur={handleBlur} />
+      <NumericTextBox hasStepper onBlur={handleBlur} />
     ));
 
     screen.getByRole('textbox').focus();
@@ -199,7 +207,7 @@ describe('NumericTextBox HANDLERS', () => {
     const handleChange = jest.fn();
 
     render((
-      <NumericTextBox onChange={handleChange} />
+      <NumericTextBox hasStepper onChange={handleChange} />
     ));
 
     userEvent.type(screen.getByRole('textbox'), '25');
@@ -213,7 +221,7 @@ describe('NumericTextBox HANDLERS', () => {
     const handleFocus = jest.fn();
 
     render((
-      <NumericTextBox onFocus={handleFocus} />
+      <NumericTextBox hasStepper onFocus={handleFocus} />
     ));
 
     screen.getByRole('textbox').focus();
@@ -225,7 +233,7 @@ describe('NumericTextBox HANDLERS', () => {
     const handleChange = jest.fn();
 
     render((
-      <NumericTextBox name="test" onChange={handleChange} />
+      <NumericTextBox hasStepper name="test" onChange={handleChange} />
     ));
 
     userEvent.type(screen.getByRole('textbox'), '25');
@@ -242,7 +250,7 @@ describe('NumericTextBox HANDLERS', () => {
     const handleBlur = jest.fn();
 
     render((
-      <NumericTextBox value={25} name="test" onBlur={handleBlur} />
+      <NumericTextBox hasStepper value={25} name="test" onBlur={handleBlur} />
     ));
 
     screen.getByRole('textbox').focus();
@@ -259,7 +267,7 @@ describe('NumericTextBox HANDLERS', () => {
   describe('different ways to change value', () => {
     it('should change value by clicking upper spinner', () => {
       render((
-        <NumericTextBox defaultValue={0} />
+        <NumericTextBox hasStepper defaultValue={0} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('0');
@@ -275,7 +283,7 @@ describe('NumericTextBox HANDLERS', () => {
 
     it('should change value by clicking lower spinner', () => {
       render((
-        <NumericTextBox defaultValue={0} />
+        <NumericTextBox hasStepper defaultValue={0} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('0');
@@ -291,7 +299,7 @@ describe('NumericTextBox HANDLERS', () => {
 
     it('should change value by input numbers', () => {
       render((
-        <NumericTextBox defaultValue={0} />
+        <NumericTextBox hasStepper defaultValue={0} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('0');
@@ -306,7 +314,7 @@ describe('NumericTextBox HANDLERS', () => {
 
   it('should round value according to current format', () => {
     render((
-      <NumericTextBox format="#,## %" value={0.235813} />
+      <NumericTextBox hasStepper format="#,## %" value={0.235813} />
     ));
 
     expect(screen.getByRole('textbox')).toHaveValue('0,24 %');
@@ -314,7 +322,7 @@ describe('NumericTextBox HANDLERS', () => {
 
   it('should change format onFocus', () => {
     render((
-      <NumericTextBox format="#,## %" value={0.235813} />
+      <NumericTextBox hasStepper format="#,## %" value={0.235813} />
     ));
 
     expect(screen.getByRole('textbox')).toHaveValue('0,24 %');
@@ -326,7 +334,7 @@ describe('NumericTextBox HANDLERS', () => {
 
   it('should change format onBlur', () => {
     render((
-      <NumericTextBox format="#,## %" value={0.235813} />
+      <NumericTextBox hasStepper format="#,## %" value={0.235813} />
     ));
 
     expect(screen.getByRole('textbox')).toHaveValue('0,24 %');
@@ -345,7 +353,7 @@ describe('NumericTextBox ATTRIBUTES', () => {
   describe('format', () => {
     it('should have number format', () => {
       render((
-        <NumericTextBox format="#,##" value={0.235813} />
+        <NumericTextBox hasStepper format="#,##" value={0.235813} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('0,24');
@@ -353,7 +361,7 @@ describe('NumericTextBox ATTRIBUTES', () => {
 
     it('should have currency format', () => {
       render((
-        <NumericTextBox format="#,## ₽" value={0.235813} />
+        <NumericTextBox hasStepper format="#,## ₽" value={0.235813} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('0,24 ₽');
@@ -361,7 +369,7 @@ describe('NumericTextBox ATTRIBUTES', () => {
 
     it('should have percent format', () => {
       render((
-        <NumericTextBox format="#,## %" value={0.235813} />
+        <NumericTextBox hasStepper format="#,## %" value={0.235813} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('0,24 %');
@@ -369,7 +377,7 @@ describe('NumericTextBox ATTRIBUTES', () => {
 
     it('should have custom format', () => {
       render((
-        <NumericTextBox format="#,####### tests" value={1080.235813} />
+        <NumericTextBox hasStepper format="#,####### tests" value={1080.235813} />
       ));
 
       expect(screen.getByRole('textbox')).toHaveValue('1 080,2358130 tests');
@@ -384,7 +392,7 @@ describe('NumericTextBox VALIDATION', () => {
     const validator = (value: string): boolean => value.toString().length >= 4;
 
     render((
-      <NumericTextBox isRequired form="test" name="test" onBlur={handleBlur} validator={validator} invalidMessage="message" />
+      <NumericTextBox hasStepper isRequired form="test" name="test" onBlur={handleBlur} validator={validator} invalidMessage="message" />
     ));
 
     screen.getByRole('textbox').focus();
@@ -444,7 +452,7 @@ describe('NumericTextBox VALIDATION', () => {
     const handleBlur = jest.fn();
 
     render((
-      <NumericTextBox isRequired form="test" name="test" onBlur={handleBlur} />
+      <NumericTextBox hasStepper isRequired form="test" name="test" onBlur={handleBlur} />
     ));
 
     screen.getByRole('textbox').focus();

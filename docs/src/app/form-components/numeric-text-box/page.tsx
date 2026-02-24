@@ -36,6 +36,11 @@ const NumericTextBoxPage = () => (
         </Td>
       </tr>
       <tr>
+        <Td>hasStepper</Td>
+        <Td>boolean</Td>
+        <Td>Whether or not to show stepper buttons. Default is false</Td>
+      </tr>
+      <tr>
         <Td>isDisabled</Td>
         <Td>boolean</Td>
         <Td>Disable the component</Td>
@@ -141,9 +146,9 @@ const NumericTextBoxPage = () => (
     <CustomizationPropsTableSection>
       <tr>
         <Td>
-          arrowButtonsRender <br />
           inputRender <br />
           invalidMessageRender <br />
+          stepperRender <br />
           wrapperRender
         </Td>
         <Td>

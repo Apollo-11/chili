@@ -194,9 +194,9 @@ export const normalizeValue = ({
 
 export const getRestProps = (props: NumericTextBoxProps): WrapperProps => {
   const {
-    arrowButtonsRender,
     defaultValue,
     format,
+    hasStepper,
     inputRender,
     className,
     max,
@@ -210,6 +210,7 @@ export const getRestProps = (props: NumericTextBoxProps): WrapperProps => {
     onFocus,
     prefixRender,
     step,
+    stepperRender,
     isDisabled,
     isRequired,
     isValid: isValidProp,
