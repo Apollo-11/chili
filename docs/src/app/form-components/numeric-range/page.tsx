@@ -55,7 +55,7 @@ interface NumericRangeBlurEvent extends React.FocusEvent<HTMLInputElement> {
   component: {
     formattedValue: [string, string],
     isValid?: boolean,
-    name?: string | [string | undefined, string | undefined],
+    name?: string,
     value: [number | null, number | null],
   },
 }
@@ -66,19 +66,55 @@ interface NumericRangeBlurEvent extends React.FocusEvent<HTMLInputElement> {
       </tr>
       <tr>
         <Td>onChange</Td>
-        <Td>(event: ChangeEvent{'<'}T{'>'}) ={'>'} void</Td>
+        <Td>
+          <CodeBlock>
+            {`(event: NumericRangeChangeEvent) => void
+
+interface NumericRangeChangeEvent {
+  component: {
+    formattedValue: [string, string],
+    name?: string,
+    value: [number | null, number | null],
+  },
+}
+`}
+          </CodeBlock>
+        </Td>
         <Td>Value change handler</Td>
       </tr>
       <tr>
         <Td>onEnterPress</Td>
         <Td>
-          (event: EnterPressEvent) ={'>'} void
+          <CodeBlock>
+            {`(event: NumericRangeEnterPressEvent) => void
+
+interface NumericRangeEnterPressEvent extends React.KeyboardEvent<HTMLInputElement> {
+  component: {
+    name?: string,
+    value: [number | null, number | null],
+  },
+}
+`}
+          </CodeBlock>
         </Td>
         <Td>Enter press handler</Td>
       </tr>
       <tr>
         <Td>onFocus</Td>
-        <Td>(event: FocusEvent) ={'>'} void</Td>
+        <Td>
+          <CodeBlock>
+            {`(event: NumericRangeFocusEvent) => void
+
+interface NumericRangeFocusEvent extends React.FocusEvent<HTMLInputElement> {
+  component: {
+    formattedValue: [string, string],
+    name?: string,
+    value: [number | null, number | null],
+  },
+}
+`}
+          </CodeBlock>
+        </Td>
         <Td>Focus handler</Td>
       </tr>
       <tr>
@@ -125,7 +161,10 @@ interface NumericRangeBlurEvent extends React.FocusEvent<HTMLInputElement> {
     <Live scope={{ L }}>
       {`<>
 <L.NumericRange
-  onChange={({ component }) => console.log(component.value)}
+  onBlur={({ component }) => console.log('blur', component.value)}
+  onChange={({ component }) => console.log('change', component.value)}
+  onEnterPress={({ component }) => console.log('enter', component.value)}
+  onFocus={({ component }) => console.log('focus', component.value)}
   form='numeric-range-form'
   name='numeric-range'
   _w-96
@@ -164,7 +203,7 @@ interface NumericRangeBlurEvent extends React.FocusEvent<HTMLInputElement> {
     <Live scope={{ L }}>
       {`
 <L.NumericRange
-  onChange={({ component }) => console.log(component.value)}
+  onChange={({ component }) => console.log('change', component.value)}
   _w-96
 />
         `}

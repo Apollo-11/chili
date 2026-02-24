@@ -2,7 +2,7 @@ import type * as React from 'react';
 import type { CustomRender } from '../../commonTypes';
 import type { COMPONENTS_NAMESPACES } from '../../constants';
 import type { PartialGlobalDefaultTheme } from '../../utils/useTheme';
-import type { FocusEvent, NumericTextBoxProps } from '../NumericTextBox/types';
+import type { NumericTextBoxProps } from '../NumericTextBox/types';
 import type { DivProps } from '../Div';
 
 export interface LabelProps {
@@ -14,19 +14,34 @@ export interface NumericRangeState {
   value: [number | null, number | null],
 }
 
-export interface RangeChangeEvent {
-  component: {
-    name?: string | [string | undefined, string | undefined],
-    value: [number | null, number | null],
-    formattedValue: [string, string],
-  },
-}
-
 export interface NumericRangeBlurEvent extends React.FocusEvent<HTMLInputElement> {
   component: {
     formattedValue: [string, string],
     isValid?: boolean,
-    name?: string | [string | undefined, string | undefined],
+    name?: string,
+    value: [number | null, number | null],
+  },
+}
+
+export interface NumericRangeChangeEvent {
+  component: {
+    formattedValue: [string, string],
+    name?: string,
+    value: [number | null, number | null],
+  },
+}
+
+export interface NumericRangeEnterPressEvent extends React.KeyboardEvent<HTMLInputElement> {
+  component: {
+    name?: string,
+    value: [number | null, number | null],
+  },
+}
+
+export interface NumericRangeFocusEvent extends React.FocusEvent<HTMLInputElement> {
+  component: {
+    formattedValue: [string, string],
+    name?: string,
     value: [number | null, number | null],
   },
 }
@@ -50,14 +65,16 @@ export interface NumericRangeProps {
   max?: number,
   /** Min range value */
   min?: number,
-  /** Numerics names */
-  name?: string | [string | undefined, string | undefined],
+  /** Numeric name */
+  name?: string,
   /** Change handler */
-  onChange?: (event: RangeChangeEvent) => void,
+  onChange?: (event: NumericRangeChangeEvent) => void,
   /** Blur handler */
   onBlur?: (event: NumericRangeBlurEvent) => void,
-  /** Focus handler, comes from NumericTextBox unchanged */
-  onFocus?: (event: FocusEvent) => void,
+  /** Enter press handler */
+  onEnterPress?: (event: NumericRangeEnterPressEvent) => void,
+  /** Focus handler */
+  onFocus?: (event: NumericRangeFocusEvent) => void,
   /** Placeholders */
   placeholder?: [string | undefined, string | undefined] | string,
   /** Ref */

@@ -8,8 +8,10 @@ export const Demos = () => (
       {`
 <L.NumericRange
   format='#.# robots'
-  onBlur={({ component }) => console.log(component.value)}
-  onChange={({ component }) => console.log(component.value)}
+  onBlur={({ component }) => console.log('blur', component.value)}
+  onChange={({ component }) => console.log('change', component.value)}
+  onEnterPress={({ component }) => console.log('enter', component.value)}
+  onFocus={({ component }) => console.log('focus', component.value)}
   _w-96
 />
 `}

@@ -118,7 +118,12 @@ import * as commonTypes from './commonTypes';
 import { form, getPersistedForm, setPersistedForm } from './form';
 import { Persistence } from './components/Validation/types';
 
-export type { NumericRangeBlurEvent } from './components/NumericRange/types';
+export type {
+  NumericRangeBlurEvent,
+  NumericRangeChangeEvent,
+  NumericRangeEnterPressEvent,
+  NumericRangeFocusEvent,
+} from './components/NumericRange/types';
 
 const utils = {
   bytesSizeToUnitsSize,

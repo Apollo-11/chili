@@ -3,11 +3,8 @@
 import { isString, isBoolean } from 'lodash';
 import type { NumericRangeProps } from './types';
 
-export const getName = (name?: string | [string | undefined, string | undefined]): [string | undefined, string | undefined] => {
+export const getInputNames = (name?: string): [string | undefined, string | undefined] => {
   if (isString(name)) return [`${name}-from`, `${name}-to`];
-
-  if (Array.isArray(name) && name.length === 2) return name;
-
   return [undefined, undefined];
 };
 
