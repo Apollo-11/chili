@@ -48,7 +48,19 @@ const NumericRangePage = () => (
       <tr>
         <Td>onBlur</Td>
         <Td>
-          (event: BlurEvent) ={'>'} void
+          <CodeBlock>
+            {`(event: NumericRangeBlurEvent) => void
+
+interface NumericRangeBlurEvent extends React.FocusEvent<HTMLInputElement> {
+  component: {
+    formattedValue: [string, string],
+    isValid?: boolean,
+    name?: string | [string | undefined, string | undefined],
+    value: [number | null, number | null],
+  },
+}
+`}
+          </CodeBlock>
         </Td>
         <Td>Blur handler</Td>
       </tr>

@@ -8,6 +8,7 @@ export const Demos = () => (
       {`
 <L.NumericRange
   format='#.# robots'
+  onBlur={({ component }) => console.log(component.value)}
   onChange={({ component }) => console.log(component.value)}
   _w-96
 />

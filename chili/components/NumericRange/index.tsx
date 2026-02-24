@@ -9,6 +9,7 @@ import {
 import { Div } from '../Div';
 import { NumericTextBox } from '../NumericTextBox';
 import {
+  createNumericBlurHandler,
   createNumericChangeHandler,
 } from './handlers';
 import {
@@ -57,7 +58,6 @@ export const NumericRange = React.forwardRef((props: NumericRangeProps, ref?: Re
     form,
     format,
     step,
-    onBlur,
     onFocus,
     isValid,
     shouldTrimTrailingZeros,
@@ -71,6 +71,14 @@ export const NumericRange = React.forwardRef((props: NumericRangeProps, ref?: Re
     onChange,
     format,
     thousandsSeparator,
+  });
+  const handleBlur = createNumericBlurHandler({
+    value,
+    name: nameProp,
+    onBlur,
+    format,
+    thousandsSeparator,
+    shouldTrimTrailingZeros,
   });
 
   const wrapperClassNames = getClassNames(
@@ -99,6 +107,7 @@ export const NumericRange = React.forwardRef((props: NumericRangeProps, ref?: Re
         max={isNil(value[1]) ? max : value[1]}
         min={min}
         name={name[0]}
+        onBlur={handleBlur('from')}
         onChange={handleChange('from')}
         placeholder={placeholder[0]}
         theme={theme.to}
@@ -113,6 +122,7 @@ export const NumericRange = React.forwardRef((props: NumericRangeProps, ref?: Re
         max={max}
         min={isNil(value[0]) ? min : value[0]}
         name={name[1]}
+        onBlur={handleBlur('to')}
         onChange={handleChange('to')}
         placeholder={placeholder[1]}
         theme={theme.from}

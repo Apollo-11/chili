@@ -2,7 +2,7 @@ import type * as React from 'react';
 import type { CustomRender } from '../../commonTypes';
 import type { COMPONENTS_NAMESPACES } from '../../constants';
 import type { PartialGlobalDefaultTheme } from '../../utils/useTheme';
-import type { BlurEvent, FocusEvent, NumericTextBoxProps } from '../NumericTextBox/types';
+import type { FocusEvent, NumericTextBoxProps } from '../NumericTextBox/types';
 import type { DivProps } from '../Div';
 
 export interface LabelProps {
@@ -19,6 +19,15 @@ export interface RangeChangeEvent {
     name?: string | [string | undefined, string | undefined],
     value: [number | null, number | null],
     formattedValue: [string, string],
+  },
+}
+
+export interface NumericRangeBlurEvent extends React.FocusEvent<HTMLInputElement> {
+  component: {
+    formattedValue: [string, string],
+    isValid?: boolean,
+    name?: string | [string | undefined, string | undefined],
+    value: [number | null, number | null],
   },
 }
 
@@ -45,8 +54,8 @@ export interface NumericRangeProps {
   name?: string | [string | undefined, string | undefined],
   /** Change handler */
   onChange?: (event: RangeChangeEvent) => void,
-  /** Blur handler, comes from NumericTextBox unchanged */
-  onBlur?: (event: BlurEvent) => void,
+  /** Blur handler */
+  onBlur?: (event: NumericRangeBlurEvent) => void,
   /** Focus handler, comes from NumericTextBox unchanged */
   onFocus?: (event: FocusEvent) => void,
   /** Placeholders */

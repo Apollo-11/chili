@@ -1,8 +1,8 @@
 import { isFunction } from 'lodash';
 import type { SetState } from '../../commonTypes';
-import type { ChangeEvent } from '../NumericTextBox/types';
-import type { NumericRangeProps, NumericRangeState } from './types';
+import type { BlurEvent as NumericTextBoxBlurEvent, ChangeEvent } from '../NumericTextBox/types';
 import { formatValue } from '../NumericTextBox/helpers';
+import type { NumericRangeProps, NumericRangeState } from './types';
 
 export const createNumericChangeHandler = ({
   value,
@@ -50,4 +50,51 @@ export const createNumericChangeHandler = ({
   if (isFunction(onChange)) {
     onChange(customEvent);
   }
+};
+
+export const createNumericBlurHandler = ({
+  format = '#',
+  name,
+  onBlur,
+  shouldTrimTrailingZeros,
+  thousandsSeparator = ' ',
+  value,
+}: {
+  format?: string,
+  name?: string | [string | undefined, string | undefined],
+  onBlur?: NumericRangeProps['onBlur'],
+  shouldTrimTrailingZeros?: boolean,
+  thousandsSeparator?: string,
+  value: NumericRangeState['value'],
+}) => (type: 'from' | 'to') => (event: NumericTextBoxBlurEvent) => {
+  const newValue = (() => {
+    if (type === 'from') return [event.component.value, value[1]] as [number | null, number | null];
+    if (type === 'to') return [value[0], event.component.value] as [number | null, number | null];
+    return [null, null] as [number | null, number | null];
+  })();
+
+  onBlur?.({
+    ...event,
+    component: {
+      formattedValue: [formatValue(
+        {
+          value: newValue[0],
+          format,
+          shouldTrimTrailingZeros,
+          thousandsSeparator,
+        },
+      ),
+      formatValue(
+        {
+          value: newValue[1],
+          format,
+          shouldTrimTrailingZeros,
+          thousandsSeparator,
+        },
+      )] as [string, string],
+      isValid: event.component.isValid,
+      name,
+      value: newValue,
+    },
+  });
 };
