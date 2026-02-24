@@ -15,7 +15,12 @@ describe('setPersistedForm', () => {
     const key = `${FORM_STORAGE_PREFIX}${formName}`;
     window.localStorage.setItem(key, JSON.stringify({ [fieldName]: 'old', another: 1 }));
 
-    setPersistedForm({ form: formName, persistence: Persistence.localStorage, field: fieldName, value: 'new' });
+    setPersistedForm({
+      form: formName,
+      persistence: Persistence.localStorage,
+      field: fieldName,
+      value: 'new',
+    });
 
     expect(JSON.parse(window.localStorage.getItem(key) as string)).toEqual({ [fieldName]: 'new', another: 1 });
   });

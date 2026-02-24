@@ -450,7 +450,7 @@ export const getFieldValidState = (formName: string, fieldName: string): FormGet
   // Attach component-specific extras (e.g., MaskedInput: inputValue)
   if (rawField.extra && typeof rawField.extra === 'object') {
     Object.assign(base, rawField.extra);
-  };
-  
+  }
+
   return base;
 };

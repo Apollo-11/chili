@@ -33,7 +33,7 @@ export const createChangeHandler = (
       ? transformToCase(maxLengthAdjustedValue, letterCase)
       : maxLengthAdjustedValue;
 
-    if ((letterCase == null || letterCase == 'lower') && capitalizeFirstLetter) {
+    if ((letterCase == null || letterCase === 'lower') && capitalizeFirstLetter) {
       val = capitalizeFirstChar(val);
     }
 
