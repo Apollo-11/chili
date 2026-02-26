@@ -9,6 +9,7 @@ export const Demos = () => (
 <L.MultiSelect
   data={['Argentina', 'Spain', 'Mexico', 'Columbia', 'Peru', 'Chile', 'Costa Rica', 'Puerto Rico']}
   onChange={({ component }) => console.log(component.value)}
+  onEnterPress={({ component }) => console.log(component.value)}
   _w-48
 />
 `}

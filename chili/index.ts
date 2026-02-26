@@ -119,6 +119,13 @@ import { form, getPersistedForm, setPersistedForm } from './form';
 import { Persistence } from './components/Validation/types';
 
 export type {
+  MultiSelectBlurEvent,
+  MultiSelectChangeEvent,
+  MultiSelectEnterPressEvent,
+  MultiSelectFocusEvent,
+} from './components/MultiSelect/types';
+
+export type {
   NumericRangeBlurEvent,
   NumericRangeChangeEvent,
   NumericRangeEnterPressEvent,

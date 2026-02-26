@@ -65,6 +65,7 @@ export interface BlurEvent<T = Value> extends React.FocusEvent<HTMLInputElement>
 
 export interface EnterPressEvent<T = Value> extends React.KeyboardEvent<HTMLInputElement> {
   component: {
+    isValid?: boolean,
     name?: string,
     value: T[],
   },
@@ -77,7 +78,10 @@ export interface FocusEvent<T = Value> extends React.FocusEvent<HTMLInputElement
   },
 }
 
-export type ChangeEvent<T = Value> = MouseSelectEvent<T> | EnterSelectEvent<T> | ClearEvent<T> | ResetEvent<T>;
+export type MultiSelectBlurEvent<T = Value> = BlurEvent<T>;
+export type MultiSelectChangeEvent<T = Value> = MouseSelectEvent<T> | EnterSelectEvent<T> | ClearEvent<T> | ResetEvent<T>;
+export type MultiSelectEnterPressEvent<T = Value> = EnterPressEvent<T>;
+export type MultiSelectFocusEvent<T = Value> = FocusEvent<T>;
 
 export interface MultiSelectMessages {
   nothingFound?: React.ReactNode,
@@ -125,9 +129,11 @@ export interface MultiSelectProps<T extends MultiSelectValue | null | undefined 
   /** No suggestions test customizator */
   noSuggestionsRender?: CustomRender<SuggestionListProps, Record<string, never>, NoSuggestionsProps>,
   /** Blur handler */
-  onBlur?: (event: FocusEvent) => void,
+  onBlur?: (event: BlurEvent) => void,
   /** Change handler */
-  onChange?: (event: ChangeEvent) => void,
+  onChange?: (event: MultiSelectChangeEvent) => void,
+  /** Enter press handler */
+  onEnterPress?: (event: EnterPressEvent) => void,
   /** Focus handler */
   onFocus?: (event: FocusEvent) => void,
   /** Placeholder */
@@ -224,8 +230,11 @@ export interface KeyDownData {
   filterValue: string,
   handleSelect: CustomEventHandler<React.MouseEvent<HTMLElement> & SuggestionTarget>,
   highlightedSuggestion: Value,
+  name?: string,
+  onEnterPress?: MultiSelectProps['onEnterPress'],
   setFocused: SetState<boolean>,
   setHighlightedSuggestion: SetState<Value>,
+  validateCurrent: () => boolean,
   value: MultiSelectValue,
 }
 

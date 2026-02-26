@@ -164,7 +164,7 @@ export const createKeyDownHandler = (props: MultiSelectProps, extraData: KeyDown
   } = props;
 
   const {
-    filterValue, highlightedSuggestion, setHighlightedSuggestion, handleSelect, value,
+    filterValue, highlightedSuggestion, setHighlightedSuggestion, handleSelect, name, onEnterPress, validateCurrent, value,
   } = extraData;
 
   if (!data) return;
@@ -213,6 +213,15 @@ export const createKeyDownHandler = (props: MultiSelectProps, extraData: KeyDown
   }
 
   if (ev.key === 'Enter') {
+    onEnterPress?.({
+      ...ev,
+      component: {
+        isValid: validateCurrent(),
+        name,
+        value,
+      },
+    });
+
     if (!highlightedSuggestion) return;
 
     setHighlightedSuggestion(null);

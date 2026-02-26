@@ -162,6 +162,11 @@ interface MultiSelectMessages {
         <Td>Value change handler</Td>
       </tr>
       <tr>
+        <Td>onEnterPress</Td>
+        <Td>(event: EnterPressEvent) ={'>'} void</Td>
+        <Td>Enter press handler</Td>
+      </tr>
+      <tr>
         <Td>onFocus</Td>
         <Td>(event: FocusEvent) ={'>'} void</Td>
         <Td>Focus handler</Td>
@@ -226,6 +231,7 @@ interface MultiSelectMessages {
 <L.MultiSelect
   data={['Argentina', 'Spain', 'Mexico', 'Columbia', 'Peru', 'Chile', 'Costa Rica', 'Puerto Rico']}
   onChange={({ component }) => console.log(component.value)}
+  onEnterPress={({ component }) => console.log(component.value)}
   form='multiselect_form'
   name='multiselect'
   isRequired

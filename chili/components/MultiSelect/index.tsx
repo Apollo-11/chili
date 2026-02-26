@@ -63,6 +63,7 @@ export const MultiSelect = React.forwardRef((props: MultiSelectProps, ref: React
     noSuggestionsRender,
     onBlur,
     onChange,
+    onEnterPress,
     onFocus,
     placeholder,
     requiredMessage,
@@ -142,8 +143,11 @@ export const MultiSelect = React.forwardRef((props: MultiSelectProps, ref: React
     filterValue,
     handleSelect,
     highlightedSuggestion,
+    name,
+    onEnterPress,
     setFocused,
     setHighlightedSuggestion,
+    validateCurrent,
     value,
   });
 
