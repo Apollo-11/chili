@@ -6,13 +6,16 @@
   display: flex;
   align-items: center;
   min-inline-size: var(--chili-tag-min-inline-size);
+  max-inline-size: 100%;
   padding: var(--chili-tag-padding);
   margin-inline-end: var(--chili-tag-margin-inline-end);
-  block-size: var(--chili-tag-block-size);
+  min-block-size: var(--chili-tag-block-size);
   background-color: var(--chili-tag-bg);
   border: var(--chili-tag-border);
   border-radius: var(--chili-tag-border-radius);
   transition: var(--chili-tag-transition);
+  overflow-wrap: anywhere;
+  white-space: normal;
   &:hover {
     .chili-tag-icon {
       color: var(--chili-tag-icon-color-hover);
