@@ -7,7 +7,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/chili',
+  basePath: '/chili-ui',
   eslint: { ignoreDuringBuilds: true },
   webpack: (config) => {
     // This tells Next.js: "When you see '@chili', look in the parent folder"
