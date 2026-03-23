@@ -68,7 +68,7 @@ export const ValidationSection = ({
         </L.Tr>
         <L.Tr shouldRender={Boolean(all || persistence || form)}>
           <TdCode>persistence</TdCode>
-          <TdCode>{"'sessionStorage' | 'localStorage'"}</TdCode>
+          <TdCode>'sessionStorage' | 'localStorage'</TdCode>
           <Td>Persist the value in web storage</Td>
         </L.Tr>
         <L.Tr shouldRender={Boolean(all || requiredMessage)}>
