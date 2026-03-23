@@ -10,7 +10,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@chili": "file:..",
+    "chili-local": "file:..",
     "@types/node": "20.4.7",
     "@types/react": "^18.2.21",
     "@types/react-dom": "18.2.7",
