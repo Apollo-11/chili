@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { MenuButton } from './MenuButton';
 // eslint-disable-next-line import/extensions, import/no-relative-packages
 import packageJson from '../../../../package.json';
+import chiliLogo from '../../../public/chili_pepper.png';
 
 export const MainHeader = ({
   isMenuOpen,
@@ -28,7 +29,7 @@ export const MainHeader = ({
         className="inline-block px-4"
       >
         <Image
-          src="/chili_pepper.png"
+          src={chiliLogo}
           alt="Chili pepper"
           width={70}
           height={70}
