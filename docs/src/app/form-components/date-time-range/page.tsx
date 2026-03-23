@@ -14,7 +14,7 @@ const DateTimeRangePage = () => (
   <article>
     <H1>DateTimeRange</H1>
 
-  <PropsTableSection>
+    <PropsTableSection>
       <tr>
         <Td>autoComplete</Td>
         <Td>string</Td>

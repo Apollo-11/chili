@@ -4,7 +4,13 @@
 
 import * as L from '@chili';
 import { ShouldRender, UnderscoreClasses } from '@/components/commonProps';
-import { A, P, CodeBlock, H1, Td } from '@/components/typography';
+import {
+  A,
+  P,
+  CodeBlock,
+  H1,
+  Td,
+} from '@/components/typography';
 import { Live } from '@/components/live';
 import { CustomizationPropsTableSection, PropsTableSection, ValidationSection } from '@/sections';
 import { Demos } from './Demos';

@@ -20,4 +20,3 @@ export const CasingDemo = () => (
 }`}
   </Live>
 );
-
