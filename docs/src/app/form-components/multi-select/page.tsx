@@ -146,7 +146,7 @@ interface MultiSelectMessages {
             Customize component text labels
           </P>
           <P>
-            Consider using <Link href={PATHS.chiliProvider}>Chili provider</Link> to set messages globally.
+            Consider using <A href={PATHS.chiliProvider}>Chili provider</A> to set messages globally.
           </P>
         </Td>
       </tr>

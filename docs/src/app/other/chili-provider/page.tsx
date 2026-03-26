@@ -27,8 +27,8 @@ const ChiliProviderPage = () => (
         <Td>
           <P>Customize component text labels globally.</P>
           <P>Available messages:</P>
-          <P><Link href={PATHS.autoComplete}>autoComplete</Link></P>
-          <P><Link href={PATHS.pagination}>pagination</Link></P>
+          <P><A href={PATHS.autoComplete}>autoComplete</A></P>
+          <P><A href={PATHS.pagination}>pagination</A></P>
         </Td>
       </tr>
       <tr>
