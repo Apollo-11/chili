@@ -4,7 +4,7 @@ Chili UI is a React UI component library with built-in declarative forms and val
 
 ## Documentation
 
-<!-- [https://reactivechili.online][1] -->
+[tom-in-the-shell.github.io/chili-ui][1]
 
 ## Credit
 
@@ -29,8 +29,7 @@ Contributors:
 
 Chili UI is licensed under the MIT License
 
-<!-- [1]: https://reactivechili.online -->
-
+[1]: http://tom-in-the-shell.github.io/chili-ui
 [2]: https://github.com/tom-in-the-shell
 [3]: https://github.com/777PolarFox777
 [4]: https://github.com/roshal
