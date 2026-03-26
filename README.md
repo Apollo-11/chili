@@ -31,7 +31,7 @@ Chili is licensed under the MIT License
 
 <!-- [1]: https://reactivechili.online -->
 
-[2]: https://github.com/Apollo-11
+[2]: https://github.com/tom-in-the-shell
 [3]: https://github.com/777PolarFox777
 [4]: https://github.com/roshal
 [5]: https://github.com/JustOxxy
