@@ -2,11 +2,12 @@
 
 import * as L from '@chili';
 import {
-  H1, H2, P, A, Section,
+  H1, H2, P, Section,
 } from '@/components/typography';
 import { Live } from '@/components/live';
 import { ButtonValidationPropsTable, ValidationSection } from '@/sections';
 import { log } from '@/utils';
+import Link from 'next/link';
 
 const Page = () => (
   <article className="mb-10">
@@ -24,7 +25,7 @@ const Page = () => (
         Components can be controlled or uncontrolled, it does not matter, do as you like.
       </P>
       <P>
-        All form data can be retrieved from the onClick event or using <A href="/form-helpers/form">form API</A>.
+        All form data can be retrieved from the onClick event or using <Link href="/form-helpers/form">form API</Link>.
       </P>
 
       <Live scope={{ L, log }} className="mb-6">

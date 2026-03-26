@@ -1,6 +1,6 @@
-# Chili
+# Chili UI
 
-Chili is a React UI component library with built-in declarative forms and validation.
+Chili UI is a React UI component library with built-in declarative forms and validation.
 
 ## Documentation
 
@@ -27,7 +27,7 @@ Contributors:
 
 ## License
 
-Chili is licensed under the MIT License
+Chili UI is licensed under the MIT License
 
 <!-- [1]: https://reactivechili.online -->
 

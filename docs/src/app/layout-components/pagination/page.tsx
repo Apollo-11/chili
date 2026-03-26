@@ -5,6 +5,7 @@ import {
 import { CustomizationPropsTableSection, PropsTableSection } from '@/sections';
 import { MainDemo } from './MainDemo.tsx';
 import { PATHS } from '@/constants';
+import Link from 'next/link';
 
 const PaginationPage = () => (
   <article>
@@ -57,7 +58,7 @@ interface PaginationMessages {
             Customize component text labels
           </P>
           <P>
-            Consider using <A href={PATHS.chiliProvider}>Chili provider</A> to set messages globally.
+            Consider using <Link href={PATHS.chiliProvider}>Chili provider</Link> to set messages globally.
           </P>
         </Td>
       </tr>

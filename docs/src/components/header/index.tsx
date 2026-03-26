@@ -4,6 +4,7 @@ import { MenuButton } from './MenuButton';
 // eslint-disable-next-line import/extensions, import/no-relative-packages
 import packageJson from '../../../../package.json';
 import chiliLogo from '../../../public/chili_pepper.png';
+import Link from 'next/link';
 
 export const MainHeader = ({
   isMenuOpen,
@@ -24,7 +25,7 @@ export const MainHeader = ({
         justify-between
       "
     >
-      <L.A
+      <Link
         href="/"
         className="inline-block px-4"
       >
@@ -43,7 +44,7 @@ export const MainHeader = ({
             {packageJson.version}
           </span>
         </span>
-      </L.A>
+      </Link>
       <div
         className="
           flex

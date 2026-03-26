@@ -10,6 +10,8 @@ import {
   Section,
 } from '@/components/typography';
 import { Live } from '@/components/live';
+import variablesPng from '../../../../public/variables.png';
+
 
 const Page = () => (
   <article>
@@ -21,7 +23,7 @@ const Page = () => (
         Chili has some default styles so it is ready to use immediately.
       </P>
       <P>
-        <Code>{"import 'chili/dist/styles/chili.base.css';"}</Code>
+        <Code>{"import 'chili-ui/dist/styles/chili.base.css';"}</Code>
       </P>
 
       <P>
@@ -32,7 +34,7 @@ const Page = () => (
         <H3>Variables</H3>
 
         <Image
-          src="/variables.png"
+          src={variablesPng}
           alt="css variables list"
           width={300}
           height={300}
@@ -48,7 +50,7 @@ const Page = () => (
           Just add it after default styles import:
         </P>
         <P>
-          <Code>{"import 'chili/dist/styles/chili.base.css';"}</Code>
+          <Code>{"import 'chili-ui/dist/styles/chili.base.css';"}</Code>
           <br />
           <Code>{"import 'your-variables.css';"}</Code>
         </P>

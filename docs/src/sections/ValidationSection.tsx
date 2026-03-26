@@ -1,7 +1,8 @@
 import * as L from '@chili';
 import {
-  Code, H2, P, Section, Table, Td, TdCode, THead, CodeBlock, A, propsTableCommonHeaders,
+  Code, H2, P, Section, Table, Td, TdCode, THead, CodeBlock, propsTableCommonHeaders,
 } from '@/components/typography';
+import Link from 'next/link';
 
 export const ValidationSection = ({
   all,
@@ -119,7 +120,7 @@ export const ValidationSection = ({
           </TdCode>
           <Td>
             <P>
-              See <A href="/examples/predefined-validators">predefined validators</A>
+              See <Link href="/examples/predefined-validators">predefined validators</Link>
             </P>
           </Td>
         </L.Tr>

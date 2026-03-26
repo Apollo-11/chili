@@ -4,13 +4,14 @@
 
 import * as L from '@chili';
 import {
-  H1, H2, Section, Table, Th, Td, TdCode, P, A,
+  H1, H2, Section, Table, Th, Td, TdCode, P,
 } from '@/components/typography';
 import { Live } from '@/components/live';
 import { CustomizationPropsTableSection, PropsTableSection, ValidationSection } from '@/sections';
 import { UnderscoreClasses } from '@/components/commonProps';
 import { PATHS } from '@/constants';
 import { MainDemo } from './MainDemo';
+import Link from 'next/link';
 
 const AutoCompletePage = () => (
   <article>
@@ -121,7 +122,7 @@ interface AutoCompleteMessages {
             Customize component text labels
           </P>
           <P>
-            Consider using <A href={PATHS.chiliProvider}>Chili provider</A> to set messages globally.
+            Consider using <Link href={PATHS.chiliProvider}>Chili provider</Link> to set messages globally.
           </P>
         </Td>
       </tr>

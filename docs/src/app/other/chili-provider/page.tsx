@@ -4,6 +4,7 @@ import {
 import { PropsTableSection } from '@/sections';
 import { MainDemo } from './MainDemo';
 import { PATHS } from '@/constants';
+import Link from 'next/link';
 
 const ChiliProviderPage = () => (
   <article>
@@ -26,8 +27,8 @@ const ChiliProviderPage = () => (
         <Td>
           <P>Customize component text labels globally.</P>
           <P>Available messages:</P>
-          <P><A href={PATHS.autoComplete}>autoComplete</A></P>
-          <P><A href={PATHS.pagination}>pagination</A></P>
+          <P><Link href={PATHS.autoComplete}>autoComplete</Link></P>
+          <P><Link href={PATHS.pagination}>pagination</Link></P>
         </Td>
       </tr>
       <tr>

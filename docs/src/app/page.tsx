@@ -3,12 +3,12 @@
 import * as L from '@chili';
 import { Live } from '@/components/live';
 import {
-  A,
   Code, H1, H2, Li, P,
   Section,
   Ul,
 } from '@/components/typography';
 import { log } from '@/utils';
+import Link from 'next/link';
 
 const Home = () => (
   <article className="mb-10">
@@ -53,9 +53,9 @@ const Home = () => (
       </div>
 
       <P>
-        <A href="/basics/validation">
+        <Link href="/basics/validation">
           More on forms and validation
-        </A>
+        </Link>
       </P>
     </Section>
     <Section>
@@ -108,7 +108,7 @@ const Home = () => (
       <H2>Themes</H2>
 
       <P>
-        All colors, sizes and other numeric values have corresponding <A href="/basics/styles">css variables</A> so you can change everything to make components look different.
+        All colors, sizes and other numeric values have corresponding <Link href="/basics/styles">css variables</Link> so you can change everything to make components look different.
       </P>
 
       <P>
@@ -142,27 +142,27 @@ const Home = () => (
       <H2>Further reading</H2>
 
       <P>
-        <A href="/basics/styles">
+        <Link href="/basics/styles">
           Styles
-        </A>
+        </Link>
       </P>
 
       <P>
-        <A href="/basics/customization">
+        <Link href="/basics/customization">
           Customization
-        </A>
+        </Link>
       </P>
 
       <P>
-        <A href="/form-helpers/form">
+        <Link href="/form-helpers/form">
           Form helpers (submit forms programmaticaly)
-        </A>
+        </Link>
       </P>
 
       <P>
-        <A href="/validation-examples/predefined-validators">
+        <Link href="/validation-examples/predefined-validators">
           More validation examples
-        </A>
+        </Link>
       </P>
     </Section>
   </article>
