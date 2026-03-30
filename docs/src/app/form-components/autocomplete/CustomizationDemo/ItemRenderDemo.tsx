@@ -17,6 +17,7 @@ export const ItemRenderDemo = () => (
     <L.AutoComplete
       data={data}
       textField='last_name'
+      minSearchLength={0}
       itemRender={({ Element, elementProps, componentProps }) => {
         const author = componentProps.item;
         const sub = [author.first_name, author.middle_name]
