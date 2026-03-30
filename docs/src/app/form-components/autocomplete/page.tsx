@@ -11,6 +11,7 @@ import { CustomizationPropsTableSection, PropsTableSection, ValidationSection } 
 import { UnderscoreClasses } from '@/components/commonProps';
 import { PATHS } from '@/constants';
 import { MainDemo } from './MainDemo';
+import { CustomizationDemo } from './CustomizationDemo';
 
 const AutoCompletePage = () => (
   <article>
@@ -260,22 +261,7 @@ interface AutoCompleteMessages {
       </tr>
     </CustomizationPropsTableSection>
 
-    <Live scope={{ L }}>
-      {`
-<L.AutoComplete
-  noSuggestionsRender={({ elementProps }) => (
-    <div {...elementProps}>
-      <div className='text-amber-400 font-bold'>
-        no suggestions found
-      </div>
-    </div>
-  )}
-  data={['Argentina', 'Spain']}
-  onChange={({ component }) => console.log(component.value)}
-  _w-48
-/>
-        `}
-    </Live>
+    <CustomizationDemo />
 
     <Section>
       <H2>Suggestions list theme</H2>
