@@ -29,7 +29,10 @@ export const Tabs = React.forwardRef((props: TabsProps, ref?: React.Ref<HTMLElem
 
   const theme = useTheme(themeProp, COMPONENTS_NAMESPACES.tabs);
 
-  const [activeTabKeyState, setActiveTabKeyState] = React.useState<string | number>(0);
+  const [activeTabKeyState, setActiveTabKeyState] = React.useState<string | number>(() => {
+    const firstChild = React.Children.toArray(children).find(React.isValidElement);
+    return firstChild ? (firstChild.props as { tabKey?: string | number }).tabKey ?? 0 : 0;
+  });
 
   // if activeTabKey is not passed - work in uncontrolled mode
   const activeTabKey = isNil(activeTabKeyProp)

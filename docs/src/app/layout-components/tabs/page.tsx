@@ -1,11 +1,10 @@
 'use client';
 
-import * as L from '@chili';
 import { UnderscoreClasses } from '@/components/commonProps';
 import {
   H1, H2, Section, THead, Table, Td, propsTableCommonHeaders,
 } from '@/components/typography';
-import { Live } from '@/components/live';
+import { MainDemo } from './MainDemo';
 
 const TabsPage = () => (
   <article>
@@ -94,30 +93,7 @@ const TabsPage = () => (
       </Table>
     </Section>
 
-    <Live scope={{ L }}>
-      {`
-() => {
-  const [selected, setSelected] = React.useState(0);
-
-  return (
-    <L.Tabs
-      activeTabKey={selected}
-      onChange={(ev) => setSelected(ev.component.value)}
-    >
-      <L.Tab title={'Tab 1'} tabKey={0}>
-        <div className='p-4'>Tab 1 content</div>
-      </L.Tab>
-      <L.Tab title={'Tab 2'} tabKey={1}>
-        <div className='p-4'>Tab 2 content</div>
-      </L.Tab>
-      <L.Tab title={'Tab 3'} tabKey={2}>
-        <div className='p-4'>Tab 3 content</div>
-      </L.Tab>
-    </L.Tabs>
-  );
-};
-  `}
-    </Live>
+    <MainDemo />
   </article>
 );
 
