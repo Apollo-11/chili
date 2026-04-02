@@ -20,7 +20,12 @@ import { getText } from '../../src/SuggestionList/helpers';
 import type { CustomEventHandler, SetState } from '../../commonTypes';
 import type { SuggestionTarget } from '../../src/SuggestionList/types';
 import { stringToMaxLength } from '../../utils';
-import { capitalizeFirstChar, isSymbolAllowed, isSymbolForbidden, transformToCase } from '../Input/helpers';
+import {
+  capitalizeFirstChar,
+  isSymbolAllowed,
+  isSymbolForbidden,
+  transformToCase,
+} from '../Input/helpers';
 
 export const clearButtonClickHandlerCreator = ({
   isDisabled,
