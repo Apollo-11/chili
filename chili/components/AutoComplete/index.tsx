@@ -41,12 +41,14 @@ import { useMessages } from '../../utils/useMessages';
 
 export const AutoComplete = React.forwardRef((props: AutoCompleteProps, ref: React.Ref<HTMLElement>): React.ReactElement | null => {
   const {
+    allowedSymbols,
     autoComplete = 'off',
     className,
     compareObjectsBy,
     data,
     defaultValue = null,
     filterRule,
+    forbiddenSymbols,
     form,
     groupBy,
     hasClearButton,
@@ -181,6 +183,8 @@ export const AutoComplete = React.forwardRef((props: AutoCompleteProps, ref: Rea
     isValueControlled,
     setSelectedSuggestion,
     setStateValue,
+    allowedSymbols,
+    forbiddenSymbols,
     maxLength,
     capitalizeFirstLetter,
     letterCase,

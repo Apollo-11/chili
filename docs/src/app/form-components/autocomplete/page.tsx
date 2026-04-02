@@ -18,6 +18,14 @@ const AutoCompletePage = () => (
     <H1>AutoComplete</H1>
     <PropsTableSection>
       <tr>
+        <TdCode>allowedSymbols</TdCode>
+        <TdCode>{"'numbers' | RegExp"}</TdCode>
+        <Td>
+          Put <b>{'\'numbers\''}</b> to allow numbers only, or a <b>RegExp</b> to use your own pattern.
+          Typed characters not matching the pattern are ignored
+        </Td>
+      </tr>
+      <tr>
         <TdCode>autoComplete</TdCode>
         <TdCode>string</TdCode>
         <Td>
@@ -69,6 +77,14 @@ const AutoCompletePage = () => (
         <Td>
           Search mode, <b>smart</b> is default, looks for one or several words regardless of their order,
           can be slow if <b>data</b> has thousands of elements or more
+        </Td>
+      </tr>
+      <tr>
+        <TdCode>forbiddenSymbols</TdCode>
+        <TdCode>{"'numbers' | RegExp"}</TdCode>
+        <Td>
+          Put <b>{'\'numbers\''}</b> to forbid numbers, or a <b>RegExp</b> to use your own pattern.
+          Typed characters matching the pattern are ignored
         </Td>
       </tr>
       <tr>

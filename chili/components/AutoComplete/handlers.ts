@@ -20,7 +20,7 @@ import { getText } from '../../src/SuggestionList/helpers';
 import type { CustomEventHandler, SetState } from '../../commonTypes';
 import type { SuggestionTarget } from '../../src/SuggestionList/types';
 import { stringToMaxLength } from '../../utils';
-import { capitalizeFirstChar, transformToCase } from '../Input/helpers';
+import { capitalizeFirstChar, isSymbolAllowed, isSymbolForbidden, transformToCase } from '../Input/helpers';
 
 export const clearButtonClickHandlerCreator = ({
   isDisabled,
@@ -117,6 +117,8 @@ export const inputChangeHandlerCreator = ({
   setStateValue,
   setSelectedSuggestion,
   textField,
+  allowedSymbols,
+  forbiddenSymbols,
   maxLength,
   capitalizeFirstLetter,
   letterCase,
@@ -128,11 +130,17 @@ export const inputChangeHandlerCreator = ({
   setStateValue: SetState<string>,
   setSelectedSuggestion: SetState<Suggestion>,
   textField?: string,
+  allowedSymbols?: AutoCompleteProps['allowedSymbols'],
+  forbiddenSymbols?: AutoCompleteProps['forbiddenSymbols'],
   maxLength?: number,
   capitalizeFirstLetter?: boolean,
   letterCase?: 'lower' | 'upper',
 }): React.ChangeEventHandler<HTMLInputElement> => (event) => {
   const { value } = event.currentTarget;
+
+  if (isSymbolForbidden(value, forbiddenSymbols)) return;
+
+  if (!isSymbolAllowed(value, allowedSymbols)) return;
 
   const maxLengthAdjustedValue = stringToMaxLength(value, maxLength);
 

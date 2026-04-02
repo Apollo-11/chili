@@ -6,6 +6,7 @@ import type { SuggestionListProps } from '../../src/SuggestionList/types';
 import type { UlProps } from '../Ul';
 import type { PartialGlobalDefaultTheme } from '../../utils/useTheme';
 import type { COMPONENTS_NAMESPACES } from '../../constants';
+import type { PredefinedAllowedSymbols, PredefinedForbiddenSymbols } from '../Input/types';
 
 /** DataObject contains strings to show in the dropdown list
  * The object must contain a property with a string value
@@ -106,10 +107,14 @@ export interface AutoCompleteMessages {
 }
 
 export interface AutoCompleteProps<T extends Suggestion = Suggestion> extends ValidationProps {
+  /** Put 'numbers' to allow numbers only or a RegExp to use your own pattern */
+  allowedSymbols?: PredefinedAllowedSymbols | RegExp,
   /** Browser autofill, off is the default value. Works as HTML autoComplete attribute */
   autoComplete?: string,
   /** If true, capitalizes the first symbol in the input */
   capitalizeFirstLetter?: boolean,
+  /** Put 'numbers' to forbid numbers only or a RegExp to use your own pattern */
+  forbiddenSymbols?: PredefinedForbiddenSymbols | RegExp,
   /** ... */
   compareObjectsBy?: T extends object ? ((suggestionListItem: T) => unknown) | string : never,
   /** Data for the dropdown list */
