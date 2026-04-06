@@ -21,10 +21,15 @@ export const Tabs = React.forwardRef((props: TabsProps, ref?: React.Ref<HTMLElem
     activeTabKey: activeTabKeyProp,
     children,
     className,
+    contentRender,
+    headingRender,
+    onChange,
     shouldScrollTabs,
     style,
     tabContentNode,
     tabRender,
+    wrapperRender,
+    ...restProps
   } = useProps(props);
 
   const theme = useTheme(themeProp, COMPONENTS_NAMESPACES.tabs);
@@ -77,6 +82,7 @@ export const Tabs = React.forwardRef((props: TabsProps, ref?: React.Ref<HTMLElem
 
   return (
     <Wrapper
+      {...restProps}
       className={combinedClassNames}
       style={style as React.CSSProperties}
       ref={ref}

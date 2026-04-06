@@ -90,6 +90,7 @@ export interface WrapperProps {
   style?: React.CSSProperties,
   ref?: React.Ref<HTMLElement>,
   children?: React.ReactNode,
+  [x: string]: unknown,
 }
 
 export interface ContentProps {
